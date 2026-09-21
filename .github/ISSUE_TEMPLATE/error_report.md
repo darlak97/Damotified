@@ -1,15 +1,26 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: feature_request
+name: Error report
+about: Create a report to help us catch bugs more easily
+title: 'Error: '
+labels: 'Blender ERROR'
 assignees: ''
 
 ---
 
-**Describe the feature you'd like to see**
-A clear and concise description of the feature you would like to see implemented
-And what Hytale related aspects could be improved.
+**Bug description**
+A clear and concise description of what the bug is.
+If applicable, add screenshots or videos to help explain your problem.
 
-**Comparisons**
-Are there examples of the feature you're asking for? Point them to us so we can take a look.
+**Versions used**
+Paste the error that Python displayed here:
+
+
+**How to reproduce**
+Steps to reproduce the behavior:
+1. __
+2. __
+3. __
+
+**Versions used**
+- Blender version: __
+- Add-on version: __
