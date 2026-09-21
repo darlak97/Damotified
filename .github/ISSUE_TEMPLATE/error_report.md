@@ -11,7 +11,7 @@ assignees: ''
 A clear and concise description of what the bug is.
 If applicable, add screenshots or videos to help explain your problem.
 
-**Versions used**
+**Python ERROR**
 Paste the error that Python displayed here:
 
 
