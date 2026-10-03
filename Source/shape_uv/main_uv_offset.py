@@ -223,11 +223,12 @@ def draw_uvtx_panel(panel, context):
         return
         
     if uv.name == BASE_LAYER:
-        layout.label(text=f"'{BASE_LAYER}' is the base layer:", icon='ERROR')
+        layout.label(text=f"'{BASE_LAYER}' is the base layer", icon='ERROR')
         layout.label(text="Select another UV as active")
         return
 
-    prefs = context.preferences.addons.get("Damotified")
+    addon_name = __package__.rsplit('.', 1)[0]
+    prefs = context.preferences.addons.get(addon_name)
     is_debug = prefs.preferences.debug_mode if prefs else False
 
     # Debug information displays

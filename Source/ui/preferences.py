@@ -13,7 +13,7 @@ def update_debug_mode(self, context):
 
 class DAMOTIFIED_AddonPreferences(bpy.types.AddonPreferences):
     """ Global addon preferences window."""
-    bl_idname = "Damotified" # Prevent path resolution issues
+    bl_idname = __package__.rsplit('.', 1)[0] # Prevent path resolution issues
 
     is_configured: bpy.props.BoolProperty(
         name="Is Configured",

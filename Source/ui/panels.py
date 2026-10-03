@@ -14,8 +14,13 @@ class DAMOTIFIED_DummyItem(PropertyGroup):
 
 def is_plugin_configured(context):
     """ State from addon preferences."""
-    prefs = context.preferences.addons.get("Damotified")
-    return prefs.preferences.is_configured if prefs else False
+    addon_name = __package__.rsplit('.', 1)[0]
+    prefs = context.preferences.addons.get(addon_name)
+    
+    is_permanently_hidden = prefs.preferences.is_configured if prefs else False
+    is_file_configured = context.scene.get("damotified_is_configured", False)
+    
+    return is_permanently_hidden or is_file_configured
 
 # =========================================================
 # Welcome Panel

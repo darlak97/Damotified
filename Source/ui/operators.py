@@ -3,6 +3,7 @@ import difflib
 import bpy
 import random
 import sys
+import addon_utils
 from ..debug import logger
 from bpy.props import StringProperty, EnumProperty
 from bpy.types import Operator
@@ -972,17 +973,19 @@ class DAMOTIFIED_OT_StartConfiguration(Operator):
     def draw(self, context):
         layout = self.layout
         
-        addon_name = __package__.split('.')[0]
+        addon_name = __package__.rsplit('.', 1)[0]
         version_str = "Beta"
         
-        if addon_name in sys.modules and hasattr(sys.modules[addon_name], "bl_info"):
-            version_tuple = sys.modules[addon_name].bl_info.get("version", (0, 2))
-            version_str = ".".join(map(str, version_tuple))
+        for mod in addon_utils.modules(): # Read extension metadata
+            if mod.__name__ == addon_name:
+                version_tuple = mod.bl_info.get("version", (0, 2, 0))
+                version_str = ".".join(map(str, version_tuple))
+                break
             
         box = layout.box()
         col = box.column(align=True)
         
-        col.label(text=f"Damotified (Hytale Plugin) |v{version_str}|", icon='ERROR') # dynamic version
+        col.label(text=f"Damotified (Hytale Plugin) |v{version_str}|", icon='ERROR')
         col.label(text="|Basic stable version of Damotified.|")
         col.label(text="This plugin was designed to import, animate, and export animations for Hytale")
         col.label(text="following the rules and restrictions of the game animations adapted to Blender.")
@@ -1003,13 +1006,8 @@ class DAMOTIFIED_OT_StartConfiguration(Operator):
         op.url = "https://github.com/darlak97/Damotified"
         
     def execute(self, context):
-        prefs = context.preferences.addons.get("Damotified")
-        
-        if prefs:
-            prefs.preferences.is_configured = True
-        else:
-            self.report({'WARNING'}, "Preferences not found. Ensure your addon folder is named 'Damotified'.")
-            
+        # Sets a session flag Blender
+        context.scene["damotified_is_configured"] = True
         return {'FINISHED'}
 
 def menu_func_import(self, context):
