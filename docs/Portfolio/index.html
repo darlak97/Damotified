@@ -135,7 +135,7 @@
           <div>
             <div class="font-semibold text-white mb-1">All in BLockBench</div>
             <p class="text-slate-400 leading-relaxed">
-              All animations were created for <span class="mono text-sky-300">Hytale</span>. <br> I've been practicing and experimenting throughout these past few months, constantly improving my skills.
+              All animations were created for <span class="mono text-sky-300">Hytale</span>. <br> I've been practicing and experimenting throughout these past few months, constantly improving my Hand.
             </p>
           </div>
         </div>
@@ -1512,7 +1512,7 @@ function identifyModelFromAnimation(animJson, filePath) {
     }
     function normalizeRepoPath(raw) {
       let s = decodeURIComponent(String((raw && raw.path) || raw || "")).replace(/\\/g, "/").split("?")[0].split("#")[0];
-      s = s.replace(/^https?:\/\/[^/]+\
+      s = s.replace(/^https?:\/\/[^/]+\//i, "").replace(/^\.\//, "").replace(/^\//, "");
       const m = s.match(/(?:^|\/)(Models|Animations)\//);
       if (m) return s.slice(m.index + (s[m.index] === "/" ? 1 : 0));
       return s.replace(/^(?:docs\/Portfolio\/|Portfolio\/)/, "");
