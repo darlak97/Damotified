@@ -1,0 +1,1162 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Origin",
+      "position": {"x": 0, "y": 0, "z": 0},
+      "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
+      "shape": {
+        "type": "none",
+        "offset": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat"
+      },
+      "children": [
+        {
+          "id": "2",
+          "name": "Main",
+          "position": {"x": 0, "y": 35.33333, "z": 0},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "3",
+              "name": "Crystal_1",
+              "position": {"x": -10.14211, "y": 10.88873, "z": -7.3963},
+              "orientation": {"x": 0.18628, "y": 0.51179, "z": -0.28684, "w": 0.78809},
+              "shape": {
+                "type": "box",
+                "offset": {"x": 0, "y": 0, "z": 16.5},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 26, "y": 26, "z": 70}
+                },
+                "textureLayout": {
+                  "back": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "front": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "top": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "fullbright"
+              },
+              "children": [
+                {
+                  "id": "4",
+                  "name": "Shard",
+                  "position": {"x": 0, "y": 0, "z": -34.5},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "5",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": -26},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "6",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": -26},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "7",
+                  "name": "Shard",
+                  "position": {"x": 0, "y": 0, "z": 35},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "8",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": 25},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "9",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": 25},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "10",
+              "name": "Crystal_2",
+              "position": {"x": 0, "y": 0, "z": 0},
+              "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+              "shape": {
+                "type": "box",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 26, "y": 26, "z": 70}
+                },
+                "textureLayout": {
+                  "back": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "front": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "top": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "fullbright"
+              },
+              "children": [
+                {
+                  "id": "11",
+                  "name": "Shard_1",
+                  "position": {"x": 0, "y": 0, "z": -35},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "12",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": -25},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "13",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": -25},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "14",
+                  "name": "Shard_2",
+                  "position": {"x": 0, "y": 0, "z": 36},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "15",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": 23},
+                      "orientation": {"x": -0.65328, "y": 0.2706, "z": 0.65328, "w": 0.2706},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "16",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": 23},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "17",
+              "name": "Crystal_3",
+              "position": {"x": 0, "y": 0, "z": 0},
+              "orientation": {"x": -0.26308, "y": 0.53348, "z": 0.35554, "w": 0.72096},
+              "shape": {
+                "type": "box",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 26, "y": 26, "z": 70}
+                },
+                "textureLayout": {
+                  "back": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "front": {
+                    "offset": {"x": 0, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {"x": 26, "y": 70},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "top": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {"x": 0, "y": 0},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "fullbright"
+              },
+              "children": [
+                {
+                  "id": "18",
+                  "name": "Shard_3",
+                  "position": {"x": 0, "y": 0, "z": -36},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "19",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": -24},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "20",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": -24},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "21",
+                  "name": "Shard_4",
+                  "position": {"x": 0, "y": 0, "z": 35},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "22",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": 25},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "23",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": 25},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "24",
+                  "name": "Shard_5",
+                  "position": {"x": 6.5, "y": 9.66667, "z": 15},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "25",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 2.9, "z": -0.5},
+                      "orientation": {"x": 0.63689, "y": -0.63689, "z": -0.3072, "w": -0.3072},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -15, "y": 1.5, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "26",
+                      "name": "cube--C2",
+                      "position": {"x": -1.5, "y": 1.9765, "z": 1.77402},
+                      "orientation": {"x": -0.23313, "y": 0.66757, "z": -0.23313, "w": 0.66757},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -15, "y": 1.5, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "27",
+                  "name": "Shard_6",
+                  "position": {"x": 5, "y": -7.05683, "z": -5.52598},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "28",
+                      "name": "cube--C1",
+                      "position": {"x": -1.97164, "y": -5.17447, "z": -6.44884},
+                      "orientation": {"x": 0.62863, "y": 0.32377, "z": 0.62863, "w": 0.32377},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -15, "y": 1.5, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "29",
+                      "name": "cube--C2",
+                      "position": {"x": -0.47164, "y": -6.748, "z": -4.72216},
+                      "orientation": {"x": 0.21557, "y": -0.21557, "z": 0.67345, "w": 0.67345},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -15, "y": 1.5, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "30",
+                      "name": "cube--C3",
+                      "position": {"x": 12.93678, "y": 30.77958, "z": -19.64785},
+                      "orientation": {"x": -0.46353, "y": 0.43527, "z": -0.75318, "w": 0.16854},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0.13919, "y": -0.4096, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "31",
+                      "name": "cube--C4",
+                      "position": {"x": 12.93678, "y": 30.77958, "z": -19.64785},
+                      "orientation": {"x": -0.44694, "y": 0.84036, "z": -0.22479, "w": -0.20858},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -0.13919, "y": 0, "z": 0.4096},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "32",
+                      "name": "cube--C5",
+                      "position": {"x": -21.06322, "y": -15.22042, "z": 37.15215},
+                      "orientation": {"x": -0.65497, "y": 0.14254, "z": 0.50685, "w": 0.54203},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -0.13919, "y": 0, "z": 0.4096},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "33",
+                      "name": "cube--C6",
+                      "position": {"x": -21.06322, "y": -15.22042, "z": 37.15215},
+                      "orientation": {"x": -0.07987, "y": 0.45919, "z": 0.2576, "w": 0.84641},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0.13919, "y": -0.4096, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 32, "y": 25},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 64},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "34",
+              "name": "Crystal_4",
+              "position": {"x": 0, "y": 0, "z": 0},
+              "orientation": {"x": -0.21782, "y": 0.80154, "z": -0.02092, "w": 0.55647},
+              "shape": {
+                "type": "none",
+                "offset": {"x": 0, "y": 1.66667, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat"
+              },
+              "children": [
+                {
+                  "id": "35",
+                  "name": "bone--C1",
+                  "position": {"x": 0, "y": -1.66667, "z": 0},
+                  "orientation": {"x": 0, "y": 0, "z": 1, "w": 0},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 26, "y": 26, "z": 70},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 70},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 26, "y": 70},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 270
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 70},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 26, "y": 70},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 270
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "36",
+                  "name": "Shard_7",
+                  "position": {"x": 0, "y": -1.66667, "z": -35},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "37",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": -25},
+                      "orientation": {"x": 0.2706, "y": 0.65328, "z": -0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 1.5, "y": 1.46667, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "38",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": -25},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 51},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "39",
+                  "name": "Shard_8",
+                  "position": {"x": 0, "y": -1.66667, "z": 35},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "none",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "40",
+                      "name": "cube--C1",
+                      "position": {"x": 0, "y": 0, "z": 25},
+                      "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    },
+                    {
+                      "id": "41",
+                      "name": "cube--C2",
+                      "position": {"x": 0, "y": 0, "z": 26},
+                      "orientation": {"x": -0.65328, "y": 0.2706, "z": 0.65328, "w": 0.2706},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 51, "y": 35},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 53, "y": 0},
+                            "mirror": {"x": false, "y": true},
+                            "angle": 90
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "fullbright"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "prop",
+  "lod": "auto"
+}

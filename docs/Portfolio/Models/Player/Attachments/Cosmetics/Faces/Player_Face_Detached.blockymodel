@@ -1,0 +1,470 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Head",
+      "position": {"x": 0, "y": 79, "z": 0},
+      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+      "shape": {
+        "type": "none",
+        "offset": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat"
+      },
+      "children": [
+        {
+          "id": "2",
+          "name": "Face",
+          "position": {"x": 0, "y": -20, "z": 12},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "quad",
+            "offset": {"x": 0, "y": 20, "z": 2},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 30, "y": 28},
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {"x": 0, "y": 0},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "3",
+          "name": "L-Eyelid-Bot",
+          "position": {"x": -8, "y": -7, "z": 13.8},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "quad",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 0.1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 12, "y": 5},
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {"x": 28, "y": 40},
+                "mirror": {"x": false, "y": false},
+                "angle": 0
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "4",
+          "name": "R-Eyelid-Bot",
+          "position": {"x": 8, "y": -7, "z": 13.8},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "quad",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": -1, "y": 0.1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 12, "y": 5},
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {"x": 40, "y": 40},
+                "mirror": {"x": true, "y": false},
+                "angle": 0
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "5",
+          "name": "R-Eyelid-Top",
+          "position": {"x": 8, "y": 1, "z": 13.9},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "quad",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": -1, "y": 0.1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 12, "y": 7},
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {"x": 26, "y": 45},
+                "mirror": {"x": true, "y": true},
+                "angle": 0
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "6",
+          "name": "L-Eyelid-Top",
+          "position": {"x": -8, "y": 1, "z": 13.9},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "quad",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 0.1, "z": 1},
+            "settings": {
+              "isPiece": false,
+              "size": {"x": 12, "y": 7},
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {"x": 14, "y": 45},
+                "mirror": {"x": false, "y": true},
+                "angle": 0
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "7",
+          "name": "L-Eyelash-Top",
+          "position": {"x": -8, "y": 1, "z": 14.3},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "8",
+              "name": "L-Eyelash-Top--C1",
+              "position": {"x": 0, "y": 0.68898, "z": -0.16417},
+              "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1.125},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 7},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 31, "y": 1},
+                    "mirror": {"x": true, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "9",
+              "name": "L-Eyelash-Top--C2",
+              "position": {"x": 0, "y": 0.71766, "z": 0},
+              "orientation": {"x": -0.67559, "y": 0, "z": 0, "w": 0.73728},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 0.9},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 6},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 31, "y": 8},
+                    "mirror": {"x": true, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "10",
+          "name": "R-Eyelash-Bot",
+          "position": {"x": 8, "y": -6, "z": 14.2},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "11",
+              "name": "R-Eyelash-Bot--C1",
+              "position": {"x": 0, "y": 0.68898, "z": -0.16417},
+              "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1.125},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 7},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 45, "y": 14},
+                    "mirror": {"x": false, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "12",
+              "name": "R-Eyelash-Bot--C2",
+              "position": {"x": 0, "y": 0.71766, "z": 0},
+              "orientation": {"x": -0.73728, "y": 0, "z": 0, "w": 0.67559},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 0.9},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 6},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 45, "y": 21},
+                    "mirror": {"x": false, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "13",
+          "name": "R-Eyelash-Top",
+          "position": {"x": 8, "y": 1, "z": 14.3},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "14",
+              "name": "R-Eyelash-Top--C1",
+              "position": {"x": 0, "y": 0.68898, "z": -0.16417},
+              "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1.125},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 7},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 45, "y": 1},
+                    "mirror": {"x": false, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "15",
+              "name": "R-Eyelash-Top--C2",
+              "position": {"x": 0, "y": 0.71766, "z": 0},
+              "orientation": {"x": -0.67559, "y": 0, "z": 0, "w": 0.73728},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 0.9},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 6},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 45, "y": 8},
+                    "mirror": {"x": false, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "16",
+          "name": "L-Eyelash-Bot",
+          "position": {"x": -8, "y": -6, "z": 14.2},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "17",
+              "name": "L-Eyelash-Bot--C1",
+              "position": {"x": 0, "y": 0.68898, "z": -0.16417},
+              "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1.125},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 7},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 31, "y": 14},
+                    "mirror": {"x": true, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "18",
+              "name": "L-Eyelash-Bot--C2",
+              "position": {"x": 0, "y": 0.71766, "z": 0},
+              "orientation": {"x": -0.73728, "y": 0, "z": 0, "w": 0.67559},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 0.9},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 14, "y": 6},
+                  "normal": "-Y",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 31, "y": 21},
+                    "mirror": {"x": true, "y": true},
+                    "angle": 180
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "character",
+  "lod": "auto"
+}

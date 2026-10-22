@@ -1,11 +1,3623 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>darlak97 Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #090d16;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .bone-label {
+      position: absolute;
+      transform: translate(calc(-100% - 12px), -50%);
+      pointer-events: auto;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+      user-select: none;
+      z-index: 20;
+    }
+    .bone-label:hover {
+      z-index: 40;
+    }
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
 </head>
-<body>
-    <h1>Hello Portfolio!</h1>
-</body>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-sky-500/30">
+  <header class="sticky top-0 border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-md px-4 py-3 flex flex-wrap items-center justify-between gap-3 z-[100]">
+    <div class="flex items-center gap-3">
+      <a href="#/showcase" id="headerHomeLink" class="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/40 flex items-center justify-center font-bold text-sky-300 mono text-xs hover:bg-sky-500/25 transition" title="Return to Showcase Gallery">
+        3D
+      </a>
+      <div>
+        <div class="flex flex-wrap items-center gap-2">
+          <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Blockbench Hytale Portfolio</h1>
+          <span id="repoStatsBadge" class="px-2 py-0.5 text-[11px] font-medium rounded-md bg-slate-900 text-slate-300 border border-slate-800 mono">0 Models · 0 Animations</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="portfolioAboutSection" class="max-w-7xl w-full mx-auto px-4 pt-5 pb-1">
+    <div class="bg-slate-900/60 border border-slate-800/90 rounded-2xl p-4 sm:p-5 flex flex-col gap-4">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+        <div class="space-y-1.5 max-w-3xl">
+          <div class="inline-flex items-center gap-2 text-[11px] uppercase tracking-wider font-semibold text-sky-400 mono">
+            <span>About This Portfolio</span>
+          </div>
+          <h2 id="portfolioCreatorTitle" class="text-lg sm:text-xl font-bold text-white tracking-tight">
+            Hello!
+          </h2>
+          <p id="portfolioCreatorBio" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            I'm darlak97, I studied Computer Systems Engineering and have been creating mods since 2020.
+			<br>
+			I am passionate about creating content and events for communities, and I've been studying and practicing various aspects of content creation. My main has been programming, which has allowed me to develop mods for different games, including Don't Starve Together, Arma 3, and Project Zomboid.
+			<br>
+			To create different kinds of content, I've also explored drawing, 3D modeling, and animation.
+			<br><br>
+			I've wanted to be part of Hytale's development since it was announced in 2018. After some time, I decided to start creating content through mods and collaborating on projects with development teams, hoping to eventually become part of the team. I was saddened when the game's cancellation was announced, but the #SaveHytale gave me even more motivation and renewed my hope of becoming part of this incredible game!
+			<br><br>
+			I hope you enjoy my portfolio. I'll continue sharing new content every day!
+          </p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-2 shrink-0 text-xs">
+          <div class="bg-slate-950/80 border border-slate-800/90 rounded-xl px-3 py-2">
+            <div class="text-[10px] uppercase text-slate-400 mono">Author</div>
+            <div class="font-semibold text-slate-100 mt-0.5">darlak97</div>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800/90 rounded-xl px-3 py-2">
+            <div class="text-[10px] uppercase text-slate-400 mono">Social</div>
+			<a href="https://x.com/darlak97" class="font-semibold text-sky-300 mono mt-0.5 block">https://x.com/darlak97</a>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800/90 rounded-xl px-3 py-2 col-span-2 sm:col-span-1 md:col-span-2">
+            <div class="text-[10px] uppercase text-slate-400 mono">Skills</div>
+            <div class="font-medium text-slate-300 mono text-[11px] mt-0.5">
+			3D models, Animation, Textures
+			<br><br>
+			Programing:
+			<br>
+			C#, LUA, JAVA
+			</div>
+          </div>
+        </div>
+      </div>
+      <details open class="border-t border-slate-800/80 pt-2.5 group">
+        <summary class="flex items-center justify-between cursor-pointer text-xs text-slate-400 hover:text-slate-200 select-none">
+          <span class="font-medium flex items-center gap-1.5">
+            <span class="text-sky-400 transition-transform group-open:rotate-90">&#9656;</span>
+            <span>Page Technical Info</span>
+          </span>
+          <span class="text-[11px] mono text-slate-500">Click to expand / collapse</span>
+        </summary>
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-300 bg-slate-950/70 p-3.5 rounded-xl border border-slate-800/80 items-start">
+          <div>
+            <div class="font-semibold text-white mb-1">3D Orbit &amp; Free 3D Space Translation</div>
+            <p class="text-slate-400 leading-relaxed">
+              Move the 3D focus point freely in space: right-click or Shift+drag to translate the pivot in X, Y, Z, left-click to orbit, and scroll to zoom.
+            </p>
+          </div>
+          <div>
+            <div class="font-semibold text-white mb-1">Per-Model Display Options &amp; Sub-Links</div>
+            <p class="text-slate-400 leading-relaxed">
+              Customize each showcase card individually via its <span class="text-sky-300 font-medium">Display Options</span> menu, or click <span class="text-sky-300 font-medium">Inspect &rarr;</span> to redirect to its dedicated <span class="mono text-slate-200"> /inspect/&lt;model&gt;</span>
+            </p>
+          </div>
+          <div>
+            <div class="font-semibold text-white mb-1">All in BLockBench</div>
+            <p class="text-slate-400 leading-relaxed">
+              All animations were created for <span class="mono text-sky-300">Hytale</span>. <br> I've been practicing and experimenting throughout these past few months, constantly improving my skills.
+            </p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+  <section id="showcaseGridView" class="flex-1 max-w-7xl w-full mx-auto px-4 py-4 flex flex-col gap-4">
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl px-3.5 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-semibold text-slate-200">Models Gallery</span>
+        <span class="text-xs text-slate-500">·</span>
+        <span class="text-xs text-slate-400">Use each card's Display Options to customize models individually, or click Inspect to open its sub-link</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <input id="inputGridSearch" type="text" placeholder="Filter model..." class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 w-40" />
+        <details class="relative">
+          <summary class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 cursor-pointer select-none flex items-center gap-1.5">
+            <span>Global Display Options</span>
+            <span class="text-slate-400 text-[10px]">&#9662;</span>
+          </summary>
+          <div class="absolute right-0 mt-1.5 w-52 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-2 z-30 flex flex-col gap-1">
+            <button id="btnGridToggleTextures" class="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium bg-sky-500/15 text-sky-300 border border-sky-500/30 transition">Grid Textures: ON</button>
+            <button id="btnGridToggleWireframe" class="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-950 text-slate-300 border border-slate-800 hover:text-white transition">Grid Wireframe: OFF</button>
+            <button id="btnGridToggleBones" class="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-950 text-slate-300 border border-slate-800 hover:text-white transition">Grid Bones: OFF</button>
+            <button id="btnGridToggleSpin" class="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium bg-sky-500/15 text-sky-300 border border-sky-500/30 transition">Auto-Rotate: ON</button>
+            <button id="btnGridPlayAll" class="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-950 text-slate-200 border border-slate-800 hover:text-white transition">Pause All</button>
+          </div>
+        </details>
+      </div>
+    </div>
+	
+    <div id="modelsGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-8">
+    </div>
+  </section>
+  <main id="detailInspectorView" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 py-4 grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+    <nav aria-label="Inspector Sub-Links" class="relative z-[90] lg:col-span-12 bg-slate-900/70 border border-slate-800/90 rounded-2xl px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <button id="btnBackToGrid" type="button" class="px-5 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-sm font-semibold text-slate-200 transition inline-flex items-center shadow-sm">
+            &larr; Back to 2-Column Grid
+          </button>
+        <details id="inspectorModelDropdown" class="relative z-[90]">
+            <summary class="px-5 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-sm font-semibold text-white cursor-pointer select-none flex items-center gap-2 shadow-sm">
+              <span class="text-slate-400 font-normal">Model:</span>
+              <span id="inspectorActiveModelLabel">No model detected</span>
+              <span class="text-slate-400 text-[10px]">&#9662;</span>
+            </summary>
+            <div id="inspectorModelButtons" class="absolute left-0 mt-1.5 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 z-[90] flex flex-col gap-1 max-h-64 overflow-y-auto">
+            </div>
+          </details>
+      </div>
+
+    </nav>
+	
+    <section class="lg:col-span-7 flex flex-col bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden relative">
+	
+      <div class="relative px-3.5 py-2.5 bg-slate-900/90 border-b border-slate-800/80 flex flex-wrap items-center justify-end gap-2 z-[70]">
+        <div class="flex flex-wrap items-center gap-1.5 ml-auto">
+          <details id="inspectorAnimDropdown" class="relative z-[80]">
+            <summary class="px-4 py-2.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/40 text-sm font-semibold text-sky-300 cursor-pointer select-none flex items-center gap-2 mono shadow-sm">
+              <span class="text-slate-300 font-sans font-semibold text-sm">Animation:</span>
+              <span id="inspectorActiveAnimLabel" class="truncate max-w-[280px] text-sm">Base Rig Pose</span>
+              <span class="text-sky-300 text-[10px]">&#9662;</span>
+            </summary>
+            <div id="clipVariantButtons" class="absolute right-0 mt-1.5 w-80 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 z-[80] flex flex-col gap-1 max-h-60 overflow-y-auto">
+			
+            </div>
+          </details>
+
+        </div>
+      </div>
+	  
+      <div id="viewportContainer" class="relative w-full h-[460px] sm:h-[520px] overflow-hidden select-none" style="background:#3E3E3E">
+        <canvas id="threeCanvas" class="w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
+
+          <details id="inspectorDisplayOptions" class="absolute top-3 right-3 z-50">
+            <summary class="px-3.5 py-2 rounded-xl bg-slate-900/95 hover:bg-slate-800 border border-sky-500/40 shadow-lg backdrop-blur-md text-xs font-bold text-sky-300 cursor-pointer select-none flex items-center gap-2 transition">
+              <span>Display Options</span>
+              <span class="text-[10px] text-sky-300">&#9662;</span>
+            </summary>
+            <div class="absolute right-0 top-full mt-2 w-64 max-w-[calc(100vw-2rem)] bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl shadow-2xl p-2.5 z-50 space-y-2">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 mono px-1">Surface Style (This Model)</div>
+              <div class="grid grid-cols-2 gap-1">
+                <button id="btnModeTextured" class="px-2 py-1 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/40 transition">Textured</button>
+                <button id="btnModeGhost" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">Ghost + Rig</button>
+                <button id="btnModeSkeleton" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">Pure Skeleton</button>
+                <button id="btnModeSolid" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">Clay Mannequin</button>
+              </div>
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 mono px-1 pt-1 border-t border-slate-800">Model Layers &amp; Options</div>
+              <div class="flex flex-col gap-1">
+                <button id="btnToggleTexture" class="w-full text-left px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">Texture: ON</button>
+                <button id="btnToggleWireframe" class="w-full text-left px-2 py-1 text-[11px] rounded bg-slate-950 text-slate-300 border border-slate-800 font-medium transition">Wireframe: OFF</button>
+                <button id="btnTogglePivots" class="w-full text-left px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">Joints: ON</button>
+                <button id="btnToggleAttachments" class="w-full text-left px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">Attachments: ON</button>
+                <button id="btnToggleTrails" class="w-full text-left px-2 py-1 text-[11px] rounded bg-slate-950 text-slate-300 border border-slate-800 font-medium transition">Arcs: OFF</button>
+                <button id="btnToggleGrid" class="w-full text-left px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">Grid: ON</button>
+                <button id="btnToggleInspectorSpin" class="w-full text-left px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">Auto-Rotate: ON</button>
+              </div>
+            </div>
+          </details>
+                    <details id="inspectorCameraLabels" class="absolute right-3 top-16 z-40">
+            <summary class="px-3.5 py-2 rounded-xl bg-slate-900/95 hover:bg-slate-800 border border-slate-700 shadow-lg backdrop-blur-md text-xs font-bold text-slate-200 cursor-pointer select-none flex items-center justify-center gap-2 transition">
+              <span>Camera &amp; Labels</span>
+              <span class="text-[10px] text-slate-500">&#9662;</span>
+            </summary>
+            <div class="absolute right-0 top-full mt-2 w-56 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl shadow-2xl p-2 z-40 space-y-2">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 mono px-1">Camera Presets</div>
+              <div class="grid grid-cols-2 gap-1">
+                <button id="btnCamFront" class="px-2 py-1 text-[11px] rounded bg-slate-950 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition">Front</button>
+                <button id="btnCamThreeQuarter" class="px-2 py-1 text-[11px] rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium transition">3/4 View</button>
+                <button id="btnCamSide" class="px-2 py-1 text-[11px] rounded bg-slate-950 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition">Side</button>
+                <button id="btnCamHands" class="px-2 py-1 text-[11px] rounded bg-slate-950 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition">Hands / Claws</button>
+                <button id="btnCamHead" class="px-2 py-1 text-[11px] rounded bg-slate-950 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition col-span-2">Focus Head</button>
+              </div>
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 mono px-1 pt-1 border-t border-slate-800">3D Bone Labels</div>
+              <div class="grid grid-cols-2 gap-1">
+                <button id="btnLabelsKey" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">Key Labels</button>
+                <button id="btnLabelsAll" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">All Tracks</button>
+                <button id="btnLabelsSelected" class="px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition">Selected Only</button>
+                <button id="btnLabelsOff" class="px-2 py-1 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/40 transition">Hide Labels</button>
+              </div>
+            </div>
+          </details>
+		  
+        <div id="labelsOverlay" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+		
+        <details class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-xl px-3.5 py-2.5 shadow-lg w-[320px] pointer-events-auto group">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer select-none">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
+              <span id="hudClipTitle" class="text-xs font-semibold text-white mono truncate">Base Rig Pose</span>
+            </div>
+            <span id="hudFrameCounter" class="text-[11px] font-semibold text-sky-300 mono shrink-0 w-[92px] text-right">0.0 / 120f</span>
+          </summary>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1.5 mt-2.5 pt-2.5 border-t border-slate-800 text-[11px]">
+            <div class="text-slate-400">Playback Mode</div>
+            <div id="hudLoopBadge" class="text-right font-semibold text-sky-300 mono">LOOP</div>
+            <div class="text-slate-400">Elapsed / Total</div>
+            <div id="hudTimeCounter" class="text-right font-semibold text-slate-200 mono">0.00s / 2.00s</div>
+            <div class="text-slate-400">Animated Bones</div>
+            <div id="hudTrackCount" class="text-right font-semibold text-slate-200 mono">0 tracks</div>
+          </div>
+        </details>
+		
+        <div class="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+          <div class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-800 text-[11px] mono text-slate-300 flex items-center gap-2 pointer-events-auto">
+            <span class="text-slate-400">3D Target:</span>
+            <span id="inspectorTargetReadout" class="text-sky-300 font-semibold w-[135px] truncate">X: 0.0 Y: 28.0 Z: 8.0</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-1 pointer-events-auto bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-xl p-1 shadow-lg">
+
+            <button id="btnResetInspectorTarget" type="button" class="px-2 py-1 rounded-lg bg-slate-950 hover:bg-slate-800 text-[11px] mono text-slate-300 transition" title="Reset 3D Target Point and Camera">
+              Reset 3D
+            </button>
+          </div>
+        </div>
+      </div>
+	  
+      <div class="p-3 bg-slate-900/90 border-t border-slate-800 flex flex-col gap-2">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-1.5">
+            <button id="btnPlayPause" class="px-3 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition">
+              <span id="playPauseIcon">Pause</span>
+            </button>
+            <button id="btnPrevFrame" class="px-2 py-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs mono text-slate-300 transition" title="Step back 1 frame">-1f</button>
+            <button id="btnNextFrame" class="px-2 py-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs mono text-slate-300 transition" title="Step forward 1 frame">+1f</button>
+            <button id="btnPrevKey" class="px-2 py-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs text-sky-300 transition" title="Jump to previous keyframe">&#9664; Key</button>
+            <button id="btnNextKey" class="px-2 py-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs text-sky-300 transition" title="Jump to next keyframe">Key &#9654;</button>
+          </div>
+		  
+          <div class="flex-1 min-w-[160px] flex items-center gap-2 mx-1">
+            <input id="timelineSlider" type="range" min="0" max="120" step="0.1" value="0" class="w-full accent-sky-400 cursor-pointer h-1.5 bg-slate-800 rounded-lg" />
+          </div>
+		  
+          <div class="flex items-center gap-1.5 text-xs">
+            <select id="selectSpeed" class="bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-slate-200 mono" title="Playback Speed">
+              <option value="0.25">0.25x</option>
+              <option value="0.5">0.50x</option>
+              <option value="1" selected>1.00x</option>
+              <option value="1.5">1.50x</option>
+              <option value="2">2.00x</option>
+            </select>
+            <select id="selectFps" class="bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-slate-200 mono" title="Frame Rate">
+              <option value="24">24 FPS</option>
+              <option value="30">30 FPS</option>
+              <option value="60" selected>60 FPS</option>
+            </select>
+          </div>
+        </div>
+		
+        <details class="group" open>
+          <summary class="text-[11px] text-slate-400 hover:text-slate-200 mono cursor-pointer select-none flex items-center justify-between">
+            <span>&#9656; Keyframe Dopesheet Timeline</span>
+            <span id="dopesheetSummary" class="text-base sm:text-lg font-bold text-sky-300 mono whitespace-nowrap">0 keyframes</span>
+          </summary>
+          <div class="mt-1.5 bg-slate-950 border border-slate-800/90 rounded-lg p-2">
+            <div class="flex items-center justify-end mb-1.5">
+              <button id="btnToggleAllKeyframes" type="button" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition mono bg-sky-500/15 text-sky-300 border-sky-500/30" aria-pressed="true">All Keyframes: ON</button>
+            </div>
+            <div id="dopesheetSections" class="flex flex-col gap-1.5">
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+	
+    <aside class="lg:col-span-5 w-full flex flex-col gap-3">
+
+      
+      <details open class="bg-slate-900/60 border border-slate-800/80 rounded-2xl overflow-hidden w-full group">
+        <summary class="px-4 py-3.5 bg-slate-900/90 flex items-center justify-between gap-3 cursor-pointer select-none h-[52px]">
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">Selected Bone Telemetry</h2>
+          </div>
+          <span id="selectedBoneBadge" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500/15 text-sky-300 border border-sky-500/30 mono truncate max-w-[200px] text-right shrink-0">Head</span>
+        </summary>
+        <div class="p-4 border-t border-slate-800/80 h-[212px] w-full box-border">
+          <div class="grid grid-cols-2 grid-rows-2 gap-3 w-full h-full mono">
+            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl px-3.5 py-2.5 flex flex-col justify-between h-[84px] overflow-hidden">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Delta Rotation (Euler)</div>
+              <div id="selRotEuler" class="text-sky-300 font-semibold text-[9px] sm:text-[10px] leading-tight whitespace-nowrap overflow-hidden text-ellipsis">X: 0.0° Y: 0.0° Z: 0.0°</div>
+            </div>
+            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl px-3.5 py-2.5 flex flex-col justify-between h-[84px] overflow-hidden">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Delta Position (XYZ)</div>
+              <div id="selPosDelta" class="text-slate-100 font-semibold text-[9px] sm:text-[10px] leading-tight whitespace-nowrap overflow-hidden text-ellipsis">X: 0.00 Y: 0.00 Z: 0.00</div>
+            </div>
+            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl px-3.5 py-2.5 flex flex-col justify-between h-[84px] overflow-hidden">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Orientation (Euler)</div>
+              <div id="selQuat" class="text-slate-300 font-medium text-[9px] sm:text-[10px] leading-tight whitespace-nowrap overflow-hidden text-ellipsis">X: 0.0° Y: 0.0° Z: 0.0°</div>
+            </div>
+            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl px-3.5 py-2.5 flex flex-col justify-between h-[84px] overflow-hidden">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Keyframe Timestamps</div>
+              <div id="selKeyTimes" class="text-sky-300 font-medium text-xs whitespace-nowrap overflow-hidden text-ellipsis">[]</div>
+            </div>
+          </div>
+        </div>
+      </details>
+	  
+      <details open class="bg-slate-900/60 border border-slate-800/80 rounded-2xl overflow-hidden w-full group">
+        <summary class="px-4 py-3 bg-slate-900/90 flex items-center justify-between cursor-pointer select-none">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-200">Animated Node Tracks (<span id="trackListCount">0</span>)</span>
+          </div>
+          <span class="text-xs text-slate-400 transition-transform group-open:rotate-180">&#9662;</span>
+        </summary>
+        <div class="p-3 border-t border-slate-800/80 flex flex-col gap-2">
+          <div class="flex items-center justify-between gap-2">
+            <input id="inputSearchTrack" type="text" placeholder="Filter bone name..." class="bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 w-full" />
+          </div>
+          <div id="trackListContainer" class="h-72 overflow-y-auto divide-y divide-slate-800/60 space-y-1 pt-1">
+          </div>
+        </div>
+      </details>
+      <details id="attachmentsPanel" open class="bg-slate-900/60 border border-slate-800/80 rounded-2xl overflow-hidden w-full group">
+        <summary class="px-4 py-3 bg-slate-900/90 flex items-center justify-between cursor-pointer select-none">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">Modular Attachments (<span id="attachmentCountBadge">0</span>)</h2>
+          </div>
+          <span class="text-xs text-slate-400 transition-transform group-open:rotate-180">&#9662;</span>
+        </summary>
+        <div class="p-3.5 border-t border-slate-800/80">
+          <div id="attachmentsListContainer" class="max-h-40 overflow-y-auto space-y-1.5 pr-1">
+          </div>
+        </div>
+      </details>
+
+    </aside>
+  </main>
+
+  <script>
+  
+    const REPO_CONFIG = {
+      modelsRoot: "Models",
+      animationsRoot: "Animations",
+      manifests: ["manifest.json", "models.json", "catalog.json"], // generated by GitHub Actions when present
+      github: { owner: "", repo: "", branch: "" }, // auto-detect on *.github.io / ?github=owner/repo
+      maxDepth: 6,
+      concurrency: 6
+    };
+    const REPO_CATALOG = []; // filled at runtime from the repository subfolders
+
+    const slugify = (s) => String(s || "model").toLowerCase().replace(/\.[^.]+$/, "").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "") || "model";
+    const titleFromName = (s) => decodeURIComponent(String(s || "Model")).replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const encodePath = (path) => String(path).split("/").map(encodeURIComponent).join("/");
+    const baseName = (path) => decodeURIComponent(String(path).split("/").pop() || "");
+    const stemOf = (path) => baseName(path).replace(/\.[^.]+$/, "");
+    const DEFAULT_CAMERA = { targetY: 30, targetZ: 0, radius: 280, theta: 0.45, phi: 1.25 };
+
+    // Pick the texture
+    function pickTextureForFile(pngList, filePath, fallback) {
+      const slash = filePath.lastIndexOf("/");
+      const dir = (slash >= 0 ? filePath.slice(0, slash + 1) : "").toLowerCase();
+      const stem = stemOf(filePath).toLowerCase();
+      const inDir = pngList.filter((x) => {
+        const lx = x.toLowerCase();
+        return lx.startsWith(dir) && !lx.slice(dir.length).includes("/");
+      }).sort();
+      const sameFolder = inDir.find((x) => stemOf(x).toLowerCase() === stem)
+        || inDir.find((x) => stemOf(x).toLowerCase() === stem + "_texture")
+        || inDir.find((x) => stemOf(x).toLowerCase() === "texture")
+        || inDir[0];
+      if (sameFolder) return sameFolder;
+	  
+      // Attachments.
+      let parent = dir.replace(/\/$/, "");
+      for (let depth = 0; depth < 3 && parent.includes("/"); depth++) {
+        parent = parent.slice(0, parent.lastIndexOf("/"));
+        const inParent = pngList.filter((x) => {
+          const lx = x.toLowerCase();
+          return lx.startsWith(parent + "/") && !lx.slice(parent.length + 1).includes("/");
+        }).sort();
+        if (inParent.length === 1) return inParent[0];
+        if ((parent + "/").toLowerCase().endsWith("attachments/")) break;
+      }
+      return fallback || "";
+    }
+
+    const INSPECTOR_TOGGLE_BASE = "w-full text-left px-2 py-1 text-[11px] rounded border font-medium transition ";
+    const GLOBAL_TOGGLE_BASE = "w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium border transition ";
+    const CARD_TOGGLE_BASE = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition ";
+    function setToggleButton(el, on, label, baseClass) {
+      if (!el) return;
+      if (label != null) el.textContent = label;
+      el.className = (baseClass || "") + (on
+        ? "bg-sky-500/15 text-sky-300 border-sky-500/30"
+        : "bg-slate-950 text-slate-300 border-slate-800 hover:text-white");
+      el.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    function syncCardPlaybackUI(instance) {
+      /** Showcase Play/Pause. */
+      const mCfg = ensurePerModelDisplayConfig(instance.modelEntry);
+      const btn = instance.cardEl.querySelector("[data-card-toggle-play]");
+      if (btn) {
+        btn.textContent = instance.isPlaying ? "Pause" : "Play";
+        btn.className = instance.isPlaying
+          ? "px-2 py-0.5 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 border border-sky-400 text-[10px] mono font-bold transition"
+          : "px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-300 border border-sky-500/40 text-[10px] mono font-bold transition";
+        btn.setAttribute("aria-pressed", instance.isPlaying ? "true" : "false");
+      }
+      const spinBtn = instance.cardEl.querySelector("[data-card-opt='spin']");
+      setToggleButton(spinBtn, mCfg.autoRotate, "Auto-Rotate: " + (mCfg.autoRotate ? "ON" : "OFF"), CARD_TOGGLE_BASE);
+      const autoPlayBtn = instance.cardEl.querySelector("[data-card-autoplay]");
+      if (autoPlayBtn) {
+        const on = instance.autoPlayNext !== false;
+        autoPlayBtn.textContent = "Auto-Play: " + (on ? "ON" : "OFF");
+        autoPlayBtn.className = on
+          ? "px-2 py-0.5 rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 text-[10px] mono font-bold transition"
+          : "px-2 py-0.5 rounded bg-slate-950 text-slate-400 border border-slate-800 text-[10px] mono font-bold transition";
+        autoPlayBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+    function setCardPlayback(instance, playing) {
+      // Pause.
+      instance.isPlaying = playing;
+      ensurePerModelDisplayConfig(instance.modelEntry).autoRotate = playing;
+      syncCardPlaybackUI(instance);
+    }
+    function ensurePerModelDisplayConfig(modelEntry) {
+      if (!modelEntry) return null;
+      if (!perModelDisplayConfigs[modelEntry.id]) {
+        perModelDisplayConfigs[modelEntry.id] = { visualMode: "textured", showTexture: true, showWireframe: false, showBones: false, showAttachments: true, autoRotate: true, autoPlayNext: true, dragMode: "orbit" };
+      }
+      return perModelDisplayConfigs[modelEntry.id];
+    }
+
+    function getOrCreateModelEntry(folderName, modelPath, texturePath, allPngs) {
+      const existing = REPO_CATALOG.find((m) => m.repoModelPath === modelPath);
+      if (existing) return existing;
+      const sameFolder = REPO_CATALOG.filter((m) => m.folderName === folderName);
+      const id = slugify(sameFolder.length ? folderName + "_" + stemOf(modelPath) : folderName);
+      const entry = {
+        id, title: titleFromName(folderName), category: "Auto-detected",
+        folderName, repoModelPath: modelPath, repoTexturePath: texturePath || "",
+        camera: { ...DEFAULT_CAMERA }, textureWidth: 64, textureHeight: 64,
+        modelData: null, textureUrl: texturePath || "", attachments: [], animations: []
+      };
+      REPO_CATALOG.push(entry);
+      ensurePerModelDisplayConfig(entry);
+      return entry;
+    }
+
+    // Runtime fallback
+    // =========================================================
+    function getFallbackClipForModel(modelEntry) {
+      /** Return a neutral base rig pose. */
+      return {
+        id: "base_pose",
+        name: "Base Rig Pose",
+        label: "Base Rig Pose",
+        repoPath: "Animations/" + ((modelEntry && (modelEntry.folderName || modelEntry.id)) || "") + "/",
+        isBasePose: true,
+        data: {
+          duration: 120,
+          holdLastKeyframe: true,
+          nodeAnimations: {}
+        }
+      };
+    }
+
+    function getModelClip(modelEntry, clipIdx) {
+      /** Safely retrieve an animation. */
+      if (modelEntry && modelEntry.animations && modelEntry.animations.length > 0) {
+        const safeIdx = Math.max(0, Math.min(modelEntry.animations.length - 1, clipIdx || 0));
+        return modelEntry.animations[safeIdx];
+      }
+      return getFallbackClipForModel(modelEntry || REPO_CATALOG[0] || { folderName: "", id: "", animations: [] });
+    }
+
+    // Bone mapping
+    // =========================================================
+    const BONE_ALIAS_MAP = {
+      "Teeth up": { target: "Teeth-Top", parentHint: null },
+      "L-Thumb2-Mid": { target: "L-Thumb2", parentHint: null },
+      "L-Nail": { target: "L-Thumbnail", parentHint: null },
+      "L-Finger2": { target: "L-Finger-Front", parentHint: null },
+      "L-Finger2-Mid": { target: "L-Finger-Front2", parentHint: null },
+      "L-Nail2": { target: "L-Fingernail-Front", parentHint: null },
+      "L-Finger3": { target: "L-Finger-Back", parentHint: null },
+      "L-Finger3-Mid": { target: "L-Finger-Back2", parentHint: null },
+      "L-Nail3": { target: "L-Fingernail-Back", parentHint: null },
+      "L_Hand_Cloth": { target: "Bracer", parentHint: "L-Hand" },
+      "R-Thumb2-Mid": { target: "R-Thumb2", parentHint: null },
+      "R-Nail": { target: "R-Thumbnail", parentHint: null },
+      "R-Finger2": { target: "R-Finger-Front", parentHint: null },
+      "R-Finger2-Mid": { target: "R-Finger-Front2", parentHint: null },
+      "R-Nail2": { target: "R-Fingernail-Front", parentHint: null },
+      "R-Finger3": { target: "R-Finger-Back", parentHint: null },
+      "R-Finger3-Mid": { target: "R-Finger-Back2", parentHint: null },
+      "R-Nail3": { target: "R-Fingernail-Back", parentHint: null },
+      "R_Hand_Cloth": { target: "Bracer", parentHint: "R-Hand" }
+    };
+
+    const KEY_HIGHLIGHT_TRACKS = new Set([
+      "Head", "Neck", "Chest", "Belly", "Pelvis", "Origin", "Main",
+      "L-Arm", "R-Arm", "L-Hand", "R-Hand", "Leaf", "Tail", "Tail2", "Tail3",
+      "Crystal_1", "Crystal_2", "Crystal_3", "Crystal_4", "Head-Tentacle"
+    ]);
+
+    // Texture cache
+    // =========================================================
+    const textureCache = {};
+
+    function createHumanoidFallbackTexture() {
+      /** Create skin texture. */
+      if (textureCache["__humanoid_skin__"]) {
+        return textureCache["__humanoid_skin__"];
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "#e8b496";
+      ctx.fillRect(0, 0, 64, 64);
+      ctx.fillStyle = "#dfa382";
+      for (let y = 0; y < 64; y += 8) {
+        for (let x = 0; x < 64; x += 8) {
+          if ((x + y) % 16 === 0) {
+            ctx.fillRect(x, y, 4, 4);
+          }
+        }
+      }
+
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.magFilter = THREE.NearestFilter;
+      tex.minFilter = THREE.NearestFilter;
+      tex.needsUpdate = true;
+      textureCache["__humanoid_skin__"] = tex;
+      return tex;
+    }
+
+    function loadPixelTexture(url) {
+      /** Load a PNG data URI, Three.js texture. */
+      if (!url) {
+        return createHumanoidFallbackTexture();
+      }
+      if (textureCache[url]) {
+        return textureCache[url];
+      }
+
+      const loader = new THREE.TextureLoader();
+      const tex = loader.load(url);
+      tex.magFilter = THREE.NearestFilter;
+      tex.minFilter = THREE.NearestFilter;
+      textureCache[url] = tex;
+      return tex;
+    }
+
+    // UV mapping math
+    // =========================================================
+    function computeFaceUvCorners(faceCfg, faceWidth, faceHeight, texWidth, texHeight) {
+      /** Compute the 4 UV coordinates. */
+      if (!faceCfg || faceCfg.offset === undefined || !texWidth || !texHeight) {
+        return [
+          new THREE.Vector2(0, 0),
+          new THREE.Vector2(0, 0),
+          new THREE.Vector2(0, 0),
+          new THREE.Vector2(0, 0)
+        ];
+      }
+
+      const off = faceCfg.offset || { x: 0, y: 0 };
+      const mir = faceCfg.mirror || { x: false, y: false };
+      const ang = faceCfg.angle || 0;
+
+      const uSpan = mir.x ? -faceWidth : faceWidth;
+      const vSpan = mir.y ? -faceHeight : faceHeight;
+
+      const rad = (ang * Math.PI) / 180;
+      const cosA = Math.round(Math.cos(rad));
+      const sinA = Math.round(Math.sin(rad));
+
+      const localCorners = [
+        [0, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1]
+      ];
+
+      return localCorners.map((pair) => {
+        const u = pair[0] * uSpan;
+        const v = pair[1] * vSpan;
+        const px = off.x + (u * cosA - v * sinA);
+        const py = off.y + (u * sinA + v * cosA);
+        return new THREE.Vector2(px / texWidth, 1.0 - (py / texHeight));
+      });
+    }
+
+    function applyBoxTextureUvs(boxGeom, texLayout, size, texWidth, texHeight) {
+      /** Map per-face Hytale textureLayout coordinates. */
+      if (!texLayout || !texWidth || !texHeight) {
+        boxGeom.setIndex([]);
+        return false;
+      }
+
+      const sx = size.x || 1;
+      const sy = size.y || 1;
+      const sz = size.z || 1;
+
+      const faceSpecs = [
+        { name: "right", w: sz, h: sy },
+        { name: "left", w: sz, h: sy },
+        { name: "top", w: sx, h: sz },
+        { name: "bottom", w: sx, h: sz },
+        { name: "front", w: sx, h: sy },
+        { name: "back", w: sx, h: sy }
+      ];
+
+      const uvAttr = boxGeom.attributes.uv;
+      const origIndex = boxGeom.getIndex();
+      const origIdxArray = origIndex ? Array.from(origIndex.array) : [];
+      const validIndices = [];
+
+      for (let f = 0; f < 6; f++) {
+        const spec = faceSpecs[f];
+        const cfg = texLayout[spec.name];
+        const baseIdx = f * 4;
+        const baseTriIdx = f * 6;
+
+        if (cfg && cfg.offset !== undefined) {
+          const corners = computeFaceUvCorners(cfg, spec.w, spec.h, texWidth, texHeight);
+          uvAttr.setXY(baseIdx + 0, corners[0].x, corners[0].y);
+          uvAttr.setXY(baseIdx + 1, corners[1].x, corners[1].y);
+          uvAttr.setXY(baseIdx + 2, corners[2].x, corners[2].y);
+          uvAttr.setXY(baseIdx + 3, corners[3].x, corners[3].y);
+          for (let k = 0; k < 6; k++) {
+            if (origIdxArray[baseTriIdx + k] !== undefined) {
+              validIndices.push(origIdxArray[baseTriIdx + k]);
+            }
+          }
+        } else {
+          uvAttr.setXY(baseIdx + 0, 0, 0);
+          uvAttr.setXY(baseIdx + 1, 0, 0);
+          uvAttr.setXY(baseIdx + 2, 0, 0);
+          uvAttr.setXY(baseIdx + 3, 0, 0);
+        }
+      }
+
+      uvAttr.needsUpdate = true;
+      boxGeom.setIndex(validIndices);
+      boxGeom.clearGroups();
+      return validIndices.length > 0;
+    }
+
+    function applyQuadTextureUvs(planeGeom, texLayout, size, texWidth, texHeight) {
+      /** Map Hytale front textureLayout coordinates. */
+      if (!texLayout || !texWidth || !texHeight) {
+        planeGeom.setIndex([]);
+        return false;
+      }
+
+      const cfg = texLayout.front || Object.values(texLayout)[0];
+      if (!cfg || cfg.offset === undefined) {
+        planeGeom.setIndex([]);
+        return false;
+      }
+
+      const corners = computeFaceUvCorners(cfg, size.x || 1, size.y || 1, texWidth, texHeight);
+      const uvAttr = planeGeom.attributes.uv;
+      uvAttr.setXY(0, corners[0].x, corners[0].y);
+      uvAttr.setXY(1, corners[1].x, corners[1].y);
+      uvAttr.setXY(2, corners[2].x, corners[2].y);
+      uvAttr.setXY(3, corners[3].x, corners[3].y);
+      uvAttr.needsUpdate = true;
+      return true;
+    }
+
+    // 3D space translation
+    // =========================================================
+    function panOrbitTargetIn3DSpace(orbitObj, camObj, dxPixels, dyPixels) {
+      /** Translate the 3D orbit target point camera. */
+      const panScale = Math.max(0.08, orbitObj.radius * 0.0016);
+      const forward = new THREE.Vector3();
+      camObj.getWorldDirection(forward);
+      const worldUp = new THREE.Vector3(0, 1, 0);
+      const right = new THREE.Vector3().crossVectors(forward, worldUp).normalize();
+      if (right.lengthSq() < 0.0001) {
+        right.set(1, 0, 0);
+      }
+      const camUp = new THREE.Vector3().crossVectors(right, forward).normalize();
+
+      orbitObj.target.addScaledVector(right, -dxPixels * panScale);
+      orbitObj.target.addScaledVector(camUp, dyPixels * panScale);
+    }
+
+    function stepOrbitTargetIn3DSpace(orbitObj, camObj, rightStep, upStep, forwardStep) {
+      /** Step the 3D orbit target point. */
+      const stepScale = Math.max(3.0, orbitObj.radius * 0.04);
+      const forward = new THREE.Vector3();
+      camObj.getWorldDirection(forward);
+      const flatForward = new THREE.Vector3(forward.x, 0, forward.z);
+      if (flatForward.lengthSq() > 0.0001) {
+        flatForward.normalize();
+      } else {
+        flatForward.set(0, 0, -1);
+      }
+      const right = new THREE.Vector3().crossVectors(flatForward, new THREE.Vector3(0, 1, 0)).normalize();
+
+      orbitObj.target.addScaledVector(right, rightStep * stepScale);
+      orbitObj.target.y += upStep * stepScale;
+      orbitObj.target.addScaledVector(flatForward, forwardStep * stepScale);
+    }
+
+    function createTargetFocusGizmo() {
+      /** Create a subtle 3-axis 3D target crosshair. */
+      const group = new THREE.Group();
+      const axisLen = 7;
+
+      const xGeom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-axisLen, 0, 0), new THREE.Vector3(axisLen, 0, 0)]);
+      const yGeom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, -axisLen, 0), new THREE.Vector3(0, axisLen, 0)]);
+      const zGeom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, -axisLen), new THREE.Vector3(0, 0, axisLen)]);
+
+      const lineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.65, depthTest: false });
+      group.add(new THREE.Line(xGeom, lineMat));
+      group.add(new THREE.Line(yGeom, lineMat));
+      group.add(new THREE.Line(zGeom, lineMat));
+
+      const centerDot = new THREE.Mesh(
+        new THREE.SphereGeometry(1.1, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0x7dd3fc, transparent: true, opacity: 0.85, depthTest: false })
+      );
+      group.add(centerDot);
+      group.renderOrder = 12;
+      return group;
+    }
+
+    // Build a complete 3D rig instance with base model and attachments
+    // =========================================================
+    function buildRigSceneGraph(modelEntry, options) {
+      /** Build Three.js groups, meshes, wireframes. */
+      const rootGroup = new THREE.Group();
+      const skeletonGroup = new THREE.Group();
+      const trailsGroup = new THREE.Group();
+      const nodeRegistry = [];
+      const nodeByName = {};
+
+      const baseTex = loadPixelTexture(modelEntry.textureUrl);
+      const baseTexW = modelEntry.textureWidth || 64;
+      const baseTexH = modelEntry.textureHeight || 64;
+
+      function createNodeTree(nodeDef, parentShapeGroup, parentPivotGroup, ancestorNames, texObj, texW, texH, attachmentId) {
+        /** pivot offset. */
+        const shape = nodeDef.shape || {};
+        const settings = shape.settings || {};
+        const isPiece = Boolean(settings.isPiece);
+
+        if (attachmentId && isPiece && nodeByName[nodeDef.name]) {
+          const targetRecord = nodeByName[nodeDef.name];
+          const children = nodeDef.children || [];
+          const nextAncestors = ancestorNames.concat([nodeDef.name]);
+          for (let i = 0; i < children.length; i++) {
+            createNodeTree(
+              children[i],
+              targetRecord.shapeGroup,
+              targetRecord.pivotGroup,
+              nextAncestors,
+              texObj,
+              texW,
+              texH,
+              attachmentId
+            );
+          }
+          return;
+        }
+
+        const pivotGroup = new THREE.Group();
+        const pos = nodeDef.position || { x: 0, y: 0, z: 0 };
+        const ori = nodeDef.orientation || { x: 0, y: 0, z: 0, w: 1 };
+        pivotGroup.position.set(pos.x || 0, pos.y || 0, pos.z || 0);
+        pivotGroup.quaternion.set(ori.x || 0, ori.y || 0, ori.z || 0, ori.w !== undefined ? ori.w : 1);
+
+        const soff = shape.offset || { x: 0, y: 0, z: 0 };
+        const shapeGroup = new THREE.Group();
+        shapeGroup.position.set(soff.x || 0, soff.y || 0, soff.z || 0);
+        pivotGroup.add(shapeGroup);
+
+        const stretch = shape.stretch || { x: 1, y: 1, z: 1 };
+        const baseStretch = new THREE.Vector3(
+          stretch.x !== undefined ? stretch.x : 1,
+          stretch.y !== undefined ? stretch.y : 1,
+          stretch.z !== undefined ? stretch.z : 1
+        );
+
+        let meshObj = null;
+        let wireObj = null;
+        const stype = shape.type || "none";
+        const isVisible = shape.visible !== false;
+
+        if ((stype === "box" || stype === "quad") && settings.size && isVisible) {
+          let geom = null;
+          let hasValidFaces = false;
+
+          if (stype === "box") {
+            const sx = settings.size.x || 1;
+            const sy = settings.size.y || 1;
+            const sz = settings.size.z || 1;
+            geom = new THREE.BoxGeometry(sx, sy, sz);
+            hasValidFaces = applyBoxTextureUvs(geom, shape.textureLayout, settings.size, texW, texH);
+          } else {
+            const qx = settings.size.x || 1;
+            const qy = settings.size.y || 1;
+            geom = new THREE.PlaneGeometry(qx, qy);
+            hasValidFaces = applyQuadTextureUvs(geom, shape.textureLayout, settings.size, texW, texH);
+            const normalDir = settings.normal || "+Z";
+            if (normalDir === "-Z") geom.rotateY(Math.PI);
+            else if (normalDir === "+Y") geom.rotateX(-Math.PI / 2);
+            else if (normalDir === "-Y") geom.rotateX(Math.PI / 2);
+            else if (normalDir === "+X") geom.rotateY(Math.PI / 2);
+            else if (normalDir === "-X") geom.rotateY(-Math.PI / 2);
+          }
+
+          if (hasValidFaces) {
+            // Flat shading
+            const mat = new THREE.MeshBasicMaterial({
+              map: texObj,
+              transparent: true,
+              alphaTest: 0.05,
+              side: THREE.DoubleSide
+            });
+
+            meshObj = new THREE.Mesh(geom, mat);
+            meshObj.scale.copy(baseStretch);
+
+            const edges = new THREE.EdgesGeometry(geom);
+            const wireMat = new THREE.LineBasicMaterial({
+              color: 0x38bdf8,
+              transparent: true,
+              opacity: 0.45
+            });
+            wireObj = new THREE.LineSegments(edges, wireMat);
+            wireObj.scale.copy(baseStretch);
+
+            shapeGroup.add(meshObj);
+            shapeGroup.add(wireObj);
+          }
+        }
+
+        const jointGeom = new THREE.SphereGeometry(options.jointRadius || 1.0, 10, 10);
+        const jointMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, depthTest: false });
+        const jointSphere = new THREE.Mesh(jointGeom, jointMat);
+        jointSphere.renderOrder = 10;
+        pivotGroup.add(jointSphere);
+
+        parentShapeGroup.add(pivotGroup);
+
+        const record = {
+          name: nodeDef.name,
+          ancestors: ancestorNames,
+          attachmentId: attachmentId || null,
+          basePos: new THREE.Vector3(pos.x || 0, pos.y || 0, pos.z || 0),
+          baseQuat: new THREE.Quaternion(ori.x || 0, ori.y || 0, ori.z || 0, ori.w !== undefined ? ori.w : 1),
+          baseStretch: baseStretch,
+          textureMap: texObj,
+          pivotGroup: pivotGroup,
+          shapeGroup: shapeGroup,
+          parentPivotGroup: parentPivotGroup,
+          meshObj: meshObj,
+          wireObj: wireObj,
+          jointSphere: jointSphere,
+          boundTrackName: null
+        };
+
+        nodeRegistry.push(record);
+        if (!attachmentId || !nodeByName[nodeDef.name]) {
+          nodeByName[nodeDef.name] = record;
+        }
+
+        const nextAncestors = ancestorNames.concat([nodeDef.name]);
+        const children = nodeDef.children || [];
+        for (let i = 0; i < children.length; i++) {
+          createNodeTree(children[i], shapeGroup, pivotGroup, nextAncestors, texObj, texW, texH, attachmentId);
+        }
+      }
+
+      const rootNodes = (modelEntry.modelData && modelEntry.modelData.nodes) || [];
+	  
+      if (rootNodes.length === 0) {
+        const cam = modelEntry.camera || { targetY: 28 };
+        const dummyPivot = new THREE.Group();
+        dummyPivot.position.set(0, cam.targetY || 24, 0);
+        const dummyShape = new THREE.Group();
+        dummyPivot.add(dummyShape);
+
+        const pGeom = new THREE.BoxGeometry(20, 24, 20);
+        const pEdges = new THREE.EdgesGeometry(pGeom);
+        const pMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.5 });
+        const pWire = new THREE.LineSegments(pEdges, pMat);
+        dummyShape.add(pWire);
+
+        const jGeom = new THREE.SphereGeometry(1.2, 8, 8);
+        const jMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, depthTest: false });
+        const jSphere = new THREE.Mesh(jGeom, jMat);
+        dummyPivot.add(jSphere);
+
+        rootGroup.add(dummyPivot);
+
+        const placeholderRecord = {
+          name: "Origin",
+          ancestors: [],
+          attachmentId: null,
+          basePos: dummyPivot.position.clone(),
+          baseQuat: dummyPivot.quaternion.clone(),
+          baseStretch: new THREE.Vector3(1, 1, 1),
+          textureMap: baseTex,
+          pivotGroup: dummyPivot,
+          shapeGroup: dummyShape,
+          parentPivotGroup: null,
+          meshObj: null,
+          wireObj: pWire,
+          jointSphere: jSphere,
+          boundTrackName: null
+        };
+        nodeRegistry.push(placeholderRecord);
+        nodeByName["Origin"] = placeholderRecord;
+
+        return {
+          rootGroup: rootGroup,
+          skeletonGroup: skeletonGroup,
+          trailsGroup: trailsGroup,
+          nodeRegistry: nodeRegistry,
+          isPlaceholder: true
+        };
+      }
+
+      for (let i = 0; i < rootNodes.length; i++) {
+        createNodeTree(rootNodes[i], rootGroup, null, [], baseTex, baseTexW, baseTexH, null);
+      }
+
+      const attachments = modelEntry.attachments || [];
+      for (let a = 0; a < attachments.length; a++) {
+        const att = attachments[a];
+        if (!att.modelData || !att.modelData.nodes) continue;
+        const attTex = loadPixelTexture(att.textureUrl);
+        const attNodes = att.modelData.nodes || [];
+        for (let i = 0; i < attNodes.length; i++) {
+          createNodeTree(
+            attNodes[i],
+            rootGroup,
+            null,
+            [],
+            attTex,
+            att.textureWidth || 64,
+            att.textureHeight || 64,
+            att.id
+          );
+        }
+      }
+
+      return {
+        rootGroup: rootGroup,
+        skeletonGroup: skeletonGroup,
+        trailsGroup: trailsGroup,
+        nodeRegistry: nodeRegistry
+      };
+    }
+
+    // Bind animation tracks and evaluate keyframes at any frame time
+    // =========================================================
+    function bindClipToRegistry(nodeRegistry, clipData, enableAliasRemap) {
+      // Map animation track names.
+      const trackBindings = {};
+      for (let i = 0; i < nodeRegistry.length; i++) {
+        nodeRegistry[i].boundTrackName = null;
+      }
+
+      const nodeAnims = (clipData && clipData.nodeAnimations) || {};
+      const trackNames = Object.keys(nodeAnims);
+
+      for (let i = 0; i < trackNames.length; i++) {
+        const trackName = trackNames[i];
+        const matchedNodes = [];
+        let isAlias = false;
+
+        for (let j = 0; j < nodeRegistry.length; j++) {
+          if (nodeRegistry[j].name === trackName) {
+            matchedNodes.push(nodeRegistry[j]);
+          }
+        }
+
+        if (matchedNodes.length === 0 && enableAliasRemap && BONE_ALIAS_MAP[trackName]) {
+          const aliasSpec = BONE_ALIAS_MAP[trackName];
+          for (let j = 0; j < nodeRegistry.length; j++) {
+            const candidate = nodeRegistry[j];
+            if (candidate.name === aliasSpec.target) {
+              if (!aliasSpec.parentHint || candidate.ancestors.indexOf(aliasSpec.parentHint) !== -1) {
+                matchedNodes.push(candidate);
+                isAlias = true;
+              }
+            }
+          }
+        }
+
+        for (let m = 0; m < matchedNodes.length; m++) {
+          matchedNodes[m].boundTrackName = trackName;
+        }
+
+        trackBindings[trackName] = {
+          trackName: trackName,
+          nodeRecord: matchedNodes[0] || null,
+          matchedNodes: matchedNodes,
+          resolvedNodeName: matchedNodes[0] ? matchedNodes[0].name : "Unmapped",
+          isAlias: isAlias,
+          tracks: nodeAnims[trackName]
+        };
+      }
+
+      return trackBindings;
+    }
+
+    function evaluateKeyframePair(keyframes, time, duration, holdLast) {
+      /** keyframes and interpolation. */
+      if (!keyframes || keyframes.length === 0) return null;
+      if (keyframes.length === 1) return { k0: keyframes[0], k1: keyframes[0], alpha: 0 };
+
+      for (let i = 0; i < keyframes.length - 1; i++) {
+        const k0 = keyframes[i];
+        const k1 = keyframes[i + 1];
+        if (time >= k0.time && time <= k1.time) {
+          const span = k1.time - k0.time;
+          const rawAlpha = span > 0 ? (time - k0.time) / span : 0;
+          const alpha = k0.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha;
+          return { k0: k0, k1: k1, alpha: alpha };
+        }
+      }
+
+      const firstKf = keyframes[0];
+      const lastKf = keyframes[keyframes.length - 1];
+
+      if (holdLast || duration <= 0) {
+        if (time < firstKf.time) return { k0: firstKf, k1: firstKf, alpha: 0 };
+        return { k0: lastKf, k1: lastKf, alpha: 0 };
+      }
+
+      const wrapSpan = (duration - lastKf.time) + firstKf.time;
+      if (wrapSpan <= 0) return { k0: lastKf, k1: firstKf, alpha: 0 };
+
+      const elapsedFromLast = time >= lastKf.time ? (time - lastKf.time) : (duration - lastKf.time + time);
+      const rawAlpha = Math.max(0, Math.min(1, elapsedFromLast / wrapSpan));
+      const alpha = lastKf.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha;
+      return { k0: lastKf, k1: firstKf, alpha: alpha };
+    }
+
+    function evaluateTrackAtFrame(trackData, frameTime, duration, holdLast) {
+      const posDelta = new THREE.Vector3(0, 0, 0);
+      const quatDelta = new THREE.Quaternion(0, 0, 0, 1);
+      const stretchDelta = new THREE.Vector3(1, 1, 1);
+
+      const posPair = evaluateKeyframePair(trackData.position, frameTime, duration, holdLast);
+      if (posPair) {
+        const d0 = posPair.k0.delta;
+        const d1 = posPair.k1.delta;
+        posDelta.set(
+          d0.x + (d1.x - d0.x) * posPair.alpha,
+          d0.y + (d1.y - d0.y) * posPair.alpha,
+          d0.z + (d1.z - d0.z) * posPair.alpha
+        );
+      }
+
+      const oriPair = evaluateKeyframePair(trackData.orientation, frameTime, duration, holdLast);
+      if (oriPair) {
+        const q0 = new THREE.Quaternion(oriPair.k0.delta.x, oriPair.k0.delta.y, oriPair.k0.delta.z, oriPair.k0.delta.w);
+        const q1 = new THREE.Quaternion(oriPair.k1.delta.x, oriPair.k1.delta.y, oriPair.k1.delta.z, oriPair.k1.delta.w);
+        quatDelta.copy(q0).slerp(q1, oriPair.alpha);
+      }
+
+      const strPair = evaluateKeyframePair(trackData.shapeStretch, frameTime, duration, holdLast);
+      if (strPair) {
+        const s0 = strPair.k0.delta;
+        const s1 = strPair.k1.delta;
+        stretchDelta.set(
+          s0.x + (s1.x - s0.x) * strPair.alpha,
+          s0.y + (s1.y - s0.y) * strPair.alpha,
+          s0.z + (s1.z - s0.z) * strPair.alpha
+        );
+      }
+
+      return { posDelta: posDelta, quatDelta: quatDelta, stretchDelta: stretchDelta };
+    }
+
+    function applyPoseToRig(nodeRegistry, trackBindings, clipData, frameTime, telemetryOut) {
+      /** Apply evaluated keyframe transforms to all nodes. */
+      const duration = (clipData && clipData.duration) || 90;
+      const holdLast = Boolean(clipData && clipData.holdLastKeyframe);
+
+      for (let i = 0; i < nodeRegistry.length; i++) {
+        const rec = nodeRegistry[i];
+        rec.pivotGroup.position.copy(rec.basePos);
+        rec.pivotGroup.quaternion.copy(rec.baseQuat);
+        if (rec.meshObj) rec.meshObj.scale.copy(rec.baseStretch);
+        if (rec.wireObj) rec.wireObj.scale.copy(rec.baseStretch);
+      }
+
+      const trackNames = Object.keys(trackBindings);
+      for (let i = 0; i < trackNames.length; i++) {
+        const tName = trackNames[i];
+        const binding = trackBindings[tName];
+        const evalRes = evaluateTrackAtFrame(binding.tracks, frameTime, duration, holdLast);
+
+        if (telemetryOut) {
+          const eulerDeg = new THREE.Euler().setFromQuaternion(evalRes.quatDelta, "XYZ");
+          telemetryOut[tName] = {
+            posDelta: evalRes.posDelta,
+            quatDelta: evalRes.quatDelta,
+            stretchDelta: evalRes.stretchDelta,
+            eulerDeg: {
+              x: THREE.MathUtils.radToDeg(eulerDeg.x),
+              y: THREE.MathUtils.radToDeg(eulerDeg.y),
+              z: THREE.MathUtils.radToDeg(eulerDeg.z)
+            }
+          };
+        }
+
+        const targets = binding.matchedNodes || [];
+        for (let m = 0; m < targets.length; m++) {
+          const rec = targets[m];
+          rec.pivotGroup.position.set(
+            rec.basePos.x + evalRes.posDelta.x,
+            rec.basePos.y + evalRes.posDelta.y,
+            rec.basePos.z + evalRes.posDelta.z
+          );
+          rec.pivotGroup.quaternion.copy(rec.baseQuat).multiply(evalRes.quatDelta);
+          if (rec.meshObj) {
+            rec.meshObj.scale.set(
+              rec.baseStretch.x * evalRes.stretchDelta.x,
+              rec.baseStretch.y * evalRes.stretchDelta.y,
+              rec.baseStretch.z * evalRes.stretchDelta.z
+            );
+          }
+          if (rec.wireObj) {
+            rec.wireObj.scale.set(
+              rec.baseStretch.x * evalRes.stretchDelta.x,
+              rec.baseStretch.y * evalRes.stretchDelta.y,
+              rec.baseStretch.z * evalRes.stretchDelta.z
+            );
+          }
+        }
+      }
+    }
+
+    function rebuildBoneLinesForRig(nodeRegistry, skeletonGroup, visible) {
+      /** Rebuild 3D line segments. */
+      while (skeletonGroup.children.length > 0) {
+        skeletonGroup.remove(skeletonGroup.children[0]);
+      }
+      if (!visible) return;
+
+      const points = [];
+      for (let i = 0; i < nodeRegistry.length; i++) {
+        const rec = nodeRegistry[i];
+        if (!rec.pivotGroup.visible) continue;
+        if (rec.parentPivotGroup) {
+          const p0 = new THREE.Vector3();
+          const p1 = new THREE.Vector3();
+          rec.parentPivotGroup.getWorldPosition(p0);
+          rec.pivotGroup.getWorldPosition(p1);
+          points.push(p0, p1);
+        }
+      }
+
+      if (points.length > 0) {
+        const lineGeom = new THREE.BufferGeometry().setFromPoints(points);
+        const lineMat = new THREE.LineBasicMaterial({
+          color: 0x38bdf8,
+          transparent: true,
+          opacity: 0.75,
+          depthTest: false
+        });
+        const lines = new THREE.LineSegments(lineGeom, lineMat);
+        lines.renderOrder = 8;
+        skeletonGroup.add(lines);
+      }
+    }
+
+    // Per-model display options
+    // =========================================================
+    const perModelDisplayConfigs = {};
+
+    const appState = {
+      activeTab: "showcase",
+      gridSearchQuery: "",
+      gridShowTextures: true,
+      gridShowWireframe: false,
+      gridShowBones: false,
+      gridPlayAll: true,
+      autoRotateModels: true,
+      rotationSpeedRad: 0.22,
+      gridInstances: [],
+
+      activeModelIndex: 0,
+      activeClipIndex: 0,
+      isPlaying: true,
+      currentFrame: 0,
+      fps: 60,
+      speed: 1.0,
+      visualMode: "textured",
+      showTexture: true,
+      showWireframe: false,
+      showPivots: true,
+      showAttachments: true,
+      showTrails: false,
+      showGrid: true,
+      showAllKeyframes: true,
+      enableAliasRemap: true,
+      inspectorDragMode: "orbit",
+      labelMode: "off",
+      selectedTrackName: "Head",
+      trackGroupFilter: "all",
+      trackSearchQuery: "",
+      nodeRegistry: [],
+      trackBindings: {},
+      liveTelemetry: {}
+    };
+
+    // Sub-links
+    // =========================================================
+    let suppressHashListener = false;
+
+    function computeModelSublinkHash(modelIdx, clipIdx) {
+      const modelEntry = REPO_CATALOG[modelIdx] || REPO_CATALOG[0];
+      if (!modelEntry) return "#/showcase";
+      const animEntry = (modelEntry.animations && modelEntry.animations[clipIdx || 0]) || modelEntry.animations[0];
+      return "#/inspect/" + modelEntry.id + (animEntry ? "/" + animEntry.id : "");
+    }
+
+    function updateUrlSublink(hashStr) {
+      suppressHashListener = true;
+      if (window.location.hash !== hashStr) {
+        window.location.hash = hashStr;
+      }
+      const headerBadge = document.getElementById("headerSublinkBadge");
+      if (headerBadge) headerBadge.textContent = hashStr;
+      const inspAnchor = document.getElementById("inspectorSublinkAnchor");
+      if (inspAnchor) {
+        inspAnchor.textContent = hashStr;
+        inspAnchor.setAttribute("href", hashStr);
+      }
+      setTimeout(() => {
+        suppressHashListener = false;
+      }, 10);
+    }
+
+    function renderQuickSublinksBar() {
+      /** Model selection happens only through the Model. */
+    }
+
+    function applyRouteFromHash() {
+      if (suppressHashListener) return;
+      const rawHash = window.location.hash || "#/showcase";
+      const headerBadge = document.getElementById("headerSublinkBadge");
+      if (headerBadge) headerBadge.textContent = rawHash;
+
+      if (rawHash.indexOf("#/inspect/") === 0 || rawHash.indexOf("#inspect/") === 0) {
+        const clean = rawHash.replace(/^#\/?inspect\//, "");
+        const parts = clean.split("/").filter(Boolean);
+        const modelSlug = (parts[0] || "").toLowerCase();
+        const animSlug = (parts[1] || "").toLowerCase();
+
+        if (!REPO_CATALOG.length) { switchMainTab("showcase", true); return; }
+        let mIdx = REPO_CATALOG.findIndex(
+          (m) => m.id.toLowerCase() === modelSlug || m.folderName.toLowerCase() === modelSlug
+        );
+        if (mIdx === -1) mIdx = 0;
+
+        let aIdx = 0;
+        if (animSlug) {
+          const foundAnim = REPO_CATALOG[mIdx].animations.findIndex(
+            (a) => a.id.toLowerCase() === animSlug || a.name.toLowerCase() === animSlug
+          );
+          if (foundAnim !== -1) aIdx = foundAnim;
+        }
+
+        switchMainTab("inspector", true);
+        loadInspectorModel(mIdx, aIdx, true);
+        setTimeout(() => resizeInspectorViewport(), 25);
+      } else {
+        switchMainTab("showcase", true);
+      }
+    }
+
+    // .blockyanim files
+    // =========================================================
+function identifyModelFromAnimation(animJson, filePath) {
+      /** Identify the model from the subfolder in the path. */
+      const parts = String(filePath || "").replace(/\\/g, "/").split("/").filter(Boolean);
+      const lower = parts.map((x) => x.toLowerCase());
+      const animRoot = lower.indexOf(REPO_CONFIG.animationsRoot.toLowerCase());
+      const modelsRoot = lower.indexOf(REPO_CONFIG.modelsRoot.toLowerCase());
+      const folder = animRoot >= 0 ? parts[animRoot + 1] : (modelsRoot >= 0 ? parts[modelsRoot + 1] : null);
+      if (folder) {
+        const byFolder = REPO_CATALOG.find((m) => m.folderName.toLowerCase() === folder.toLowerCase());
+        if (byFolder) return byFolder.id;
+      }
+      const trackNames = new Set(Object.keys((animJson && animJson.nodeAnimations) || {}));
+      let best = null, bestScore = 0;
+      REPO_CATALOG.forEach((m) => {
+        const nodeNames = new Set((((m.modelData || {}).nodes) || []).flatMap(function walk(n) { return [n.name, ...((n.children || []).flatMap(walk))]; }));
+        let score = 0; trackNames.forEach((k) => { if (nodeNames.has(k)) score++; });
+        if (score > bestScore) { bestScore = score; best = m; }
+      });
+      return best ? best.id : (REPO_CATALOG[0] && REPO_CATALOG[0].id) || null;
+    }
+
+
+        function registerAnimationForModel(targetModel, fileName, repoPath, animJson) {
+      /** Register a parsed .blockyanim object on targetModel. */
+      if (!targetModel || !animJson || typeof animJson !== "object" || !animJson.nodeAnimations) {
+        return false;
+      }
+      const cleanName = decodeURIComponent(fileName.split("/").pop().split("?")[0]);
+      if (!cleanName.toLowerCase().endsWith(".blockyanim")) {
+        return false;
+      }
+      const animId = cleanName
+        .replace(/\.blockyanim$/i, "")
+        .replace(/[^a-zA-Z0-9_-]/g, "_")
+        .toLowerCase();
+
+      const exists = targetModel.animations.some(
+        (a) => a.id === animId || a.name.toLowerCase() === cleanName.toLowerCase()
+      );
+      if (exists) {
+        return false;
+      }
+
+      targetModel.animations.push({
+        id: animId,
+        name: cleanName,
+        label: cleanName,
+        repoPath: repoPath || ("Animations/" + targetModel.folderName + "/" + cleanName),
+        data: animJson
+      });
+      targetModel.animations.sort((a, b) => a.name.localeCompare(b.name));
+      return true;
+    }
+
+    async function fetchAndRegisterAnimCandidate(targetModel, candidateUrls, canonicalRepoPath) {
+      /** Try fetching a .blockyanim file. */
+      for (let i = 0; i < candidateUrls.length; i++) {
+        const urlToTry = candidateUrls[i];
+        try {
+          const resp = await fetch(urlToTry);
+          if (!resp.ok) continue;
+          const text = await resp.text();
+          if (!text || text.trim().startsWith("<")) continue;
+          const animJson = JSON.parse(text);
+          if (animJson && animJson.nodeAnimations) {
+            const resolvedModel = targetModel || REPO_CATALOG.find(
+              (m) => m.id === identifyModelFromAnimation(animJson, canonicalRepoPath || urlToTry)
+            );
+            const fileName = (canonicalRepoPath || urlToTry).split("/").pop();
+            return registerAnimationForModel(resolvedModel, fileName, canonicalRepoPath || urlToTry, animJson);
+          }
+        } catch (err) {}
+      }
+      return false;
+    }
+
+    function onModelDataLoaded(modelEntry) {
+      updateHeaderCounts();
+
+      // Update grid instance for model
+      for (let i = 0; i < appState.gridInstances.length; i++) {
+        const inst = appState.gridInstances[i];
+        if (inst.modelEntry.id === modelEntry.id) {
+          inst.scene.remove(inst.rig.rootGroup);
+          inst.scene.remove(inst.rig.skeletonGroup);
+          inst.scene.remove(inst.rig.trailsGroup);
+
+          inst.rig = buildRigSceneGraph(modelEntry, { jointRadius: 1.1 });
+          inst.scene.add(inst.rig.rootGroup);
+          inst.scene.add(inst.rig.skeletonGroup);
+
+          const activeClip = getModelClip(modelEntry, inst.activeAnimIdx);
+          inst.trackBindings = bindClipToRegistry(inst.rig.nodeRegistry, activeClip.data, true);
+          applyCardVisualSettings(inst);
+          updateCardAnimationDropdownUI(inst);
+        }
+      }
+
+      // inspector rig
+      const activeModel = REPO_CATALOG[appState.activeModelIndex];
+      if (activeModel && activeModel.id === modelEntry.id) {
+        if (inspectorRig) {
+          inspectorScene.remove(inspectorRig.rootGroup);
+          inspectorScene.remove(inspectorRig.skeletonGroup);
+          inspectorScene.remove(inspectorRig.trailsGroup);
+        }
+
+        inspectorRig = buildRigSceneGraph(modelEntry, { jointRadius: 1.15 });
+        inspectorScene.add(inspectorRig.rootGroup);
+        inspectorScene.add(inspectorRig.skeletonGroup);
+        inspectorScene.add(inspectorRig.trailsGroup);
+
+        appState.nodeRegistry = inspectorRig.nodeRegistry;
+        const activeClipObj = getModelClip(modelEntry, appState.activeClipIndex);
+        appState.trackBindings = bindClipToRegistry(appState.nodeRegistry, activeClipObj.data, appState.enableAliasRemap);
+
+        const trackKeys = Object.keys(appState.trackBindings);
+        if (trackKeys.length > 0 && !appState.trackBindings[appState.selectedTrackName]) {
+          appState.selectedTrackName = trackKeys.indexOf("Head") !== -1 ? "Head" : trackKeys[0];
+        }
+
+        renderAttachmentsPanel();
+        applyInspectorVisualStyling();
+        rebuildInspectorMotionTrails();
+        rebuildFloatingLabelElements();
+        renderTrackTelemetryList();
+        setFrameAndRefresh(appState.currentFrame);
+      }
+    }
+
+// models, attachments, animations
+    const _fetchCache = new Map();
+    function fetchOnce(url, asJson) {
+      if (!_fetchCache.has(url)) {
+        _fetchCache.set(url, fetch(url).then(async (r) => {
+          if (!r.ok) throw new Error(r.status + " " + url);
+          return asJson ? r.json() : r.text();
+        }));
+      }
+      return _fetchCache.get(url);
+    }
+    async function mapLimit(items, limit, fn) {
+      const out = new Array(items.length); let next = 0;
+      await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+        while (next < items.length) { const i = next++; out[i] = await fn(items[i], i); }
+      }));
+      return out;
+    }
+    function normalizeRepoPath(raw) {
+      let s = decodeURIComponent(String((raw && raw.path) || raw || "")).replace(/\\/g, "/").split("?")[0].split("#")[0];
+      s = s.replace(/^https?:\/\/[^/]+\
+      const m = s.match(/(?:^|\/)(Models|Animations)\//);
+      if (m) return s.slice(m.index + (s[m.index] === "/" ? 1 : 0));
+      return s.replace(/^(?:docs\/Portfolio\/|Portfolio\/)/, "");
+    }
+    function parseListing(html, dirUrl) {
+      const files = [], dirs = [], seen = new Set();
+      try {
+        new DOMParser().parseFromString(html, "text/html").querySelectorAll("a[href]").forEach((a) => {
+          const href = a.getAttribute("href"); if (!href || href.startsWith("?") || href.startsWith("#")) return;
+          let url; try { url = new URL(href, new URL(dirUrl, location.href).href.replace(/\/?$/, "/")); } catch (e) { return; }
+          const path = normalizeRepoPath(url.pathname); if (!path || seen.has(path)) return; seen.add(path);
+          (url.pathname.endsWith("/") || href.endsWith("/") ? dirs : files).push(path);
+        });
+      } catch (e) {}
+      return { files, dirs };
+    }
+    function flattenManifest(data, out) {
+      if (typeof data === "string") out.push(data);
+      else if (Array.isArray(data)) data.forEach((x) => flattenManifest(x, out));
+      else if (data && typeof data === "object") {
+        if (data.path || data.name || data.file) out.push(data.path || data.name || data.file);
+        else flattenManifest(data.files || data.tree || data.paths || data.entries || [], out);
+      }
+      return out;
+    }
+    function detectGitHubRepo() {
+      const cfg = REPO_CONFIG.github;
+      if (cfg.owner && cfg.repo) return cfg;
+      const meta = document.querySelector('meta[name="github-repo"]');
+      const fromQuery = new URLSearchParams(location.search).get("github") || (meta && meta.getAttribute("content")) || "";
+      const m = fromQuery.match(/^([^/\s]+)\/([^/\s]+)$/); if (m) return { owner: m[1], repo: m[2], branch: cfg.branch || "" };
+      if (location.hostname.endsWith("github.io")) {
+        const repo = location.pathname.split("/").filter(Boolean)[0];
+        return { owner: location.hostname.split(".")[0], repo: repo && !repo.endsWith(".html") ? repo : location.hostname, branch: cfg.branch || "" };
+      }
+      return null;
+    }
+    async function discoverFilePaths() {
+      const found = new Set();
+      //  manifest
+      for (const name of REPO_CONFIG.manifests) {
+        try { flattenManifest(await fetchOnce(name, true), []).forEach((x) => found.add(normalizeRepoPath(x.path || x))); if (found.size) return found; } catch (e) {}
+      }
+      // GitHub Trees API
+      const gh = detectGitHubRepo();
+      if (gh) {
+        try {
+          const tree = await fetchOnce("https://api.github.com/repos/" + gh.owner + "/" + gh.repo + "/git/trees/" + (gh.branch || "HEAD") + "?recursive=1", true);
+          (tree.tree || []).forEach((x) => { if (x.type === "blob") found.add(normalizeRepoPath(x.path)); });
+          if (found.size) return found;
+        } catch (e) {}
+      }
+      // Recursive directory listing
+      const queue = [REPO_CONFIG.modelsRoot + "/", REPO_CONFIG.animationsRoot + "/"], visited = new Set();
+      while (queue.length) {
+        const dir = queue.shift(); if (visited.has(dir)) continue; visited.add(dir);
+        try {
+          const { files, dirs } = parseListing(await fetchOnce(dir, false), dir);
+          files.forEach((f) => found.add(f));
+          dirs.forEach((d) => { if ((d.match(/\//g) || []).length <= REPO_CONFIG.maxDepth && !visited.has(d)) queue.push(d.replace(/\/?$/, "/")); });
+        } catch (e) {}
+      }
+      if (found.size) return found;
+      // Local files
+      try {
+        const buf = await (await fetch(".git/index")).arrayBuffer();
+        (new TextDecoder("latin1").decode(new Uint8Array(buf)).match(/(?:Models|Animations)\/[A-Za-z0-9_ .()\/-]+\.(?:blockymodel|blockyanim|png|json)/g) || []).forEach((x) => found.add(normalizeRepoPath(x)));
+      } catch (e) {}
+      return found;
+    }
+    // Preview look
+    const PREVIEW_BG = 0x3e3e3e;
+    function createPreviewGrid(size) {
+      const group = new THREE.Group();
+      const coarse = new THREE.GridHelper(size, 3, 0x565656, 0x2e2e2e);
+      coarse.material.transparent = true; coarse.material.opacity = 0.9;
+      group.add(coarse);
+      const fine = new THREE.GridHelper(size / 3, 24, 0x5a5a5a, 0x353535);
+      fine.material.transparent = true; fine.material.opacity = 0.85;
+      fine.position.y = 0.02; // z-fighting
+      group.add(fine);
+      return group;
+    }
+    function probeTextureSize(url) {
+      return new Promise((resolve) => {
+        if (!url) return resolve(null);
+        const img = new Image();
+        img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+        img.onerror = () => resolve(null); img.src = encodePath(url);
+      });
+    }
+    function computeAutoCamera(modelData) {
+      let minY = Infinity, maxY = -Infinity, maxXZ = 0;
+      (function walk(nodes, y, x, z) { (nodes || []).forEach((n) => {
+        const p = n.position || {}, s = ((n.shape || {}).settings || {}).size || {};
+        const ny = y + (p.y || 0), nx = x + (p.x || 0), nz = z + (p.z || 0);
+        minY = Math.min(minY, ny - (s.y || 0) / 2); maxY = Math.max(maxY, ny + (s.y || 0) / 2);
+        maxXZ = Math.max(maxXZ, Math.abs(nx) + (s.x || 0) / 2, Math.abs(nz) + (s.z || 0) / 2);
+        walk(n.children, ny, nx, nz);
+      }); })((modelData || {}).nodes, 0, 0, 0);
+      if (!isFinite(minY)) return { ...DEFAULT_CAMERA };
+      const height = Math.max(10, maxY - minY), extent = Math.max(height, maxXZ * 2);
+      return { targetY: Math.round((minY + maxY) / 2), targetZ: 0, radius: Math.round(Math.min(1530, Math.max(90, extent * 3.8))), theta: 0.45, phi: 1.25 };
+    }
+    function buildCatalogFromPaths(paths) {
+      const pngs = new Set([...paths].filter((x) => x.toLowerCase().endsWith(".png")));
+      const byFolder = new Map();
+      const animsByFolder = new Map(), orphanAnims = [];
+      const group = (f) => { if (!byFolder.has(f)) byFolder.set(f, { models: [], attachments: [] }); return byFolder.get(f); };
+      paths.forEach((raw) => {
+        const path = normalizeRepoPath(raw), seg = path.split("/");
+        if (seg[0] === REPO_CONFIG.modelsRoot && seg.length >= 3) {
+          const folder = seg[1], rest = seg.slice(2).join("/"), low = rest.toLowerCase();
+          if (low.endsWith(".blockyanim")) (animsByFolder.get(folder) || animsByFolder.set(folder, []).get(folder)).push(path);
+          else if (low.startsWith("attachments/") && low.endsWith(".blockymodel")) group(folder).attachments.push(path);
+          else if (!rest.includes("/") && low.endsWith(".blockymodel")) group(folder).models.push(path);
+          else if (low === "model.json") group(folder).meta = path;
+        } else if (seg[0] === REPO_CONFIG.animationsRoot && seg.length >= 3 && path.toLowerCase().endsWith(".blockyanim")) {
+          const folder = seg[1]; if (!animsByFolder.has(folder)) animsByFolder.set(folder, []);
+          animsByFolder.get(folder).push(path);
+        } else if (path.toLowerCase().endsWith(".blockyanim")) orphanAnims.push(path);
+      });
+      byFolder.forEach((g, folder) => {
+        g.models.sort(); g.attachments.sort();
+        g.models.forEach((modelPath) => {
+          const pngList = [...pngs];
+          const tex = pickTextureForFile(pngList, modelPath, "");
+          const entry = getOrCreateModelEntry(folder, modelPath, tex || "", pngs);
+          entry._metaPath = g.meta || null;
+          entry.attachments = g.attachments.map((attPath) => ({
+            id: slugify(folder + "_" + stemOf(attPath)), name: titleFromName(stemOf(attPath)) + " (" + baseName(attPath) + ")",
+            repoPath: attPath, textureUrl: pickTextureForFile(pngList, attPath, tex || ""), // PNG in the attachment
+            textureWidth: 64, textureHeight: 64, enabled: true, modelData: null
+          }));
+          (animsByFolder.get(folder) || []).forEach((animPath) => { (entry._pendingAnims = entry._pendingAnims || []).push(animPath); });
+        });
+      });
+      REPO_CATALOG.sort((a, b) => a.title.localeCompare(b.title));
+      return orphanAnims;
+    }
+    async function loadDiscoveredCatalog(paths) {
+      const orphans = buildCatalogFromPaths(paths);
+      await mapLimit(REPO_CATALOG, REPO_CONFIG.concurrency, async (entry) => {
+        try { const json = await fetchOnce(encodePath(entry.repoModelPath), true); if (json && json.nodes) { entry.modelData = json; entry.camera = computeAutoCamera(json); } } catch (e) {}
+        if (entry._metaPath) { try { const meta = await fetchOnce(encodePath(entry._metaPath), true); if (meta.title) entry.title = meta.title; if (meta.category) entry.category = meta.category; if (meta.camera) entry.camera = { ...entry.camera, ...meta.camera }; } catch (e) {} }
+        const size = await probeTextureSize(entry.textureUrl); if (size) { entry.textureWidth = size.w; entry.textureHeight = size.h; }
+        await mapLimit(entry.attachments, REPO_CONFIG.concurrency, async (att) => {
+          try { const json = await fetchOnce(encodePath(att.repoPath), true); if (json && json.nodes) att.modelData = json; } catch (e) {}
+          const s = await probeTextureSize(att.textureUrl); if (s) { att.textureWidth = s.w; att.textureHeight = s.h; }
+        });
+        for (const animPath of entry._pendingAnims || []) {
+          try { const json = await fetchOnce(encodePath(animPath), true); registerAnimationForModel(entry, baseName(animPath), animPath, json); } catch (e) {}
+        }
+        delete entry._pendingAnims; delete entry._metaPath;
+      });
+      for (const animPath of orphans) { // animations outside Models/<Model>/    Animations/<Model>/
+        try { const json = await fetchOnce(encodePath(animPath), true); const target = REPO_CATALOG.find((m) => m.id === identifyModelFromAnimation(json, animPath)); if (target) registerAnimationForModel(target, baseName(animPath), animPath, json); } catch (e) {}
+      }
+      REPO_CATALOG.forEach((m) => onModelDataLoaded(m));
+    }
+
+
+        function refreshUIAfterAnimationSync() {
+      /** Refresh all showcase. */
+      updateHeaderCounts();
+
+      appState.gridInstances.forEach((inst) => {
+        const modelEntry = inst.modelEntry;
+        const animCount = (modelEntry.animations || []).length;
+        if (inst.activeAnimIdx >= animCount) {
+          inst.activeAnimIdx = 0;
+        }
+        const activeClip = getModelClip(modelEntry, inst.activeAnimIdx);
+        inst.trackBindings = bindClipToRegistry(inst.rig.nodeRegistry, activeClip.data, true);
+        updateCardAnimationDropdownUI(inst);
+      });
+
+      const activeModel = REPO_CATALOG[appState.activeModelIndex];
+      if (activeModel) {
+        if (appState.activeClipIndex >= activeModel.animations.length) {
+          appState.activeClipIndex = 0;
+        }
+        const activeClipObj = getModelClip(activeModel, appState.activeClipIndex);
+        document.getElementById("inspectorActiveAnimLabel").textContent = activeClipObj.name.replace(/\.blockyanim$/i, "");
+        appState.trackBindings = bindClipToRegistry(appState.nodeRegistry, activeClipObj.data, appState.enableAliasRemap);
+        const trackKeys = Object.keys(appState.trackBindings);
+        if (trackKeys.length > 0 && !appState.trackBindings[appState.selectedTrackName]) {
+          appState.selectedTrackName = trackKeys.indexOf("Head") !== -1 ? "Head" : trackKeys[0];
+        }
+        renderQuickSublinksBar();
+        renderClipButtons();
+        applyInspectorVisualStyling();
+        rebuildInspectorMotionTrails();
+        rebuildFloatingLabelElements();
+        renderDopesheetBar();
+        renderTrackTelemetryList();
+        setFrameAndRefresh(appState.currentFrame);
+      }
+    }
+
+    let isSyncInProgress = false;
+
+async function syncRepositoryFilesAutomatically() {
+      if (isSyncInProgress) return; isSyncInProgress = true;
+      const statusEl = document.getElementById("repoSyncStatusText");
+      try {
+        const paths = await discoverFilePaths();
+        const signature = [...paths].sort().join("\n");
+        if (signature === syncRepositoryFilesAutomatically._sig && REPO_CATALOG.length) return;
+        syncRepositoryFilesAutomatically._sig = signature;
+        REPO_CATALOG.length = 0; Object.keys(perModelDisplayConfigs).forEach((k) => delete perModelDisplayConfigs[k]);
+        await loadDiscoveredCatalog(paths);
+        buildShowcaseGridCards(); refreshUIAfterAnimationSync();
+        if (REPO_CATALOG.length) { loadInspectorModel(Math.min(appState.activeModelIndex, REPO_CATALOG.length - 1), 0, true); applyRouteFromHash(); }
+        if (statusEl) statusEl.textContent = REPO_CATALOG.length
+          ? "Auto-detected " + REPO_CATALOG.length + " model(s), " + REPO_CATALOG.reduce((n, m) => n + m.attachments.length, 0) + " attachment(s) and " + getTotalAnimationCount() + " animation(s)"
+          : "No .blockymodel found in Models/<Model>/ - add a subfolder and reload";
+      } catch (err) { console.warn("Repository folder scan error:", err); }
+      finally { isSyncInProgress = false; }
+    }
+
+
+        function getTotalAnimationCount() {
+      /** Return the total number of dynamically. */
+      let count = 0;
+      REPO_CATALOG.forEach((m) => {
+        count += (m.animations || []).length;
+      });
+      return count;
+    }
+
+    function updateHeaderCounts() {
+      /** Update the header badge with current model, attachment, and animation counts. */
+      let totalAnims = 0;
+      REPO_CATALOG.forEach((m) => { totalAnims += (m.animations || []).length; });
+      const badge = document.getElementById("repoStatsBadge");
+      if (badge) {
+        badge.textContent = REPO_CATALOG.length + " Models · " + totalAnims + " Animations";
+      }
+    }
+
+    // 2-Column Showcase
+    // =========================================================
+    function updateCardAnimationDropdownUI(instance) {
+      /** Update a showcase cards animation. */
+      const cardEl = instance.cardEl;
+      const modelEntry = instance.modelEntry;
+      const modelIdx = instance.modelIdx;
+      const anims = modelEntry.animations || [];
+      const animCount = anims.length;
+      const activeClip = getModelClip(modelEntry, instance.activeAnimIdx);
+
+      const countSpan = cardEl.querySelector("[data-card-anim-count]");
+      if (countSpan) countSpan.textContent = "Anim (" + animCount + "):";
+
+      const activeLabelSpan = cardEl.querySelector("[data-card-active-anim-label]");
+      if (activeLabelSpan) activeLabelSpan.textContent = activeClip.name;
+
+      const frameReadout = cardEl.querySelector("[data-card-frame-readout]");
+      if (frameReadout) {
+        frameReadout.textContent = Math.floor(instance.currentFrame) + "f / " + (activeClip.data.duration || 120) + "f";
+      }
+
+      const inspectAnchor = cardEl.querySelector("[data-open-inspector]");
+      if (inspectAnchor) {
+        inspectAnchor.setAttribute("href", computeModelSublinkHash(modelIdx, instance.activeAnimIdx));
+      }
+
+      const listContainer = cardEl.querySelector("[data-card-anim-list]");
+      if (!listContainer) return;
+
+      let popupItemsHtml =
+        "<div class='px-2 py-1 text-[10px] uppercase tracking-wider text-slate-400 mono border-b border-slate-800/80'>Folder: Animations/" + modelEntry.folderName + "/ (" + animCount + ")</div>";
+
+      if (animCount === 0) {
+        popupItemsHtml +=
+          "<div class='px-2.5 py-2 text-xs text-slate-400 mono'>Base Rig Pose (No .blockyanim files in folder)</div>";
+      } else {
+        anims.forEach((animObj, aIdx) => {
+          const activeCls = aIdx === instance.activeAnimIdx
+            ? "bg-sky-500/20 text-sky-300 border-sky-500/40 font-semibold"
+            : "bg-slate-950/80 text-slate-300 border-transparent hover:bg-slate-800 hover:text-white";
+          popupItemsHtml +=
+            "<button type='button' data-card-anim='" + aIdx + "' class='w-full text-left px-2.5 py-1.5 rounded-lg text-xs mono border transition flex items-center justify-between gap-2 " + activeCls + "'>" +
+              "<span class='truncate'>" + animObj.name + "</span>" +
+              "<span class='text-[10px] text-slate-400 shrink-0'>" + (animObj.data.duration || 0) + "f</span>" +
+            "</button>";
+        });
+      }
+
+      listContainer.innerHTML = popupItemsHtml;
+
+      const dropdownEl = cardEl.querySelector("[data-card-dropdown]");
+      const animButtons = listContainer.querySelectorAll("[data-card-anim]");
+      animButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetIdx = parseInt(btn.getAttribute("data-card-anim"), 10) || 0;
+          instance.activeAnimIdx = targetIdx;
+          instance.currentFrame = 0;
+          const clipObj = getModelClip(modelEntry, targetIdx);
+          instance.trackBindings = bindClipToRegistry(instance.rig.nodeRegistry, clipObj.data, true);
+          if (dropdownEl) dropdownEl.removeAttribute("open");
+          updateCardAnimationDropdownUI(instance);
+        });
+      });
+    }
+
+    function disposeGridInstances() {
+      /** Release WebGL contexts/geometries. */
+      appState.gridInstances.forEach((inst) => {
+        try {
+          inst.scene.traverse((obj) => {
+            if (obj.geometry) obj.geometry.dispose();
+            if (obj.material) (Array.isArray(obj.material) ? obj.material : [obj.material]).forEach((m) => m.dispose());
+          });
+          inst.renderer.dispose();
+          if (inst.renderer.forceContextLoss) inst.renderer.forceContextLoss();
+        } catch (e) {}
+      });
+      appState.gridInstances = [];
+    }
+    function syncCardDisplayOptionsUI(instance) {
+      /** Refresh a cards Display Options. */
+      const mCfg = ensurePerModelDisplayConfig(instance.modelEntry);
+      const states = { texture: mCfg.showTexture, wireframe: mCfg.showWireframe, bones: mCfg.showBones, attachments: mCfg.showAttachments };
+      const labels = { texture: "Textures", wireframe: "Wireframe", bones: "Bones / Joints", attachments: "Attachments" };
+      instance.cardEl.querySelectorAll("[data-card-opt]").forEach((btn) => {
+        const key = btn.getAttribute("data-card-opt");
+        if (key in states) setToggleButton(btn, states[key], labels[key] + ": " + (states[key] ? "ON" : "OFF"), CARD_TOGGLE_BASE);
+      });
+    }
+    function applyGlobalGridDisplayOptions() {
+      /** Apply global options. */
+      appState.gridInstances.forEach((inst) => {
+        applyCardVisualSettings(inst);
+        syncCardDisplayOptionsUI(inst);
+        syncCardPlaybackUI(inst);
+      });
+    }
+    function buildShowcaseGridCards() {
+      /** Create the 2-column showcase cards with individual Display. */
+      const container = document.getElementById("modelsGridContainer");
+      disposeGridInstances();
+      container.innerHTML = "";
+      if (!REPO_CATALOG.length) {
+        container.innerHTML = "<div class='md:col-span-2 bg-slate-900/60 border border-dashed border-slate-700 rounded-2xl p-8 text-center text-sm text-slate-400'>No models detected yet.<br><span class='mono text-xs text-slate-500'>Add <span class='text-sky-300'>Models/&lt;Model&gt;/&lt;Model&gt;.blockymodel</span></div>";
+        return;
+      }
+
+      const query = appState.gridSearchQuery.trim().toLowerCase();
+
+      REPO_CATALOG.forEach((modelEntry, modelIdx) => {
+        if (query && modelEntry.title.toLowerCase().indexOf(query) === -1 && modelEntry.category.toLowerCase().indexOf(query) === -1) {
+          return;
+        }
+
+        const mCfg = ensurePerModelDisplayConfig(modelEntry);
+        const card = document.createElement("article");
+        card.className = "bg-slate-900/60 border border-slate-800/90 hover:border-slate-700 rounded-2xl overflow-hidden shadow-lg flex flex-col transition";
+
+        const attCount = (modelEntry.attachments || []).length;
+        const animCount = (modelEntry.animations || []).length;
+        const firstAnim = getModelClip(modelEntry, 0);
+        const sublinkHref = computeModelSublinkHash(modelIdx, 0);
+
+        const headerHtml =
+          "<div class='p-4 border-b border-slate-800/80 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 bg-slate-900/90'>" +
+            "<div class='min-w-0'>" +
+              "<div class='flex items-center gap-2'>" +
+                "<h2 class='font-bold text-sm sm:text-base text-white truncate'>" + modelEntry.title + "</h2>" +
+              "</div>" +
+              (attCount > 0 ? "<div class='text-[11px] text-slate-400 mono mt-0.5 truncate'><span class='text-sky-300'>" + attCount + " Attachment" + (attCount > 1 ? "s" : "") + "</span></div>" : "") +
+            "</div>" +
+            "<a href='" + sublinkHref + "' data-open-inspector='" + modelIdx + "' class='px-6 py-2.5 min-w-[155px] sm:min-w-[180px] rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md shadow-sky-500/15 flex items-center justify-center gap-2 transition shrink-0'>" +
+              "<span>Inspect &rarr;</span>" +
+            "</a>" +
+          "</div>";
+
+        const styleModes = [
+          { key: "textured", label: "Textured" },
+          { key: "ghost", label: "Ghost+Rig" },
+          { key: "skeleton", label: "Skeleton" },
+          { key: "solid", label: "Clay" }
+        ];
+        let styleBtnsHtml = "";
+        styleModes.forEach((sm) => {
+          const isAct = mCfg.visualMode === sm.key;
+          styleBtnsHtml +=
+            "<button type='button' data-card-style='" + sm.key + "' class='px-2 py-1 rounded text-[11px] font-medium border transition " +
+            (isAct ? "bg-sky-500/20 text-sky-300 border-sky-500/40" : "bg-slate-950 text-slate-400 hover:text-slate-200 border-slate-800") + "'>" +
+            sm.label + "</button>";
+        });
+
+        const bodyHtml =
+          "<div class='px-3.5 py-2 bg-slate-950/60 border-b border-slate-800/70 flex flex-wrap items-center justify-between gap-2 relative z-20'>" +
+            "<div class='flex flex-wrap items-center gap-1.5'>" +
+              "<details data-card-dropdown='" + modelIdx + "' class='relative'>" +
+                "<summary class='px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs mono text-slate-200 cursor-pointer select-none flex items-center gap-2'>" +
+                  "<span data-card-anim-count='" + modelIdx + "' class='text-[10px] uppercase text-slate-400 font-sans font-semibold'>Anim (" + animCount + "):</span>" +
+                  "<span data-card-active-anim-label='" + modelIdx + "' class='text-sky-300 font-medium truncate max-w-[140px] sm:max-w-[185px]'>" + firstAnim.name + "</span>" +
+                  "<span class='text-slate-400 text-[10px]'>&#9662;</span>" +
+                "</summary>" +
+                "<div data-card-anim-list='" + modelIdx + "' class='absolute left-0 mt-1.5 w-64 sm:w-72 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 z-30 flex flex-col gap-1 max-h-48 overflow-y-auto'>" +
+                "</div>" +
+              "</details>" +
+            "</div>" +
+            "<div class='flex items-center gap-2 ml-auto'>" +
+              "<span data-card-frame-readout='" + modelIdx + "' class='text-[11px] mono text-slate-400 font-medium shrink-0 w-[86px] text-right'>0f / " + firstAnim.data.duration + "f</span>" +
+              "<details data-card-display-menu='" + modelIdx + "' class='relative'>" +
+                "<summary class='px-2.5 py-1 rounded-lg bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/35 text-xs font-medium text-sky-300 cursor-pointer select-none flex items-center gap-1.5'>" +
+                  "<span>Display Options</span>" +
+                  "<span class='text-[10px]'>&#9662;</span>" +
+                "</summary>" +
+                "<div class='absolute right-0 mt-1.5 w-56 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-2 z-30 space-y-2'>" +
+                  "<div class='text-[10px] uppercase tracking-wider text-slate-400 mono px-1'>Surface Style</div>" +
+                  "<div class='grid grid-cols-2 gap-1'>" + styleBtnsHtml + "</div>" +
+                  "<div class='text-[10px] uppercase tracking-wider text-slate-400 mono px-1 pt-1 border-t border-slate-800'>Model Layers</div>" +
+                  "<div class='flex flex-col gap-1'>" +
+                    "<button type='button' data-card-opt='texture' class='w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " + (mCfg.showTexture ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800") + "'>Textures: " + (mCfg.showTexture ? "ON" : "OFF") + "</button>" +
+                    "<button type='button' data-card-opt='wireframe' class='w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " + (mCfg.showWireframe ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800") + "'>Wireframe: " + (mCfg.showWireframe ? "ON" : "OFF") + "</button>" +
+                    "<button type='button' data-card-opt='bones' class='w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " + (mCfg.showBones ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800") + "'>Bones / Joints: " + (mCfg.showBones ? "ON" : "OFF") + "</button>" +
+                    "<button type='button' data-card-opt='attachments' class='w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " + (mCfg.showAttachments ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800") + "'>Attachments: " + (mCfg.showAttachments ? "ON" : "OFF") + "</button>" +
+                    "<button type='button' data-card-opt='spin' class='w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " + (mCfg.autoRotate ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800") + "'>Auto-Rotate: " + (mCfg.autoRotate ? "ON" : "OFF") + "</button>" +
+                  "</div>" +
+                "</div>" +
+              "</details>" +
+            "</div>" +
+          "</div>" +
+          "<div class='relative h-72 sm:h-80 w-full select-none overflow-hidden' style='background:#3E3E3E' data-card-viewport='" + modelIdx + "'>" +
+            "<canvas class='w-full h-full block cursor-grab active:cursor-grabbing'></canvas>" +
+            "<div class='absolute bottom-2.5 right-2.5 flex items-center gap-1 pointer-events-auto bg-slate-900/90 border border-slate-800 rounded-lg p-0.5'>" +
+              (animCount > 1 ? "<button type='button' data-card-autoplay='" + modelIdx + "' class='px-2 py-0.5 rounded bg-sky-500/15 text-sky-300 border border-sky-500/30 text-[10px] mono font-bold' title='When the animation ends, play the next one; when off, loop the current one'>Auto-Play: ON</button>" : "") +
+              "<button type='button' data-card-toggle-play='" + modelIdx + "' class='px-2 py-0.5 rounded bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[10px] mono text-sky-300'>Pause</button>" +
+              "<button type='button' data-card-reset-cam='" + modelIdx + "' class='px-2 py-0.5 rounded bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[10px] mono text-slate-300'>Reset</button>" +
+            "</div>" +
+          "</div>";
+
+        card.innerHTML = headerHtml + bodyHtml;
+        container.appendChild(card);
+
+        const vpEl = card.querySelector("[data-card-viewport]");
+        const canvasEl = vpEl.querySelector("canvas");
+        const instance = createCardViewportInstance(modelEntry, modelIdx, vpEl, canvasEl, card);
+        appState.gridInstances.push(instance);
+      });
+    }
+
+    function createCardViewportInstance(modelEntry, modelIdx, vpEl, canvasEl, cardEl) {
+      /** Initialize an interactive Three.js scene. */
+      const scene = new THREE.Scene();
+      const camCfg = modelEntry.camera || { targetY: 30, targetZ: 0, radius: 260, theta: 0.45, phi: 1.25 };
+      const orbit = {
+        theta: camCfg.theta,
+        phi: camCfg.phi,
+        radius: camCfg.radius,
+        target: new THREE.Vector3(0, camCfg.targetY, camCfg.targetZ)
+      };
+
+      const width = Math.max(300, vpEl.clientWidth || 420);
+      const height = Math.max(240, vpEl.clientHeight || 300);
+      const camera = new THREE.PerspectiveCamera(40, width / height, 0.5, 3000);
+
+      const renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true, powerPreference: "low-power" });
+      scene.background = new THREE.Color(PREVIEW_BG);
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.88));
+      const dLight1 = new THREE.DirectionalLight(0x38bdf8, 0.72);
+      dLight1.position.set(80, 140, 100);
+      scene.add(dLight1);
+      const dLight2 = new THREE.DirectionalLight(0x94a3b8, 0.45);
+      dLight2.position.set(-80, 50, -80);
+      scene.add(dLight2);
+
+      scene.add(createPreviewGrid(240));
+
+      const targetGizmo = createTargetFocusGizmo();
+      targetGizmo.position.copy(orbit.target);
+      targetGizmo.visible = false;
+      scene.add(targetGizmo);
+
+      const rig = buildRigSceneGraph(modelEntry, { jointRadius: 1.1 });
+      scene.add(rig.rootGroup);
+      scene.add(rig.skeletonGroup);
+
+      const initialClip = getModelClip(modelEntry, 0);
+      const instance = {
+        modelIdx: modelIdx,
+        modelEntry: modelEntry,
+        vpEl: vpEl,
+        canvasEl: canvasEl,
+        cardEl: cardEl,
+        scene: scene,
+        camera: camera,
+        renderer: renderer,
+        orbit: orbit,
+        targetGizmo: targetGizmo,
+        rig: rig,
+        activeAnimIdx: 0,
+        autoPlayNext: ensurePerModelDisplayConfig(modelEntry).autoPlayNext !== false,
+        trackBindings: bindClipToRegistry(rig.nodeRegistry, initialClip.data, true),
+        currentFrame: 0,
+        isPlaying: true,
+        isDragging: false,
+        isPanning: false
+      };
+
+      function syncCardCamera() {
+        /** Update card camera position and 3D. */
+        const sinPhi = Math.sin(orbit.phi);
+        camera.position.set(
+          orbit.target.x + orbit.radius * sinPhi * Math.sin(orbit.theta),
+          orbit.target.y + orbit.radius * Math.cos(orbit.phi),
+          orbit.target.z + orbit.radius * sinPhi * Math.cos(orbit.theta)
+        );
+        camera.lookAt(orbit.target);
+        targetGizmo.position.copy(orbit.target);
+      }
+      instance.syncCardCamera = syncCardCamera;
+      syncCardCamera();
+
+      let prevPt = { x: 0, y: 0 };
+      canvasEl.addEventListener("mousedown", (e) => {
+        const mCfg = perModelDisplayConfigs[modelEntry.id];
+        if (e.button === 2 || e.button === 1 || e.shiftKey || mCfg.dragMode === "pan") {
+          instance.isPanning = true;
+          targetGizmo.visible = true;
+        } else if (e.button === 0) {
+          instance.isDragging = true;
+        }
+        prevPt = { x: e.clientX, y: e.clientY };
+      });
+      canvasEl.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      window.addEventListener("mouseup", () => {
+        instance.isDragging = false;
+        instance.isPanning = false;
+        const mCfg = perModelDisplayConfigs[modelEntry.id];
+        if (mCfg.dragMode !== "pan") {
+          targetGizmo.visible = false;
+        }
+      });
+      window.addEventListener("mousemove", (e) => {
+        if (!instance.isDragging && !instance.isPanning) return;
+        const dx = e.clientX - prevPt.x;
+        const dy = e.clientY - prevPt.y;
+        prevPt = { x: e.clientX, y: e.clientY };
+
+        if (instance.isPanning) {
+          panOrbitTargetIn3DSpace(orbit, camera, dx, dy);
+          syncCardCamera();
+        } else if (instance.isDragging) {
+          orbit.theta -= dx * 0.008;
+          orbit.phi = Math.max(0.15, Math.min(Math.PI - 0.15, orbit.phi - dy * 0.008));
+          syncCardCamera();
+        }
+      });
+      canvasEl.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        orbit.radius = Math.max(30, Math.min(1800, orbit.radius + e.deltaY * 0.14));
+        syncCardCamera();
+      }, { passive: false });
+
+      updateCardAnimationDropdownUI(instance);
+
+      const styleButtons = cardEl.querySelectorAll("[data-card-style]");
+      styleButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const modeKey = btn.getAttribute("data-card-style");
+          const mCfg = perModelDisplayConfigs[modelEntry.id];
+          mCfg.visualMode = modeKey;
+          styleButtons.forEach((b) => {
+            const k = b.getAttribute("data-card-style");
+            b.className = "px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (k === modeKey ? "bg-sky-500/20 text-sky-300 border-sky-500/40" : "bg-slate-950 text-slate-400 hover:text-slate-200 border-slate-800");
+          });
+          applyCardVisualSettings(instance);
+          if (appState.activeModelIndex === modelIdx) {
+            appState.visualMode = modeKey;
+            applyInspectorVisualStyling();
+          }
+        });
+      });
+
+      const optButtons = cardEl.querySelectorAll("[data-card-opt]");
+      optButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const optKey = btn.getAttribute("data-card-opt");
+          const mCfg = perModelDisplayConfigs[modelEntry.id];
+          if (optKey === "texture") {
+            mCfg.showTexture = !mCfg.showTexture;
+            btn.textContent = "Textures: " + (mCfg.showTexture ? "ON" : "OFF");
+            btn.className = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (mCfg.showTexture ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800");
+          } else if (optKey === "wireframe") {
+            mCfg.showWireframe = !mCfg.showWireframe;
+            btn.textContent = "Wireframe: " + (mCfg.showWireframe ? "ON" : "OFF");
+            btn.className = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (mCfg.showWireframe ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800");
+          } else if (optKey === "bones") {
+            mCfg.showBones = !mCfg.showBones;
+            btn.textContent = "Bones / Joints: " + (mCfg.showBones ? "ON" : "OFF");
+            btn.className = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (mCfg.showBones ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800");
+          } else if (optKey === "attachments") {
+            mCfg.showAttachments = !mCfg.showAttachments;
+            btn.textContent = "Attachments: " + (mCfg.showAttachments ? "ON" : "OFF");
+            btn.className = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (mCfg.showAttachments ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800");
+          } else if (optKey === "spin") {
+            mCfg.autoRotate = !mCfg.autoRotate;
+            btn.textContent = "Auto-Rotate: " + (mCfg.autoRotate ? "ON" : "OFF");
+            btn.className = "w-full text-left px-2 py-1 rounded text-[11px] font-medium border transition " +
+              (mCfg.autoRotate ? "bg-sky-500/15 text-sky-300 border-sky-500/30" : "bg-slate-950 text-slate-300 border-slate-800");
+          }
+          applyCardVisualSettings(instance);
+        });
+      });
+
+      cardEl.querySelector("[data-card-toggle-play]").addEventListener("click", () => {
+        setCardPlayback(instance, !instance.isPlaying);
+      });
+
+      const autoPlayBtn = cardEl.querySelector("[data-card-autoplay]");
+      if (autoPlayBtn) autoPlayBtn.addEventListener("click", () => {
+        instance.autoPlayNext = !(instance.autoPlayNext !== false);
+        ensurePerModelDisplayConfig(modelEntry).autoPlayNext = instance.autoPlayNext;
+        syncCardPlaybackUI(instance);
+      });
+
+      cardEl.querySelector("[data-card-reset-cam]").addEventListener("click", () => {
+        orbit.theta = camCfg.theta;
+        orbit.phi = camCfg.phi;
+        orbit.radius = camCfg.radius;
+        orbit.target.set(0, camCfg.targetY, camCfg.targetZ);
+        syncCardCamera();
+      });
+
+      cardEl.querySelector("[data-open-inspector]").addEventListener("click", (e) => {
+        e.preventDefault();
+        openModelInInspector(modelIdx, instance.activeAnimIdx);
+      });
+
+      applyCardVisualSettings(instance);
+      syncCardPlaybackUI(instance);
+      return instance;
+    }
+
+    function applyCardVisualSettings(instance) {
+      /** Apply individual model Display Options. */
+      const reg = instance.rig.nodeRegistry;
+      const mCfg = perModelDisplayConfigs[instance.modelEntry.id];
+      const enabledMap = {};
+      (instance.modelEntry.attachments || []).forEach((att) => {
+        enabledMap[att.id] = mCfg.showAttachments && (att.enabled !== false);
+      });
+
+      for (let i = 0; i < reg.length; i++) {
+        const rec = reg[i];
+        const attAllowed = !rec.attachmentId || enabledMap[rec.attachmentId];
+        rec.pivotGroup.visible = attAllowed;
+
+        if (rec.meshObj) {
+          if (mCfg.visualMode === "skeleton") {
+            rec.meshObj.visible = false;
+          } else if (mCfg.visualMode === "ghost") {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = mCfg.showTexture ? rec.textureMap : null;
+            rec.meshObj.material.transparent = true;
+            rec.meshObj.material.opacity = 0.36;
+            rec.meshObj.material.color.setHex(mCfg.showTexture ? 0xffffff : 0x38bdf8);
+          } else if (mCfg.visualMode === "solid") {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = null;
+            rec.meshObj.material.transparent = false;
+            rec.meshObj.material.opacity = 1.0;
+            rec.meshObj.material.color.setHex(0x38bdf8);
+          } else {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = mCfg.showTexture ? rec.textureMap : null;
+            rec.meshObj.material.transparent = true;
+            rec.meshObj.material.opacity = mCfg.showBones ? 0.48 : 1.0;
+            rec.meshObj.material.color.setHex(mCfg.showTexture ? 0xffffff : 0x38bdf8);
+          }
+          rec.meshObj.material.needsUpdate = true;
+        }
+        if (rec.wireObj) {
+          rec.wireObj.visible = (mCfg.showWireframe || mCfg.visualMode === "ghost") && mCfg.visualMode !== "skeleton";
+        }
+        if (rec.jointSphere) {
+          rec.jointSphere.visible = mCfg.showBones || mCfg.visualMode === "skeleton" || mCfg.visualMode === "ghost";
+        }
+      }
+    }
+
+    function resizeShowcaseCards() {
+      /** Resize all 2-column showcase card WebGL viewports. */
+      for (let i = 0; i < appState.gridInstances.length; i++) {
+        const inst = appState.gridInstances[i];
+        const w = inst.vpEl.clientWidth;
+        const h = inst.vpEl.clientHeight;
+        if (w > 0 && h > 0) {
+          inst.camera.aspect = w / h;
+          inst.camera.updateProjectionMatrix();
+          inst.renderer.setSize(w, h);
+        }
+      }
+    }
+
+    // Detailed Model Inspector 3D scene, camera
+    // =========================================================
+    let inspectorScene, inspectorCamera, inspectorRenderer, inspectorRig, inspectorTargetGizmo, inspectorGrid;
+    let isDraggingInspectorOrbit = false;
+    let isPanningInspectorOrbit = false;
+    let prevInspectorPointer = { x: 0, y: 0 };
+    const inspectorOrbit = {
+      theta: 0.45,
+      phi: 1.25,
+      radius: 290,
+      target: new THREE.Vector3(0, 28, 8)
+    };
+
+    function initInspectorScene() {
+      /** Initialize the Three.js scene,  3D target gizmo. */
+      const container = document.getElementById("viewportContainer");
+      const canvas = document.getElementById("threeCanvas");
+
+      inspectorScene = new THREE.Scene();
+      inspectorCamera = new THREE.PerspectiveCamera(42, Math.max(1, container.clientWidth) / Math.max(1, container.clientHeight), 0.5, 3000);
+
+      inspectorTargetGizmo = createTargetFocusGizmo();
+      inspectorScene.add(inspectorTargetGizmo);
+      updateInspectorCameraFromOrbit();
+
+      inspectorRenderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+      inspectorScene.background = new THREE.Color(PREVIEW_BG);
+      inspectorRenderer.setSize(Math.max(320, container.clientWidth), Math.max(320, container.clientHeight));
+      inspectorRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      inspectorScene.add(new THREE.AmbientLight(0xffffff, 0.88));
+      const dirLight1 = new THREE.DirectionalLight(0x38bdf8, 0.8);
+      dirLight1.position.set(80, 140, 100);
+      inspectorScene.add(dirLight1);
+
+      const dirLight2 = new THREE.DirectionalLight(0x94a3b8, 0.5);
+      dirLight2.position.set(-80, 50, -80);
+      inspectorScene.add(dirLight2);
+
+      inspectorGrid = createPreviewGrid(240);
+      inspectorScene.add(inspectorGrid);
+
+      setupInspectorOrbitListeners(canvas);
+
+      window.addEventListener("resize", () => {
+        resizeShowcaseCards();
+        resizeInspectorViewport();
+      });
+    }
+
+    function resizeInspectorViewport() {
+      /** Resize the Detailed Model Inspector renderer. */
+      const container = document.getElementById("viewportContainer");
+      if (!container || !inspectorRenderer) return;
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      if (w > 0 && h > 0) {
+        inspectorCamera.aspect = w / h;
+        inspectorCamera.updateProjectionMatrix();
+        inspectorRenderer.setSize(w, h);
+      }
+    }
+
+    function updateInspectorCameraFromOrbit() {
+      /** Compute inspector camera world position. */
+      if (!inspectorCamera) return;
+      const sinPhi = Math.sin(inspectorOrbit.phi);
+      const x = inspectorOrbit.target.x + inspectorOrbit.radius * sinPhi * Math.sin(inspectorOrbit.theta);
+      const y = inspectorOrbit.target.y + inspectorOrbit.radius * Math.cos(inspectorOrbit.phi);
+      const z = inspectorOrbit.target.z + inspectorOrbit.radius * sinPhi * Math.cos(inspectorOrbit.theta);
+
+      inspectorCamera.position.set(x, y, z);
+      inspectorCamera.lookAt(inspectorOrbit.target);
+
+      if (inspectorTargetGizmo) {
+        inspectorTargetGizmo.position.copy(inspectorOrbit.target);
+      }
+      const readoutEl = document.getElementById("inspectorTargetReadout");
+      if (readoutEl) {
+        readoutEl.textContent =
+          "X:" + inspectorOrbit.target.x.toFixed(1) +
+          " Y:" + inspectorOrbit.target.y.toFixed(1) +
+          " Z:" + inspectorOrbit.target.z.toFixed(1);
+      }
+    }
+
+    function setupInspectorOrbitListeners(canvas) {
+      /** Attach mouse orbit, full 3D space translation. */
+      canvas.addEventListener("mousedown", (e) => {
+        if (e.button === 2 || e.button === 1 || e.shiftKey || appState.inspectorDragMode === "pan") {
+          isPanningInspectorOrbit = true;
+          if (inspectorTargetGizmo) inspectorTargetGizmo.visible = true;
+        } else if (e.button === 0) {
+          isDraggingInspectorOrbit = true;
+        }
+        prevInspectorPointer = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener("mouseup", () => {
+        isDraggingInspectorOrbit = false;
+        isPanningInspectorOrbit = false;
+        if (inspectorTargetGizmo && appState.inspectorDragMode !== "pan") {
+          inspectorTargetGizmo.visible = false;
+        }
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDraggingInspectorOrbit && !isPanningInspectorOrbit) return;
+        const dx = e.clientX - prevInspectorPointer.x;
+        const dy = e.clientY - prevInspectorPointer.y;
+        prevInspectorPointer = { x: e.clientX, y: e.clientY };
+
+        if (isPanningInspectorOrbit) {
+          panOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, dx, dy);
+          updateInspectorCameraFromOrbit();
+        } else if (isDraggingInspectorOrbit) {
+          inspectorOrbit.theta -= dx * 0.008;
+          inspectorOrbit.phi = Math.max(0.15, Math.min(Math.PI - 0.15, inspectorOrbit.phi - dy * 0.008));
+          updateInspectorCameraFromOrbit();
+        }
+      });
+
+      canvas.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      canvas.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        inspectorOrbit.radius = Math.max(30, Math.min(1800, inspectorOrbit.radius + e.deltaY * 0.14));
+        updateInspectorCameraFromOrbit();
+      }, { passive: false });
+
+      window.addEventListener("keydown", (e) => {
+        if (appState.activeTab !== "inspector") return;
+        const activeTag = (document.activeElement && document.activeElement.tagName) || "";
+        if (activeTag === "INPUT" || activeTag === "TEXTAREA" || (document.activeElement && document.activeElement.isContentEditable)) {
+          return;
+        }
+        const key = e.key.toLowerCase();
+        if (key === "w" || key === "arrowup") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, 0, 0, 1);
+          updateInspectorCameraFromOrbit();
+        } else if (key === "s" || key === "arrowdown") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, 0, 0, -1);
+          updateInspectorCameraFromOrbit();
+        } else if (key === "a" || key === "arrowleft") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, -1, 0, 0);
+          updateInspectorCameraFromOrbit();
+        } else if (key === "d" || key === "arrowright") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, 1, 0, 0);
+          updateInspectorCameraFromOrbit();
+        } else if (key === "e") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, 0, 1, 0);
+          updateInspectorCameraFromOrbit();
+        } else if (key === "q") {
+          e.preventDefault();
+          stepOrbitTargetIn3DSpace(inspectorOrbit, inspectorCamera, 0, -1, 0);
+          updateInspectorCameraFromOrbit();
+        }
+      });
+    }
+
+    // Load a model and animation
+    // =========================================================
+    function syncInspectorControlsWithModelConfig(modelEntry) {
+      /** Sync the Detailed Inspector Display Options buttons. */
+      const mCfg = perModelDisplayConfigs[modelEntry.id];
+      if (!mCfg) return;
+
+      appState.visualMode = mCfg.visualMode;
+      appState.showTexture = mCfg.showTexture;
+      appState.showWireframe = mCfg.showWireframe;
+      appState.showAttachments = mCfg.showAttachments;
+      appState.autoRotateModels = mCfg.autoRotate;
+
+      const modeButtons = [
+        { id: "btnModeTextured", mode: "textured" },
+        { id: "btnModeGhost", mode: "ghost" },
+        { id: "btnModeSkeleton", mode: "skeleton" },
+        { id: "btnModeSolid", mode: "solid" }
+      ];
+      modeButtons.forEach((b) => {
+        const el = document.getElementById(b.id);
+        if (el) {
+          el.className = b.mode === appState.visualMode
+            ? "px-2 py-1 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/40 transition"
+            : "px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition";
+        }
+      });
+
+      setToggleButton(document.getElementById("btnToggleTexture"), appState.showTexture, "Texture: " + (appState.showTexture ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnToggleWireframe"), appState.showWireframe, "Wireframe: " + (appState.showWireframe ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnTogglePivots"), appState.showPivots, "Joints: " + (appState.showPivots ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnToggleAttachments"), appState.showAttachments, "Attachments: " + (appState.showAttachments ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnToggleTrails"), appState.showTrails, "Arcs: " + (appState.showTrails ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnToggleGrid"), appState.showGrid, "Grid: " + (appState.showGrid ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      setToggleButton(document.getElementById("btnToggleInspectorSpin"), appState.autoRotateModels, "Auto-Rotate: " + (appState.autoRotateModels ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+    }
+
+    function loadInspectorModel(modelIdx, clipIdx, skipHashUpdate) {
+      const modelEntry = REPO_CATALOG[modelIdx];
+      if (!modelEntry) return;
+      appState.activeModelIndex = modelIdx;
+      appState.activeClipIndex = clipIdx !== undefined ? clipIdx : 0;
+      appState.currentFrame = 0;
+
+      syncInspectorControlsWithModelConfig(modelEntry);
+
+      if (inspectorRig) {
+        inspectorScene.remove(inspectorRig.rootGroup);
+        inspectorScene.remove(inspectorRig.skeletonGroup);
+        inspectorScene.remove(inspectorRig.trailsGroup);
+      }
+
+      inspectorRig = buildRigSceneGraph(modelEntry, { jointRadius: 1.15 });
+      inspectorScene.add(inspectorRig.rootGroup);
+      inspectorScene.add(inspectorRig.skeletonGroup);
+      inspectorScene.add(inspectorRig.trailsGroup);
+
+      appState.nodeRegistry = inspectorRig.nodeRegistry;
+
+      const camCfg = modelEntry.camera || { targetY: 30, targetZ: 0, radius: 280, theta: 0.45, phi: 1.25 };
+      inspectorOrbit.theta = camCfg.theta;
+      inspectorOrbit.phi = camCfg.phi;
+      inspectorOrbit.radius = camCfg.radius;
+      inspectorOrbit.target.set(0, camCfg.targetY, camCfg.targetZ);
+      updateInspectorCameraFromOrbit();
+
+      document.getElementById("inspectorActiveModelLabel").textContent = modelEntry.title.split(" (")[0].split(" +")[0];
+
+      const activeClipObj = getModelClip(modelEntry, appState.activeClipIndex);
+      document.getElementById("inspectorActiveAnimLabel").textContent = activeClipObj.name.replace(/\.blockyanim$/i, "");
+
+      const subHash = computeModelSublinkHash(modelIdx, appState.activeClipIndex);
+      if (!skipHashUpdate && appState.activeTab === "inspector") {
+        updateUrlSublink(subHash);
+      } else {
+        const inspAnchor = document.getElementById("inspectorSublinkAnchor");
+        if (inspAnchor) {
+          inspAnchor.textContent = subHash;
+          inspAnchor.setAttribute("href", subHash);
+        }
+      }
+
+      appState.trackBindings = bindClipToRegistry(appState.nodeRegistry, activeClipObj.data, appState.enableAliasRemap);
+
+      const trackKeys = Object.keys(appState.trackBindings);
+      if (trackKeys.length > 0 && !appState.trackBindings[appState.selectedTrackName]) {
+        appState.selectedTrackName = trackKeys.indexOf("Head") !== -1 ? "Head" : trackKeys[0];
+      }
+
+      renderQuickSublinksBar();
+      renderInspectorModelButtons();
+      renderClipButtons();
+      renderAttachmentsPanel();
+      applyInspectorVisualStyling();
+      rebuildInspectorMotionTrails();
+      rebuildFloatingLabelElements();
+      renderDopesheetBar();
+      renderTrackTelemetryList();
+      setFrameAndRefresh(0);
+    }
+
+    function openModelInInspector(modelIdx, clipIdx) {
+      /** Redirect to the chosen models sub-link. */
+      const targetClipIdx = clipIdx !== undefined ? clipIdx : 0;
+      const subHash = computeModelSublinkHash(modelIdx, targetClipIdx);
+      switchMainTab("inspector", true);
+      updateUrlSublink(subHash);
+      loadInspectorModel(modelIdx, targetClipIdx, true);
+      setTimeout(() => {
+        resizeInspectorViewport();
+      }, 20);
+    }
+
+    function switchMainTab(tabName, skipHashUpdate) {
+      /** Toggle active view between the 2-Column Showcase. */
+      appState.activeTab = tabName;
+      const gridView = document.getElementById("showcaseGridView");
+      const inspView = document.getElementById("detailInspectorView");
+
+      if (tabName === "showcase") {
+        gridView.classList.remove("hidden");
+        inspView.classList.add("hidden");
+        if (!skipHashUpdate) {
+          updateUrlSublink("#/showcase");
+        }
+        setTimeout(() => resizeShowcaseCards(), 20);
+      } else {
+        gridView.classList.add("hidden");
+        inspView.classList.remove("hidden");
+        if (!skipHashUpdate) {
+          updateUrlSublink(computeModelSublinkHash(appState.activeModelIndex, appState.activeClipIndex));
+        }
+        setTimeout(() => resizeInspectorViewport(), 20);
+      }
+    }
+
+    // Inspector visual styling
+    // =========================================================
+    function applyInspectorVisualStyling() {
+      /** Update mesh textures, opacity, wireframe overlay. */
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      if (!modelEntry) return;
+      const mCfg = perModelDisplayConfigs[modelEntry.id];
+      if (mCfg) {
+        mCfg.visualMode = appState.visualMode;
+        mCfg.showTexture = appState.showTexture;
+        mCfg.showWireframe = appState.showWireframe;
+        mCfg.showAttachments = appState.showAttachments;
+        const cardInst = appState.gridInstances.find((g) => g.modelIdx === appState.activeModelIndex);
+        if (cardInst) applyCardVisualSettings(cardInst);
+      }
+
+      const enabledAttMap = {};
+      (modelEntry.attachments || []).forEach((att) => {
+        enabledAttMap[att.id] = appState.showAttachments && (att.enabled !== false);
+      });
+
+      for (let i = 0; i < appState.nodeRegistry.length; i++) {
+        const rec = appState.nodeRegistry[i];
+        const isAnimated = Boolean(rec.boundTrackName);
+        const isSelected = rec.boundTrackName === appState.selectedTrackName;
+        const attVisible = !rec.attachmentId || enabledAttMap[rec.attachmentId];
+
+        rec.pivotGroup.visible = attVisible;
+
+        if (rec.meshObj) {
+          if (appState.visualMode === "skeleton") {
+            rec.meshObj.visible = false;
+          } else if (appState.visualMode === "ghost") {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = appState.showTexture ? rec.textureMap : null;
+            rec.meshObj.material.transparent = true;
+            rec.meshObj.material.opacity = isSelected ? 0.72 : 0.32;
+            rec.meshObj.material.color.setHex(isSelected ? 0x7dd3fc : (appState.showTexture ? 0xffffff : 0x38bdf8));
+          } else if (appState.visualMode === "solid") {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = null;
+            rec.meshObj.material.transparent = false;
+            rec.meshObj.material.opacity = 1.0;
+            rec.meshObj.material.color.setHex(isSelected ? 0xe2e8f0 : (isAnimated ? 0x38bdf8 : 0x64748b));
+          } else {
+            rec.meshObj.visible = true;
+            rec.meshObj.material.map = appState.showTexture ? rec.textureMap : null;
+            rec.meshObj.material.transparent = true;
+            rec.meshObj.material.opacity = 1.0;
+            rec.meshObj.material.color.setHex(isSelected ? 0xe0f2fe : (appState.showTexture ? 0xffffff : 0x38bdf8));
+          }
+          rec.meshObj.material.needsUpdate = true;
+        }
+
+        if (rec.wireObj) {
+          const showWire = appState.showWireframe || appState.visualMode === "ghost";
+          rec.wireObj.visible = showWire && appState.visualMode !== "skeleton";
+          rec.wireObj.material.opacity = isSelected ? 0.9 : (appState.showWireframe ? 0.65 : 0.3);
+          rec.wireObj.material.color.setHex(isSelected ? 0xf8fafc : 0x38bdf8);
+        }
+
+        if (rec.jointSphere) {
+          rec.jointSphere.visible = appState.showPivots || appState.visualMode === "skeleton";
+          if (isSelected) {
+            rec.jointSphere.material.color.setHex(0xf8fafc);
+            rec.jointSphere.scale.setScalar(1.6);
+          } else if (isAnimated) {
+            rec.jointSphere.material.color.setHex(0x38bdf8);
+            rec.jointSphere.scale.setScalar(1.05);
+          } else {
+            rec.jointSphere.material.color.setHex(0x475569);
+            rec.jointSphere.scale.setScalar(0.65);
+          }
+        }
+      }
+    }
+
+    function rebuildInspectorMotionTrails() {
+      /** Sample key animated bones across the active clip to render. */
+      if (!inspectorRig) return;
+      const trailsGroup = inspectorRig.trailsGroup;
+      while (trailsGroup.children.length > 0) {
+        trailsGroup.remove(trailsGroup.children[0]);
+      }
+      if (!appState.showTrails) return;
+
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const activeClip = getModelClip(modelEntry, appState.activeClipIndex).data;
+      const duration = activeClip.duration || 90;
+      const sampleCount = 32;
+      const savedFrame = appState.currentFrame;
+
+      // Arcs are drawn only for the selected node
+      const candidateNames = appState.trackBindings[appState.selectedTrackName]
+        ? [appState.selectedTrackName]
+        : Object.keys(appState.trackBindings).slice(0, 6);
+      const trailPointsMap = {};
+      candidateNames.forEach((name) => {
+        trailPointsMap[name] = [];
+      });
+
+      for (let step = 0; step <= sampleCount; step++) {
+        const f = (step / sampleCount) * duration;
+        applyPoseToRig(appState.nodeRegistry, appState.trackBindings, activeClip, f, null);
+        inspectorRig.rootGroup.updateMatrixWorld(true);
+        for (let i = 0; i < candidateNames.length; i++) {
+          const tName = candidateNames[i];
+          const binding = appState.trackBindings[tName];
+          if (binding && binding.nodeRecord) {
+            const wp = new THREE.Vector3();
+            binding.nodeRecord.shapeGroup.getWorldPosition(wp);
+            trailPointsMap[tName].push(wp);
+          }
+        }
+      }
+
+      for (let i = 0; i < candidateNames.length; i++) {
+        const pts = trailPointsMap[candidateNames[i]];
+        if (pts.length > 2) {
+          const geom = new THREE.BufferGeometry().setFromPoints(pts);
+          const mat = new THREE.LineBasicMaterial({
+            color: 0x7dd3fc,
+            transparent: true,
+            opacity: 0.65,
+            depthTest: false
+          });
+          const arcLine = new THREE.Line(geom, mat);
+          arcLine.renderOrder = 9;
+          trailsGroup.add(arcLine);
+        }
+      }
+
+      applyPoseToRig(appState.nodeRegistry, appState.trackBindings, activeClip, savedFrame, appState.liveTelemetry);
+      inspectorRig.rootGroup.updateMatrixWorld(true);
+    }
+
+    // Floating 3D bone labels projected onto the viewport
+    // =========================================================
+    const labelDomMap = {};
+
+    function rebuildFloatingLabelElements() {
+      /** Create interactive DOM badge elements for animated bone tracks. */
+      const overlay = document.getElementById("labelsOverlay");
+      overlay.innerHTML = "";
+      for (const k in labelDomMap) {
+        delete labelDomMap[k];
+      }
+
+      const trackNames = Object.keys(appState.trackBindings);
+      for (let i = 0; i < trackNames.length; i++) {
+        const tName = trackNames[i];
+        const binding = appState.trackBindings[tName];
+        const el = document.createElement("div");
+        el.className = "bone-label rounded-lg px-2 py-1 text-[10px] mono border shadow-lg backdrop-blur-md";
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
+          selectTrack(tName);
+        });
+        overlay.appendChild(el);
+        labelDomMap[tName] = { el: el, binding: binding };
+      }
+    }
+
+    function updateFloatingLabelsPositionAndData() {
+      /** Project 3D bone coordinates to 2D screen space. */
+      if (appState.activeTab !== "inspector") return;
+      const container = document.getElementById("viewportContainer");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const trackNames = Object.keys(labelDomMap);
+      for (let i = 0; i < trackNames.length; i++) {
+        const tName = trackNames[i];
+        const item = labelDomMap[tName];
+        const el = item.el;
+        const binding = item.binding;
+
+        let shouldShow = false;
+        if (appState.labelMode === "all") {
+          shouldShow = true;
+        } else if (appState.labelMode === "key") {
+          shouldShow = KEY_HIGHLIGHT_TRACKS.has(tName) || tName === appState.selectedTrackName;
+        } else if (appState.labelMode === "selected") {
+          shouldShow = tName === appState.selectedTrackName;
+        }
+
+        if (!shouldShow || !binding.nodeRecord || !binding.nodeRecord.pivotGroup.visible) {
+          el.style.display = "none";
+          continue;
+        }
+
+        const worldPos = new THREE.Vector3();
+        binding.nodeRecord.pivotGroup.getWorldPosition(worldPos);
+        const projected = worldPos.clone().project(inspectorCamera);
+
+        if (projected.z > 1 || projected.z < -1) {
+          el.style.display = "none";
+          continue;
+        }
+
+        const screenX = (projected.x * 0.5 + 0.5) * width;
+        const screenY = (-projected.y * 0.5 + 0.5) * height;
+
+        if (screenX < 10 || screenX > width - 10 || screenY < 10 || screenY > height - 10) {
+          el.style.display = "none";
+          continue;
+        }
+
+        el.style.display = "block";
+        el.style.left = screenX.toFixed(1) + "px";
+        el.style.top = screenY.toFixed(1) + "px";
+
+        const isSelected = tName === appState.selectedTrackName;
+        if (isSelected) {
+          el.className = "bone-label rounded-lg px-2.5 py-1.5 text-[11px] mono border bg-slate-900/70 border-sky-400/70 text-slate-100 shadow-xl z-30 w-48 overflow-hidden";
+        } else {
+          el.className = "bone-label rounded-md px-2 py-0.5 text-[10px] mono border bg-slate-950/60 border-slate-700/60 text-slate-300 hover:border-sky-400 whitespace-nowrap";
+        }
+
+        const telem = appState.liveTelemetry[tName];
+        if (telem) {
+          const rx = telem.eulerDeg.x.toFixed(1);
+          const ry = telem.eulerDeg.y.toFixed(1);
+          const rz = telem.eulerDeg.z.toFixed(1);
+          const kCount =
+            (binding.tracks.position ? binding.tracks.position.length : 0) +
+            (binding.tracks.orientation ? binding.tracks.orientation.length : 0) +
+            (binding.tracks.shapeStretch ? binding.tracks.shapeStretch.length : 0);
+
+          if (isSelected) {
+            el.innerHTML =
+              "<div class='font-bold text-white truncate'>" + tName + " <span class='text-[9px] text-sky-300'>(" + kCount + " kf)</span></div>" +
+              "<div class='text-[10px] text-sky-200 truncate'>dRot: " + rx + "°, " + ry + "°, " + rz + "°</div>" +
+              "<div class='text-[10px] text-slate-300 truncate'>dPos: " + telem.posDelta.x.toFixed(1) + ", " + telem.posDelta.y.toFixed(1) + ", " + telem.posDelta.z.toFixed(1) + "</div>";
+          } else {
+            el.innerHTML = "<span class='font-semibold text-sky-300'>" + tName + "</span> <span class='text-slate-400'>[" + rx + "°," + ry + "°," + rz + "°]</span>";
+          }
+        }
+      }
+    }
+
+    // Inspector UI panels - Vertical Model & Clip Dropdowns, Attachments, Dopesheet, Telemetry
+    // =========================================================
+    function renderInspectorModelButtons() {
+      /** Render the vertical model selector popup list with sub-link. */
+      const container = document.getElementById("inspectorModelButtons");
+      const dropdown = document.getElementById("inspectorModelDropdown");
+      container.innerHTML = "";
+
+      REPO_CATALOG.forEach((m, idx) => {
+        const isActive = idx === appState.activeModelIndex;
+        const subHash = computeModelSublinkHash(idx, 0);
+        const btn = document.createElement("a");
+        btn.href = subHash;
+        btn.className = "w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition border flex items-center justify-between gap-2 " +
+          (isActive
+            ? "bg-sky-500/20 text-sky-300 border-sky-500/40 font-semibold"
+            : "bg-slate-950/70 text-slate-300 border-transparent hover:bg-slate-800 hover:text-white");
+        btn.innerHTML =
+          "<span class='truncate'>" + m.title + "</span>" +
+          "<span class='text-[10px] mono text-slate-400 shrink-0'>#/" + m.id + "</span>";
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (dropdown) dropdown.removeAttribute("open");
+          openModelInInspector(idx, 0);
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function renderClipButtons() {
+      /** Render the vertical popup dropdown list of animations. */
+      const container = document.getElementById("clipVariantButtons");
+      const dropdown = document.getElementById("inspectorAnimDropdown");
+      container.innerHTML = "";
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const anims = modelEntry.animations || [];
+
+      const headerEl = document.createElement("div");
+      headerEl.className = "px-2 py-1 text-[10px] uppercase tracking-wider text-slate-400 mono border-b border-slate-800/80";
+      headerEl.textContent = "Folder: Animations/" + modelEntry.folderName + "/ (" + anims.length + ")";
+      container.appendChild(headerEl);
+
+      if (anims.length === 0) {
+        const emptyEl = document.createElement("div");
+        emptyEl.className = "px-2.5 py-2 text-xs text-slate-400 mono";
+        emptyEl.textContent = "Base Rig Pose (No .blockyanim in folder)";
+        container.appendChild(emptyEl);
+        return;
+      }
+
+      anims.forEach((clip, idx) => {
+        const isActive = idx === appState.activeClipIndex;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "w-full text-left px-2.5 py-1.5 rounded-lg text-xs mono transition border flex items-center justify-between gap-2 " +
+          (isActive
+            ? "bg-sky-500/20 text-sky-300 border-sky-500/40 font-semibold"
+            : "bg-slate-950/80 text-slate-300 border-transparent hover:bg-slate-800 hover:text-white");
+        btn.innerHTML =
+          "<span class='truncate'>" + clip.name + "</span>" +
+          "<span class='text-[10px] text-slate-400 shrink-0'>" + (clip.data.duration || 0) + "f</span>";
+        btn.addEventListener("click", () => {
+          appState.activeClipIndex = idx;
+          appState.currentFrame = 0;
+          document.getElementById("inspectorActiveAnimLabel").textContent = clip.name.replace(/\.blockyanim$/i, "");
+          if (dropdown) dropdown.removeAttribute("open");
+
+          updateUrlSublink(computeModelSublinkHash(appState.activeModelIndex, idx));
+
+          appState.trackBindings = bindClipToRegistry(appState.nodeRegistry, clip.data, appState.enableAliasRemap);
+          const firstTrack = Object.keys(appState.trackBindings)[0];
+          if (firstTrack && !appState.trackBindings[appState.selectedTrackName]) {
+            appState.selectedTrackName = firstTrack;
+          }
+          applyInspectorVisualStyling();
+          rebuildInspectorMotionTrails();
+          rebuildFloatingLabelElements();
+          renderDopesheetBar();
+          renderTrackTelemetryList();
+          renderClipButtons();
+          setFrameAndRefresh(0);
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function renderAttachmentsPanel() {
+      /** Populate the collapsible attachments checklist. */
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const attachments = modelEntry.attachments || [];
+      document.getElementById("attachmentCountBadge").textContent = String(attachments.length);
+      const listEl = document.getElementById("attachmentsListContainer");
+      listEl.innerHTML = "";
+
+      if (attachments.length === 0) {
+        listEl.innerHTML = "<div class='text-xs text-slate-400 py-1'>No external attachments in <span class='mono text-slate-300'>Attachments/</span> for this model.</div>";
+        return;
+      }
+
+      attachments.forEach((att) => {
+        const row = document.createElement("label");
+        row.className = "flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-slate-950/70 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs";
+        row.innerHTML =
+          "<div class='flex items-center gap-2 truncate'>" +
+            "<input type='checkbox' " + (att.enabled !== false ? "checked" : "") + " class='accent-sky-400 rounded cursor-pointer' />" +
+            "<span class='font-medium text-slate-200 truncate'>" + att.name + "</span>" +
+          "</div>" +
+          "<span class='text-[10px] mono text-slate-400 shrink-0'>" + att.repoPath.split("/").pop() + "</span>";
+
+        const checkbox = row.querySelector("input");
+        checkbox.addEventListener("change", () => {
+          att.enabled = checkbox.checked;
+          applyInspectorVisualStyling();
+          const gridInst = appState.gridInstances.find((g) => g.modelIdx === appState.activeModelIndex);
+          if (gridInst) applyCardVisualSettings(gridInst);
+        });
+        listEl.appendChild(row);
+      });
+    }
+
+    // Keyframe channels shown as separate dopesheet sections.
+    const KEYFRAME_CHANNELS = [
+      { key: "position", label: "Position", aliases: ["position", "translation"] },
+      { key: "rotation", label: "Rotation", aliases: ["orientation", "rotation", "quaternion"] },
+      { key: "scale", label: "Scale", aliases: ["shapeStretch", "scale", "stretch"] },
+      { key: "uv", label: "UV Shape", aliases: ["shapeTextureOffset", "textureOffset", "shapeUV", "shapeUv", "uv", "shapeTexture"] },
+      { key: "visibility", label: "Visibility", aliases: ["shapeVisible", "visible", "visibility", "hidden", "opacity"] }
+    ];
+    function getChannelKeyframes(trackData, channel) {
+      /** Merge the keyframe arrays of every channel. */
+      if (!trackData) return [];
+      let out = [];
+      channel.aliases.forEach((field) => { if (Array.isArray(trackData[field])) out = out.concat(trackData[field]); });
+      return out;
+    }
+    function collectChannelKeyframeTimes(nodeAnims, channel) {
+      const set = new Set();
+      Object.keys(nodeAnims || {}).forEach((tName) => {
+        getChannelKeyframes(nodeAnims[tName], channel).forEach((k) => { if (k && typeof k.time === "number") set.add(k.time); });
+      });
+      return Array.from(set).sort((a, b) => a - b);
+    }
+    function countKeyframesForChannels(tracks) {
+      let n = 0;
+      KEYFRAME_CHANNELS.forEach((ch) => { n += getChannelKeyframes(tracks, ch).length; });
+      return n;
+    }
+
+    function getActiveKeyframeTimes() {
+      /** Times used by the Prev/Next Key buttons. */
+      if (appState.showAllKeyframes) return collectAllKeyframeTimes();
+      const binding = appState.trackBindings[appState.selectedTrackName];
+      if (!binding) return collectAllKeyframeTimes();
+      const set = new Set();
+      KEYFRAME_CHANNELS.forEach((ch) => {
+        getChannelKeyframes(binding.tracks, ch).forEach((k) => { if (k && typeof k.time === "number") set.add(k.time); });
+      });
+      return Array.from(set).sort((a, b) => a - b);
+    }
+
+    function collectAllKeyframeTimes() {
+      /** Gather sorted unique keyframe timestamps. */
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const activeClip = getModelClip(modelEntry, appState.activeClipIndex).data;
+      const nodeAnims = activeClip.nodeAnimations || {};
+      const timeSet = new Set();
+
+      Object.keys(nodeAnims).forEach((tName) => {
+        KEYFRAME_CHANNELS.forEach((ch) => {
+          getChannelKeyframes(nodeAnims[tName], ch).forEach((k) => { if (k && typeof k.time === "number") timeSet.add(k.time); });
+        });
+      });
+
+      return Array.from(timeSet).sort((a, b) => a - b);
+    }
+
+    function renderDopesheetBar() {
+      /** Render one dopesheet row per keyframe channel that has keyframes. */
+      const container = document.getElementById("dopesheetSections");
+      if (!container) return;
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const activeClip = getModelClip(modelEntry, appState.activeClipIndex).data;
+      const duration = activeClip.duration || 90;
+      // Only the selected node's keyframes are shown
+      const selectedBinding = appState.trackBindings[appState.selectedTrackName];
+      const nodeAnims = (!appState.showAllKeyframes && selectedBinding)
+        ? { [appState.selectedTrackName]: selectedBinding.tracks }
+        : (activeClip.nodeAnimations || {});
+      syncAllKeyframesButton();
+      const timeSet = new Set();
+      KEYFRAME_CHANNELS.forEach((ch) => {
+        collectChannelKeyframeTimes(nodeAnims, ch).forEach((time) => timeSet.add(time));
+      });
+      const allTimes = Array.from(timeSet).sort((a, b) => a - b);
+
+      const summaryEl = document.getElementById("dopesheetSummary");
+      if (summaryEl) summaryEl.textContent = allTimes.length + " keyframes";
+
+      let html = "";
+      KEYFRAME_CHANNELS.forEach((ch) => {
+        const times = collectChannelKeyframeTimes(nodeAnims, ch);
+        if (!times.length) return; // no keyframes on this channel
+        let kfCount = 0;
+        Object.keys(nodeAnims).forEach((tName) => { kfCount += getChannelKeyframes(nodeAnims[tName], ch).length; });
+        html += "<div class='flex items-center gap-2'>"
+          + "<div class='w-28 shrink-0 text-[11px] font-semibold text-slate-200 mono'>" + ch.label
+          + " <span class='text-slate-500 font-normal'>" + kfCount + " kf</span></div>"
+          + "<div class='dopesheet-row-bar relative h-6 flex-1 bg-slate-900 rounded border border-slate-800 overflow-hidden cursor-pointer' data-channel='" + ch.key + "'>"
+          + "<div class='dopesheet-playhead absolute top-0 bottom-0 w-0.5 bg-sky-400 z-20 pointer-events-none' style='left:0%'></div>";
+        times.forEach((time) => {
+          const pct = Math.max(1, Math.min(99, (time / duration) * 100));
+          html += "<div data-kftime='" + time + "' title='" + ch.label + " - Frame " + time + "' class='dopesheet-kf absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-sky-300 hover:bg-white border border-slate-950 cursor-pointer z-10' style='left:" + pct.toFixed(2) + "%'></div>";
+        });
+        html += "</div></div>";
+      });
+      if (!html) html = "<div class='text-xs text-slate-500 mono px-1 py-1'>No keyframes for the selected node</div>";
+      container.innerHTML = html;
+
+      container.querySelectorAll(".dopesheet-kf").forEach((m) => {
+        m.addEventListener("click", (e) => {
+          e.stopPropagation();
+          appState.isPlaying = false;
+          updatePlayPauseButton();
+          setFrameAndRefresh(parseFloat(m.getAttribute("data-kftime")));
+        });
+      });
+      container.querySelectorAll(".dopesheet-row-bar").forEach((bar) => {
+        bar.addEventListener("click", (e) => {
+          const rect = bar.getBoundingClientRect();
+          if (rect.width > 0) {
+            appState.isPlaying = false;
+            updatePlayPauseButton();
+            setFrameAndRefresh(((e.clientX - rect.left) / rect.width) * duration);
+          }
+        });
+      });
+    }
+
+    function classifyTrackGroup(trackName) {
+      /** Categorize a bone track name into core. */
+      if (trackName.indexOf("L-") === 0 || trackName.indexOf("L_") === 0) return "left";
+      if (trackName.indexOf("R-") === 0 || trackName.indexOf("R_") === 0) return "right";
+      return "core";
+    }
+
+    function renderTrackTelemetryList() {
+      /** Render the scrollable list of animated bone tracks in the right-hand inspector. */
+      const container = document.getElementById("trackListContainer");
+      const trackNames = Object.keys(appState.trackBindings);
+      const query = appState.trackSearchQuery.trim().toLowerCase();
+
+      // All tracks are always shown, sorted by keyframe count
+      const filtered = trackNames.filter((tName) => {
+        if (query && tName.toLowerCase().indexOf(query) === -1 && appState.trackBindings[tName].resolvedNodeName.toLowerCase().indexOf(query) === -1) {
+          return false;
+        }
+        return true;
+      }).sort((a, b) => {
+        const diff = countKeyframesForChannels(appState.trackBindings[b].tracks) - countKeyframesForChannels(appState.trackBindings[a].tracks);
+        return diff !== 0 ? diff : a.localeCompare(b);
+      });
+
+      document.getElementById("trackListCount").textContent = String(filtered.length);
+      container.innerHTML = "";
+
+      if (filtered.length === 0) {
+        container.innerHTML = "<div class='text-xs text-slate-400 py-2'>No animated bone tracks in this clip.</div>";
+        return;
+      }
+
+      for (let i = 0; i < filtered.length; i++) {
+        const tName = filtered[i];
+        const binding = appState.trackBindings[tName];
+        const isSelected = tName === appState.selectedTrackName;
+        const totalKfs = countKeyframesForChannels(binding.tracks);
+        const kfTimesSet = new Set();
+        KEYFRAME_CHANNELS.forEach((ch) => {
+          getChannelKeyframes(binding.tracks, ch).forEach((k) => { if (k && typeof k.time === "number") kfTimesSet.add(k.time); });
+        });
+        const kfTimes = Array.from(kfTimesSet).sort((a, b) => a - b);
+
+        const row = document.createElement("div");
+        row.setAttribute("data-track-row", tName);
+        row.className = "p-2.5 h-[58px] box-border overflow-hidden rounded-lg cursor-pointer transition border flex flex-col justify-between " +
+          (isSelected ? "bg-sky-500/15 border-sky-500/40" : "bg-slate-950/60 border-slate-800/70 hover:border-slate-700");
+
+        const aliasBadge = binding.isAlias
+          ? "<span class='text-[10px] text-slate-400 mono truncate'>&rarr; " + binding.resolvedNodeName + "</span>"
+          : "";
+
+        row.innerHTML =
+          "<div class='flex items-center justify-between gap-2 min-w-0'>" +
+            "<div class='font-semibold text-xs mono text-white flex items-center gap-1.5 min-w-0 truncate'>" +
+              "<span class='w-1.5 h-1.5 rounded-full shrink-0 " + (isSelected ? "bg-white" : "bg-sky-400") + "'></span>" +
+              "<span class='truncate'>" + tName + "</span>" +
+              aliasBadge +
+            "</div>" +
+            "<span class='px-1.5 py-0.5 text-[10px] rounded bg-slate-900 text-slate-300 mono shrink-0'>" + totalKfs + " kf</span>" +
+          "</div>" +
+          "<div class='flex items-center justify-between text-[11px] mono text-slate-400 gap-2 min-w-0'>" +
+            "<span data-row-rot='" + tName + "' class='text-sky-300 shrink-0 w-[195px] truncate'>dRot: 0.0°, 0.0°, 0.0°</span>" +
+            "<span class='text-slate-400 truncate text-right'>t=[" + kfTimes.slice(0, 5).join(", ") + (kfTimes.length > 5 ? "..." : "") + "]</span>" +
+          "</div>";
+
+        row.addEventListener("click", () => {
+          selectTrack(tName);
+        });
+        container.appendChild(row);
+      }
+    }
+
+    function updateLiveTelemetryUI() {
+      /** Refresh numeric HUD counters, timeline slider, playhead. */
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const activeClipObj = getModelClip(modelEntry, appState.activeClipIndex);
+      const activeClip = activeClipObj.data;
+      const duration = activeClip.duration || 90;
+
+      document.getElementById("hudClipTitle").textContent = activeClipObj.name.replace(/\.blockyanim$/i, "");
+      document.getElementById("hudLoopBadge").textContent = activeClip.holdLastKeyframe ? "HOLD LAST" : "LOOP";
+      document.getElementById("hudFrameCounter").textContent = appState.currentFrame.toFixed(1) + " / " + duration + "f";
+
+      const curSec = appState.currentFrame / appState.fps;
+      const totSec = duration / appState.fps;
+      document.getElementById("hudTimeCounter").textContent = curSec.toFixed(2) + "s / " + totSec.toFixed(2) + "s";
+
+      const trackNames = Object.keys(appState.trackBindings);
+      let totalKfs = 0;
+      trackNames.forEach((t) => {
+        totalKfs += countKeyframesForChannels(appState.trackBindings[t].tracks);
+      });
+      document.getElementById("hudTrackCount").textContent = trackNames.length + " tracks (" + totalKfs + " kf)";
+
+      const slider = document.getElementById("timelineSlider");
+      slider.max = String(duration);
+      slider.value = String(appState.currentFrame);
+
+      const pct = Math.max(0, Math.min(100, (appState.currentFrame / duration) * 100));
+      document.querySelectorAll(".dopesheet-playhead").forEach((playhead) => {
+        playhead.style.left = pct.toFixed(2) + "%";
+      });
+
+      const selName = appState.selectedTrackName;
+      const selTelem = appState.liveTelemetry[selName];
+      const selBinding = appState.trackBindings[selName];
+      if (selTelem && selBinding) {
+        document.getElementById("selectedBoneBadge").textContent = selBinding.isAlias
+          ? selName + " -> " + selBinding.resolvedNodeName
+          : selName;
+        document.getElementById("selRotEuler").textContent =
+          "X: " + selTelem.eulerDeg.x.toFixed(1) + "° Y: " + selTelem.eulerDeg.y.toFixed(1) + "° Z: " + selTelem.eulerDeg.z.toFixed(1) + "°";
+        document.getElementById("selPosDelta").textContent =
+          "X: " + selTelem.posDelta.x.toFixed(2) + " Y: " + selTelem.posDelta.y.toFixed(2) + " Z: " + selTelem.posDelta.z.toFixed(2);
+        // Absolute orientation
+        const absQuat = selBinding.nodeRecord
+          ? selBinding.nodeRecord.baseQuat.clone().multiply(selTelem.quatDelta)
+          : selTelem.quatDelta;
+        const absEuler = new THREE.Euler().setFromQuaternion(absQuat, "XYZ");
+        document.getElementById("selQuat").textContent =
+          "X: " + THREE.MathUtils.radToDeg(absEuler.x).toFixed(1) + "° Y: " + THREE.MathUtils.radToDeg(absEuler.y).toFixed(1) + "° Z: " + THREE.MathUtils.radToDeg(absEuler.z).toFixed(1) + "°";
+
+        const kfSet = new Set();
+        KEYFRAME_CHANNELS.forEach((ch) => {
+          getChannelKeyframes(selBinding.tracks, ch).forEach((k) => { if (k && typeof k.time === "number") kfSet.add(k.time); });
+        });
+        const kfList = Array.from(kfSet).sort((a, b) => a - b);
+        document.getElementById("selKeyTimes").textContent = "[" + kfList.join(", ") + "]";
+      } else {
+        document.getElementById("selectedBoneBadge").textContent = "Base Pose";
+        document.getElementById("selRotEuler").textContent = "X: 0.0° Y: 0.0° Z: 0.0°";
+        document.getElementById("selPosDelta").textContent = "X: 0.00 Y: 0.00 Z: 0.00";
+        document.getElementById("selQuat").textContent = "X: 0.0° Y: 0.0° Z: 0.0°";
+        document.getElementById("selKeyTimes").textContent = "[]";
+      }
+
+      const rotSpans = document.querySelectorAll("[data-row-rot]");
+      rotSpans.forEach((span) => {
+        const tName = span.getAttribute("data-row-rot");
+        const tl = appState.liveTelemetry[tName];
+        if (tl) {
+          span.textContent = "dRot: " + tl.eulerDeg.x.toFixed(1) + "°, " + tl.eulerDeg.y.toFixed(1) + "°, " + tl.eulerDeg.z.toFixed(1) + "°";
+        }
+      });
+    }
+
+    function syncAllKeyframesButton() {
+      /** Sync the "All Keyframes" . */
+      setToggleButton(document.getElementById("btnToggleAllKeyframes"), appState.showAllKeyframes,
+        "All Keyframes: " + (appState.showAllKeyframes ? "ON" : "OFF"),
+        "px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition mono ");
+    }
+    function selectTrack(trackName) {
+      /** Highlight the chosen bone track and filter keyframes. */
+      if (trackName !== appState.selectedTrackName) appState.showAllKeyframes = false;
+      appState.selectedTrackName = trackName;
+      applyInspectorVisualStyling();
+      renderTrackTelemetryList();
+      renderDopesheetBar();
+      rebuildInspectorMotionTrails();
+      syncAllKeyframesButton();
+      updateLiveTelemetryUI();
+    }
+
+    function setFrameAndRefresh(frameVal) {
+      /** Set the active animation frame in the inspector. */
+      const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+      const activeClip = getModelClip(modelEntry, appState.activeClipIndex).data;
+      const duration = activeClip.duration || 90;
+      let clamped = frameVal % duration;
+      if (clamped < 0) clamped += duration;
+      appState.currentFrame = clamped;
+
+      applyPoseToRig(appState.nodeRegistry, appState.trackBindings, activeClip, appState.currentFrame, appState.liveTelemetry);
+      if (inspectorRig) {
+        inspectorRig.rootGroup.updateMatrixWorld(true);
+        rebuildBoneLinesForRig(
+          appState.nodeRegistry,
+          inspectorRig.skeletonGroup,
+          appState.showPivots || appState.visualMode === "skeleton"
+        );
+      }
+      updateLiveTelemetryUI();
+    }
+
+    // Wire all UI controls
+    // =========================================================
+    function updatePlayPauseButton() {
+      /** Synchronize the inspector Play/Pause button. */
+      const btn = document.getElementById("btnPlayPause");
+      const label = document.getElementById("playPauseIcon");
+      if (appState.isPlaying) {
+        label.textContent = "Pause";
+        btn.className = "px-3 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition";
+      } else {
+        label.textContent = "Play";
+        btn.className = "px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 border border-sky-500/40 font-semibold text-xs flex items-center gap-1.5 transition";
+      }
+    }
+
+    function wireUiControls() {
+      /** Attach event listeners to navigation sub-links. */
+      document.getElementById("btnBackToGrid").addEventListener("click", (e) => {
+        e.preventDefault();
+        switchMainTab("showcase");
+      });
+
+      const sublinkBack = document.getElementById("sublinkBackShowcase");
+      if (sublinkBack) {
+        sublinkBack.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchMainTab("showcase");
+        });
+      }
+
+      const homeLink = document.getElementById("headerHomeLink");
+      if (homeLink) {
+        homeLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchMainTab("showcase");
+        });
+      }
+
+      document.getElementById("btnResetInspectorTarget").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = cam.theta;
+        inspectorOrbit.phi = cam.phi;
+        inspectorOrbit.radius = cam.radius;
+        inspectorOrbit.target.set(0, cam.targetY, cam.targetZ);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("inputGridSearch").addEventListener("input", (e) => {
+        appState.gridSearchQuery = e.target.value;
+        buildShowcaseGridCards();
+      });
+
+      document.getElementById("btnGridToggleTextures").addEventListener("click", (e) => {
+        appState.gridShowTextures = !appState.gridShowTextures;
+        setToggleButton(e.currentTarget, appState.gridShowTextures, "Grid Textures: " + (appState.gridShowTextures ? "ON" : "OFF"), GLOBAL_TOGGLE_BASE);
+        REPO_CATALOG.forEach((m) => {
+          perModelDisplayConfigs[m.id].showTexture = appState.gridShowTextures;
+        });
+        applyGlobalGridDisplayOptions();
+      });
+
+      document.getElementById("btnGridToggleWireframe").addEventListener("click", (e) => {
+        appState.gridShowWireframe = !appState.gridShowWireframe;
+        setToggleButton(e.currentTarget, appState.gridShowWireframe, "Grid Wireframe: " + (appState.gridShowWireframe ? "ON" : "OFF"), GLOBAL_TOGGLE_BASE);
+        REPO_CATALOG.forEach((m) => {
+          perModelDisplayConfigs[m.id].showWireframe = appState.gridShowWireframe;
+        });
+        applyGlobalGridDisplayOptions();
+      });
+
+      document.getElementById("btnGridToggleBones").addEventListener("click", (e) => {
+        appState.gridShowBones = !appState.gridShowBones;
+        setToggleButton(e.currentTarget, appState.gridShowBones, "Grid Bones: " + (appState.gridShowBones ? "ON" : "OFF"), GLOBAL_TOGGLE_BASE);
+        REPO_CATALOG.forEach((m) => {
+          perModelDisplayConfigs[m.id].showBones = appState.gridShowBones;
+        });
+        applyGlobalGridDisplayOptions();
+      });
+
+      document.getElementById("btnGridToggleSpin").addEventListener("click", (e) => {
+        appState.autoRotateModels = !appState.autoRotateModels;
+        const label = "Auto-Rotate: " + (appState.autoRotateModels ? "ON" : "OFF");
+        setToggleButton(e.currentTarget, appState.autoRotateModels, label, GLOBAL_TOGGLE_BASE);
+        REPO_CATALOG.forEach((m) => {
+          perModelDisplayConfigs[m.id].autoRotate = appState.autoRotateModels;
+        });
+        setToggleButton(document.getElementById("btnToggleInspectorSpin"), appState.autoRotateModels, label, INSPECTOR_TOGGLE_BASE);
+        applyGlobalGridDisplayOptions();
+      });
+
+      document.getElementById("btnToggleInspectorSpin").addEventListener("click", (e) => {
+        appState.autoRotateModels = !appState.autoRotateModels;
+        const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+        if (modelEntry && perModelDisplayConfigs[modelEntry.id]) {
+          perModelDisplayConfigs[modelEntry.id].autoRotate = appState.autoRotateModels;
+        }
+        const label = "Auto-Rotate: " + (appState.autoRotateModels ? "ON" : "OFF");
+        setToggleButton(e.currentTarget, appState.autoRotateModels, label, INSPECTOR_TOGGLE_BASE);
+        setToggleButton(document.getElementById("btnGridToggleSpin"), appState.autoRotateModels, label, GLOBAL_TOGGLE_BASE);
+      });
+
+      document.getElementById("btnGridPlayAll").addEventListener("click", (e) => {
+        appState.gridPlayAll = !appState.gridPlayAll;
+        setToggleButton(e.currentTarget, appState.gridPlayAll, appState.gridPlayAll ? "Pause All" : "Play All", GLOBAL_TOGGLE_BASE);
+        appState.gridInstances.forEach((inst) => setCardPlayback(inst, appState.gridPlayAll));
+      });
+
+      document.getElementById("btnPlayPause").addEventListener("click", () => {
+        appState.isPlaying = !appState.isPlaying;
+        updatePlayPauseButton();
+      });
+
+      document.getElementById("btnPrevFrame").addEventListener("click", () => {
+        appState.isPlaying = false;
+        updatePlayPauseButton();
+        setFrameAndRefresh(Math.round(appState.currentFrame - 1));
+      });
+
+      document.getElementById("btnNextFrame").addEventListener("click", () => {
+        appState.isPlaying = false;
+        updatePlayPauseButton();
+        setFrameAndRefresh(Math.round(appState.currentFrame + 1));
+      });
+
+      document.getElementById("btnPrevKey").addEventListener("click", () => {
+        const times = getActiveKeyframeTimes();
+        if (times.length === 0) return;
+        appState.isPlaying = false;
+        updatePlayPauseButton();
+        let target = times[times.length - 1];
+        for (let i = times.length - 1; i >= 0; i--) {
+          if (times[i] < appState.currentFrame - 0.2) {
+            target = times[i];
+            break;
+          }
+        }
+        setFrameAndRefresh(target);
+      });
+
+      document.getElementById("btnNextKey").addEventListener("click", () => {
+        const times = getActiveKeyframeTimes();
+        if (times.length === 0) return;
+        appState.isPlaying = false;
+        updatePlayPauseButton();
+        let target = times[0];
+        for (let i = 0; i < times.length; i++) {
+          if (times[i] > appState.currentFrame + 0.2) {
+            target = times[i];
+            break;
+          }
+        }
+        setFrameAndRefresh(target);
+      });
+
+      document.getElementById("btnToggleAllKeyframes").addEventListener("click", () => {
+        appState.showAllKeyframes = !appState.showAllKeyframes;
+        syncAllKeyframesButton();
+        renderDopesheetBar();
+      });
+
+      document.getElementById("timelineSlider").addEventListener("input", (e) => {
+        appState.isPlaying = false;
+        updatePlayPauseButton();
+        setFrameAndRefresh(parseFloat(e.target.value));
+      });
+
+      document.getElementById("selectSpeed").addEventListener("change", (e) => {
+        appState.speed = parseFloat(e.target.value) || 1.0;
+      });
+
+      document.getElementById("selectFps").addEventListener("change", (e) => {
+        appState.fps = parseInt(e.target.value, 10) || 60;
+        updateLiveTelemetryUI();
+      });
+
+      const modeButtons = [
+        { id: "btnModeTextured", mode: "textured" },
+        { id: "btnModeGhost", mode: "ghost" },
+        { id: "btnModeSkeleton", mode: "skeleton" },
+        { id: "btnModeSolid", mode: "solid" }
+      ];
+      modeButtons.forEach((item) => {
+        document.getElementById(item.id).addEventListener("click", () => {
+          appState.visualMode = item.mode;
+          modeButtons.forEach((b) => {
+            const el = document.getElementById(b.id);
+            el.className = b.mode === appState.visualMode
+              ? "px-2 py-1 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/40 transition"
+              : "px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition";
+          });
+          applyInspectorVisualStyling();
+        });
+      });
+
+      const labelButtons = [
+        { id: "btnLabelsKey", mode: "key" },
+        { id: "btnLabelsAll", mode: "all" },
+        { id: "btnLabelsSelected", mode: "selected" },
+        { id: "btnLabelsOff", mode: "off" }
+      ];
+      labelButtons.forEach((item) => {
+        document.getElementById(item.id).addEventListener("click", () => {
+          appState.labelMode = item.mode;
+          labelButtons.forEach((b) => {
+            const el = document.getElementById(b.id);
+            el.className = b.mode === appState.labelMode
+              ? "px-2 py-1 rounded text-[11px] font-medium bg-sky-500/20 text-sky-300 border border-sky-500/40 transition"
+              : "px-2 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-slate-200 border border-slate-800 transition";
+          });
+        });
+      });
+
+      ["btnCamFront", "btnCamThreeQuarter", "btnCamSide", "btnCamHands", "btnCamHead"].forEach((camId) => {
+        const camBtn = document.getElementById(camId);
+        if (camBtn) camBtn.addEventListener("click", () => {
+          ["btnCamFront", "btnCamThreeQuarter", "btnCamSide", "btnCamHands", "btnCamHead"].forEach((otherId) => {
+            const other = document.getElementById(otherId);
+            if (!other) return;
+            const wide = otherId === "btnCamHead" ? " col-span-2" : "";
+            other.className = "px-2 py-1 text-[11px] rounded border font-medium transition" + wide + (otherId === camId
+              ? " bg-sky-500/15 text-sky-300 border-sky-500/30"
+              : " bg-slate-950 hover:bg-slate-800 text-slate-200 border-slate-800");
+            other.setAttribute("aria-pressed", otherId === camId ? "true" : "false");
+          });
+        });
+      });
+
+      document.getElementById("btnCamFront").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = 0;
+        inspectorOrbit.phi = 1.32;
+        inspectorOrbit.radius = cam.radius;
+        inspectorOrbit.target.set(0, cam.targetY, cam.targetZ);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("btnCamThreeQuarter").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = cam.theta;
+        inspectorOrbit.phi = cam.phi;
+        inspectorOrbit.radius = cam.radius;
+        inspectorOrbit.target.set(0, cam.targetY, cam.targetZ);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("btnCamSide").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = Math.PI / 2;
+        inspectorOrbit.phi = 1.32;
+        inspectorOrbit.radius = cam.radius;
+        inspectorOrbit.target.set(0, cam.targetY, cam.targetZ);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("btnCamHands").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = 0.35;
+        inspectorOrbit.phi = 1.3;
+        inspectorOrbit.radius = Math.max(90, cam.radius * 0.58);
+        inspectorOrbit.target.set(0, cam.targetY * 0.65, cam.targetZ + 4);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("btnCamHead").addEventListener("click", () => {
+        const cam = REPO_CATALOG[appState.activeModelIndex].camera;
+        inspectorOrbit.theta = 0.22;
+        inspectorOrbit.phi = 1.28;
+        inspectorOrbit.radius = Math.max(85, cam.radius * 0.52);
+        inspectorOrbit.target.set(0, cam.targetY * 1.35, cam.targetZ + 4);
+        updateInspectorCameraFromOrbit();
+      });
+
+      document.getElementById("btnToggleTexture").addEventListener("click", (e) => {
+        appState.showTexture = !appState.showTexture;
+        setToggleButton(e.currentTarget, appState.showTexture, "Texture: " + (appState.showTexture ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+        applyInspectorVisualStyling();
+      });
+
+      document.getElementById("btnToggleWireframe").addEventListener("click", (e) => {
+        appState.showWireframe = !appState.showWireframe;
+        setToggleButton(e.currentTarget, appState.showWireframe, "Wireframe: " + (appState.showWireframe ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+        applyInspectorVisualStyling();
+      });
+
+      document.getElementById("btnTogglePivots").addEventListener("click", (e) => {
+        appState.showPivots = !appState.showPivots;
+        setToggleButton(e.currentTarget, appState.showPivots, "Joints: " + (appState.showPivots ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+        const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+        if (modelEntry && perModelDisplayConfigs[modelEntry.id]) {
+          perModelDisplayConfigs[modelEntry.id].showBones = appState.showPivots;
+        }
+        applyInspectorVisualStyling();
+      });
+
+      document.getElementById("btnToggleAttachments").addEventListener("click", (e) => {
+        appState.showAttachments = !appState.showAttachments;
+        setToggleButton(e.currentTarget, appState.showAttachments, "Attachments: " + (appState.showAttachments ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+        applyInspectorVisualStyling();
+      });
+
+      document.getElementById("btnToggleTrails").addEventListener("click", (e) => {
+        appState.showTrails = !appState.showTrails;
+        setToggleButton(e.currentTarget, appState.showTrails, "Arcs: " + (appState.showTrails ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+        rebuildInspectorMotionTrails();
+      });
+
+      document.getElementById("btnToggleGrid").addEventListener("click", (e) => {
+        appState.showGrid = !appState.showGrid;
+        if (inspectorGrid) inspectorGrid.visible = appState.showGrid;
+        setToggleButton(e.currentTarget, appState.showGrid, "Grid: " + (appState.showGrid ? "ON" : "OFF"), INSPECTOR_TOGGLE_BASE);
+      });
+
+      document.getElementById("inputSearchTrack").addEventListener("input", (e) => {
+        appState.trackSearchQuery = e.target.value;
+        renderTrackTelemetryList();
+      });
+
+      document.getElementById("selectedBoneBadge").addEventListener("click", () => {
+        const binding = appState.trackBindings[appState.selectedTrackName];
+        if (binding && binding.nodeRecord) {
+          const wp = new THREE.Vector3();
+          binding.nodeRecord.pivotGroup.getWorldPosition(wp);
+          inspectorOrbit.target.copy(wp);
+          updateInspectorCameraFromOrbit();
+        }
+      });
+
+      window.addEventListener("hashchange", applyRouteFromHash);
+      window.addEventListener("focus", () => {
+        syncRepositoryFilesAutomatically();
+      });
+    }
+
+    // Main animation loop with per-model rotation
+    // =========================================================
+    let lastTimestamp = performance.now();
+
+    function animateLoop(now) {
+      /** Advance animation clocks. */
+      requestAnimationFrame(animateLoop);
+
+      const dtSeconds = Math.min(0.1, (now - lastTimestamp) / 1000);
+      lastTimestamp = now;
+
+      if (appState.activeTab === "showcase") {
+        for (let i = 0; i < appState.gridInstances.length; i++) {
+          const inst = appState.gridInstances[i];
+          const mCfg = perModelDisplayConfigs[inst.modelEntry.id];
+          const clipObj = getModelClip(inst.modelEntry, inst.activeAnimIdx);
+          const clipData = clipObj.data;
+          const duration = clipData.duration || 90;
+
+          if (mCfg.autoRotate && !inst.isDragging && !inst.isPanning) {
+            inst.orbit.theta += dtSeconds * appState.rotationSpeedRad;
+            inst.syncCardCamera();
+          }
+
+          if (inst.isPlaying) {
+            let nextFrame = inst.currentFrame + dtSeconds * 60;
+            if (nextFrame >= duration) {
+              const animCount = (inst.modelEntry.animations || []).length;
+              if (inst.autoPlayNext !== false && animCount > 1) {
+                // Auto-Play, move on to the next animation
+                inst.activeAnimIdx = (inst.activeAnimIdx + 1) % animCount;
+                inst.currentFrame = nextFrame - duration;
+                const nextClip = getModelClip(inst.modelEntry, inst.activeAnimIdx);
+                inst.trackBindings = bindClipToRegistry(inst.rig.nodeRegistry, nextClip.data, true);
+                updateCardAnimationDropdownUI(inst);
+                inst.currentFrame = Math.min(inst.currentFrame, (nextClip.data.duration || duration) - 0.01);
+              } else {
+                inst.currentFrame = nextFrame % duration; // Auto-Play off
+              }
+            } else {
+              inst.currentFrame = nextFrame;
+            }
+            // Apply the pose of the clip
+            applyPoseToRig(inst.rig.nodeRegistry, inst.trackBindings, getModelClip(inst.modelEntry, inst.activeAnimIdx).data, inst.currentFrame, null);
+            inst.rig.rootGroup.updateMatrixWorld(true);
+            rebuildBoneLinesForRig(
+              inst.rig.nodeRegistry,
+              inst.rig.skeletonGroup,
+              mCfg.showBones || mCfg.visualMode === "skeleton" || mCfg.visualMode === "ghost"
+            );
+
+            const readout = inst.cardEl.querySelector("[data-card-frame-readout]");
+            if (readout) {
+              readout.textContent = Math.floor(inst.currentFrame) + "f / " + (getModelClip(inst.modelEntry, inst.activeAnimIdx).data.duration || duration) + "f";
+            }
+          }
+          inst.renderer.render(inst.scene, inst.camera);
+        }
+      } else {
+        if (appState.autoRotateModels && !isDraggingInspectorOrbit && !isPanningInspectorOrbit) {
+          inspectorOrbit.theta += dtSeconds * appState.rotationSpeedRad;
+          updateInspectorCameraFromOrbit();
+        }
+
+        if (appState.isPlaying) {
+          const modelEntry = REPO_CATALOG[appState.activeModelIndex];
+          const activeClip = getModelClip(modelEntry, appState.activeClipIndex).data;
+          const duration = activeClip.duration || 90;
+          const nextFrame = appState.currentFrame + dtSeconds * appState.fps * appState.speed;
+          appState.currentFrame = nextFrame % duration;
+
+          applyPoseToRig(appState.nodeRegistry, appState.trackBindings, activeClip, appState.currentFrame, appState.liveTelemetry);
+          if (inspectorRig) {
+            inspectorRig.rootGroup.updateMatrixWorld(true);
+            rebuildBoneLinesForRig(
+              appState.nodeRegistry,
+              inspectorRig.skeletonGroup,
+              appState.showPivots || appState.visualMode === "skeleton"
+            );
+          }
+          updateLiveTelemetryUI();
+        }
+        inspectorRenderer.render(inspectorScene, inspectorCamera);
+        updateFloatingLabelsPositionAndData();
+      }
+    }
+
+    // Bootstrap application on load
+    // =========================================================
+    window.addEventListener("load", async () => {
+      initInspectorScene();
+      wireUiControls();
+      await syncRepositoryFilesAutomatically(); // discover models/attachments/animations, then build the UI
+      updateHeaderCounts();
+      requestAnimationFrame(animateLoop);
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4e698f34f0d9e1f',t:'MTc5MjY1MjEzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
