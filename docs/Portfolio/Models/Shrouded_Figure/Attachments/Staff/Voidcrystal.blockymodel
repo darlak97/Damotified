@@ -1,0 +1,418 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "R-Attachment",
+      "position": {"x": 0, "y": 45, "z": 0},
+      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+      "shape": {
+        "type": "none",
+        "offset": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat"
+      },
+      "children": [
+        {
+          "id": "2",
+          "name": "Handle",
+          "position": {"x": 0, "y": 19, "z": 0},
+          "orientation": {"x": -0.5, "y": -0.5, "z": 0.5, "w": 0.5},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "3",
+              "name": "Crystal_Void_Staff",
+              "position": {"x": 21.58187, "y": -0.57043, "z": 1.46327},
+              "orientation": {"x": 0.46854, "y": 0.52959, "z": -0.47771, "w": 0.52133},
+              "shape": {
+                "type": "quad",
+                "offset": {"x": -8.10708, "y": 75.36492, "z": 3.20165},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 4, "y": 13},
+                  "normal": "+Z"
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {"x": 5, "y": 34},
+                    "mirror": {"x": true, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "fullbright"
+              },
+              "children": [
+                {
+                  "id": "4",
+                  "name": "Crystal-Part5",
+                  "position": {"x": 15.5, "y": -29.5, "z": 0},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "quad",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 8, "y": 22},
+                      "normal": "+Z"
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {"x": 1, "y": 11},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "5",
+                  "name": "Crystal-Part2",
+                  "position": {"x": 11.25, "y": -145.5, "z": -10},
+                  "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": -1.5, "y": 30.5, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 6, "y": 21, "z": 6}
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 24, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 24, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 18, "y": 106},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 24, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 11, "y": 31},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 11, "y": 31},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "6",
+                  "name": "Crystal-Part3",
+                  "position": {"x": 11.25, "y": -145.5, "z": -10},
+                  "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 1.5, "y": 1, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 6, "y": 32, "z": 6}
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 3, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 9, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 3, "y": 95},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 9, "y": 127},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 11, "y": 8},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 11, "y": 8},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "7",
+                  "name": "Crystal-Part1",
+                  "position": {"x": 11.25, "y": -145.5, "z": -10},
+                  "orientation": {"x": 0.03953, "y": 0.42222, "z": 0.01843, "w": 0.90545},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": -2.8, "y": 74.7, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 6, "y": 60, "z": 6}
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 18, "y": 105},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 24, "y": 105},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 18, "y": 45},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 24, "y": 45},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 11, "y": 15},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 11, "y": 15},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "8",
+                  "name": "Crystal-Part4",
+                  "position": {"x": 11.25, "y": -145.5, "z": -10},
+                  "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": -3, "y": 139, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 6, "y": 42, "z": 6}
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 18, "y": 44},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 24, "y": 44},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 18, "y": 44},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 24, "y": 2},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 11, "y": 23},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 11, "y": 23},
+                        "mirror": {"x": false, "y": true},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "9",
+                  "name": "Fragment--C1",
+                  "position": {"x": 8.5, "y": 17, "z": 3},
+                  "orientation": {"x": 0.04835, "y": 0.38216, "z": 0.02003, "w": 0.92261},
+                  "shape": {
+                    "type": "quad",
+                    "offset": {"x": -1, "y": 0.5, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 8, "y": 9},
+                      "normal": "+Z",
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {"x": 1, "y": 1},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "10",
+                  "name": "Fragment--C2",
+                  "position": {"x": 8.5, "y": 17, "z": 3},
+                  "orientation": {"x": 0.00814, "y": 0.9224, "z": 0.02829, "w": 0.38512},
+                  "shape": {
+                    "type": "quad",
+                    "offset": {"x": -0.7, "y": 0.5, "z": -1},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 8, "y": 9},
+                      "normal": "+Z",
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {"x": 1, "y": 1},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "11",
+                  "name": "Crystal-Part6",
+                  "position": {"x": -0.75, "y": -43.5, "z": 0},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "quad",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 4, "y": 22},
+                      "normal": "+Z"
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {"x": 6, "y": 34},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "12",
+                  "name": "Crystal-Part7",
+                  "position": {"x": 5.25, "y": -133.5, "z": 0},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "quad",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 4, "y": 22},
+                      "normal": "+Z"
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {"x": 1, "y": 34},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "fullbright"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "character",
+  "lod": "auto"
+}
