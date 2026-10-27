@@ -57,7 +57,7 @@
 <body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-sky-500/30">
   <header class="sticky top-0 border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-md px-4 py-3 flex flex-wrap items-center justify-between gap-3 z-[100]">
     <div class="flex items-center gap-3">
-      <a href="#/showcase" id="headerHomeLink" class="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/40 flex items-center justify-center font-bold text-sky-300 mono text-xs hover:bg-sky-500/25 transition" title="Return to Showcase Gallery">
+      <a href="/Damotified/Portfolio/" id="headerHomeLink" class="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/40 flex items-center justify-center font-bold text-sky-300 mono text-xs hover:bg-sky-500/25 transition" title="Return to Showcase Gallery">
         3D
       </a>
       <div>
@@ -135,7 +135,7 @@
           <div>
             <div class="font-semibold text-white mb-1">All in BLockBench</div>
             <p class="text-slate-400 leading-relaxed">
-              All animations were created for <span class="mono text-sky-300">Hytale</span>. <br> I've been practicing and experimenting throughout these past few months, constantly improving my Hand.
+              All animations were created for <span class="mono text-sky-300">Hytale</span>. <br> I've been practicing and experimenting throughout these past few months, constantly improving my skills.
             </p>
           </div>
         </div>
@@ -670,7 +670,6 @@
     }
 
     function applyBoxTextureUvs(boxGeom, texLayout, size, texWidth, texHeight) {
-      /** Map per-face Hytale textureLayout coordinates. */
       if (!texLayout || !texWidth || !texHeight) {
         boxGeom.setIndex([]);
         return false;
@@ -726,7 +725,6 @@
     }
 
     function applyQuadTextureUvs(planeGeom, texLayout, size, texWidth, texHeight) {
-      /** Map Hytale front textureLayout coordinates. */
       if (!texLayout || !texWidth || !texHeight) {
         planeGeom.setIndex([]);
         return false;
@@ -903,6 +901,7 @@
 
             meshObj = new THREE.Mesh(geom, mat);
             meshObj.scale.copy(baseStretch);
+            if (geom.attributes.uv) meshObj.userData.baseUv = Float32Array.from(geom.attributes.uv.array);
 
             const edges = new THREE.EdgesGeometry(geom);
             const wireMat = new THREE.LineBasicMaterial({
@@ -934,6 +933,8 @@
           baseQuat: new THREE.Quaternion(ori.x || 0, ori.y || 0, ori.z || 0, ori.w !== undefined ? ori.w : 1),
           baseStretch: baseStretch,
           textureMap: texObj,
+          textureWidth: texW,
+          textureHeight: texH,
           pivotGroup: pivotGroup,
           shapeGroup: shapeGroup,
           parentPivotGroup: parentPivotGroup,
@@ -1098,10 +1099,10 @@
       for (let i = 0; i < keyframes.length - 1; i++) {
         const k0 = keyframes[i];
         const k1 = keyframes[i + 1];
-        if (time >= k0.time && time <= k1.time) {
+        if (time >= k0.time && time < k1.time) {
           const span = k1.time - k0.time;
           const rawAlpha = span > 0 ? (time - k0.time) / span : 0;
-          const alpha = k0.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha;
+          const alpha = k0.interpolationType === "step" ? 0 : (k0.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha);
           return { k0: k0, k1: k1, alpha: alpha };
         }
       }
@@ -1119,7 +1120,7 @@
 
       const elapsedFromLast = time >= lastKf.time ? (time - lastKf.time) : (duration - lastKf.time + time);
       const rawAlpha = Math.max(0, Math.min(1, elapsedFromLast / wrapSpan));
-      const alpha = lastKf.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha;
+      const alpha = lastKf.interpolationType === "step" ? 0 : (lastKf.interpolationType === "smooth" ? rawAlpha * rawAlpha * (3 - 2 * rawAlpha) : rawAlpha);
       return { k0: lastKf, k1: firstKf, alpha: alpha };
     }
 
@@ -1127,6 +1128,7 @@
       const posDelta = new THREE.Vector3(0, 0, 0);
       const quatDelta = new THREE.Quaternion(0, 0, 0, 1);
       const stretchDelta = new THREE.Vector3(1, 1, 1);
+      const uvDelta = new THREE.Vector2(0, 0);
 
       const posPair = evaluateKeyframePair(trackData.position, frameTime, duration, holdLast);
       if (posPair) {
@@ -1157,7 +1159,13 @@
         );
       }
 
-      return { posDelta: posDelta, quatDelta: quatDelta, stretchDelta: stretchDelta };
+      const uvPair = evaluateKeyframePair(trackData.shapeUvOffset, frameTime, duration, holdLast);
+      if (uvPair) {
+        const u0 = uvPair.k0.delta;
+        uvDelta.set(u0.x || 0, u0.y || 0);
+      }
+
+      return { posDelta: posDelta, quatDelta: quatDelta, stretchDelta: stretchDelta, uvDelta: uvDelta };
     }
 
     function applyPoseToRig(nodeRegistry, trackBindings, clipData, frameTime, telemetryOut) {
@@ -1171,6 +1179,12 @@
         rec.pivotGroup.quaternion.copy(rec.baseQuat);
         if (rec.meshObj) rec.meshObj.scale.copy(rec.baseStretch);
         if (rec.wireObj) rec.wireObj.scale.copy(rec.baseStretch);
+        if (rec._uvShiftApplied && rec.meshObj && rec.meshObj.userData.baseUv) {
+          const uvAttr = rec.meshObj.geometry.attributes.uv;
+          uvAttr.array.set(rec.meshObj.userData.baseUv);
+          uvAttr.needsUpdate = true;
+          rec._uvShiftApplied = false;
+        }
       }
 
       const trackNames = Object.keys(trackBindings);
@@ -1215,6 +1229,18 @@
               rec.baseStretch.y * evalRes.stretchDelta.y,
               rec.baseStretch.z * evalRes.stretchDelta.z
             );
+          }
+          if (rec.meshObj && rec.meshObj.userData.baseUv && (evalRes.uvDelta.x !== 0 || evalRes.uvDelta.y !== 0)) {
+            const uvAttr = rec.meshObj.geometry.attributes.uv;
+            const baseUv = rec.meshObj.userData.baseUv;
+            const shiftU = evalRes.uvDelta.x / (rec.textureWidth || 64);
+            const shiftV = evalRes.uvDelta.y / (rec.textureHeight || 64);
+            for (let vi = 0; vi < uvAttr.array.length; vi += 2) {
+              uvAttr.array[vi] = baseUv[vi] + shiftU;
+              uvAttr.array[vi + 1] = baseUv[vi + 1] + shiftV;
+            }
+            uvAttr.needsUpdate = true;
+            rec._uvShiftApplied = true;
           }
         }
       }
@@ -1671,6 +1697,7 @@ function identifyModelFromAnimation(animJson, filePath) {
       for (const animPath of orphans) { // animations outside Models/<Model>/    Animations/<Model>/
         try { const json = await fetchOnce(encodePath(animPath), true); const target = REPO_CATALOG.find((m) => m.id === identifyModelFromAnimation(json, animPath)); if (target) registerAnimationForModel(target, baseName(animPath), animPath, json); } catch (e) {}
       }
+      REPO_CATALOG.sort((a, b) => ((b.animations || []).length - (a.animations || []).length) || a.title.localeCompare(b.title));
       REPO_CATALOG.forEach((m) => onModelDataLoaded(m));
     }
 
@@ -2890,7 +2917,7 @@ async function syncRepositoryFilesAutomatically() {
       { key: "position", label: "Position", aliases: ["position", "translation"] },
       { key: "rotation", label: "Rotation", aliases: ["orientation", "rotation", "quaternion"] },
       { key: "scale", label: "Scale", aliases: ["shapeStretch", "scale", "stretch"] },
-      { key: "uv", label: "UV Shape", aliases: ["shapeTextureOffset", "textureOffset", "shapeUV", "shapeUv", "uv", "shapeTexture"] },
+      { key: "uv", label: "UV Shape", aliases: ["shapeUvOffset", "shapeTextureOffset", "textureOffset", "shapeUV", "shapeUv", "uv", "shapeTexture"] },
       { key: "visibility", label: "Visibility", aliases: ["shapeVisible", "visible", "visibility", "hidden", "opacity"] }
     ];
     function getChannelKeyframes(trackData, channel) {
@@ -3214,14 +3241,6 @@ async function syncRepositoryFilesAutomatically() {
       const sublinkBack = document.getElementById("sublinkBackShowcase");
       if (sublinkBack) {
         sublinkBack.addEventListener("click", (e) => {
-          e.preventDefault();
-          switchMainTab("showcase");
-        });
-      }
-
-      const homeLink = document.getElementById("headerHomeLink");
-      if (homeLink) {
-        homeLink.addEventListener("click", (e) => {
           e.preventDefault();
           switchMainTab("showcase");
         });
@@ -3619,5 +3638,5 @@ async function syncRepositoryFilesAutomatically() {
       requestAnimationFrame(animateLoop);
     });
   </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4e698f34f0d9e1f',t:'MTc5MjY1MjEzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4e698f34f0d9e1f',t:'MTc5MjY1MjEzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5102c200a130b9b',t:'MTc5MzA4ODA4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
