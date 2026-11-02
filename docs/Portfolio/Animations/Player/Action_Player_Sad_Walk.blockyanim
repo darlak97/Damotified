@@ -1,0 +1,1187 @@
+{
+  "formatVersion": 1,
+  "duration": 146,
+  "holdLastKeyframe": false,
+  "nodeAnimations": {
+    "Belly": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.0143, "y": 0.0624, "z": 0.0284, "w": 0.9975},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.0306, "y": 0.0265, "z": 0.012, "w": 0.9991},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.0837, "y": -0.0326, "z": -0.0251, "w": 0.9956},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.0576, "y": -0.0262, "z": -0.0126, "w": 0.9979},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.0156, "y": 0.0598, "z": 0.0272, "w": 0.9977},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Chest": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.1668, "y": 0.0672, "z": 0.0178, "w": 0.9835},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.1811, "y": -0.044, "z": -0.0037, "w": 0.9825},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.167, "y": 0.0655, "z": 0.0174, "w": 0.9836},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Head": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.0996, "y": -0.0827, "z": -0.0507, "w": 0.9903},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.0905, "y": -0.0376, "z": 0.0327, "w": 0.9946},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.118, "y": 0.0207, "z": 0.0525, "w": 0.9914},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.0905, "y": 0.0376, "z": -0.0327, "w": 0.9946},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.0994, "y": -0.0792, "z": -0.0502, "w": 0.9906},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Arm": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.2263, "y": -0.1628, "z": -0.006, "w": 0.9603},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.2774, "y": 0.0149, "z": -0.0786, "w": 0.9574},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.3507, "y": -0.017, "z": -0.01, "w": 0.9363},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.3172, "y": 0.0014, "z": -0.0445, "w": 0.9473},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.2302, "y": -0.1841, "z": 0.0021, "w": 0.9556},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Calf": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.4109, "y": 0, "z": 0, "w": 0.9117},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": 0.6267, "y": 0, "z": 0, "w": 0.7793},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.6595, "y": 0, "z": 0, "w": 0.7517},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": 0.3657, "y": 0, "z": 0, "w": 0.9307},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 62,
+          "delta": {"x": 0.1272, "y": 0, "z": 0, "w": 0.9919},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.2775, "y": 0, "z": 0, "w": 0.9607},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 82,
+          "delta": {"x": 0.2876, "y": 0, "z": 0, "w": 0.9577},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 83,
+          "delta": {"x": 0.2972, "y": 0, "z": 0, "w": 0.9548},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 84,
+          "delta": {"x": 0.3063, "y": 0, "z": 0, "w": 0.9519},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 87,
+          "delta": {"x": 0.3376, "y": 0, "z": 0, "w": 0.9413},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 90,
+          "delta": {"x": 0.3621, "y": 0, "z": 0, "w": 0.9322},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 93,
+          "delta": {"x": 0.3805, "y": 0, "z": 0, "w": 0.9248},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 96,
+          "delta": {"x": 0.3934, "y": 0, "z": 0, "w": 0.9194},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 97,
+          "delta": {"x": 0.3965, "y": 0, "z": 0, "w": 0.918},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 100,
+          "delta": {"x": 0.403, "y": 0, "z": 0, "w": 0.9152},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 103,
+          "delta": {"x": 0.4076, "y": 0, "z": 0, "w": 0.9132},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 106,
+          "delta": {"x": 0.4103, "y": 0, "z": 0, "w": 0.912},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.4093, "y": 0, "z": 0, "w": 0.9124},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 137,
+          "delta": {"x": 0.3173, "y": 0, "z": 0, "w": 0.9483},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.4025, "y": 0, "z": 0, "w": 0.9154},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Ear": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.095, "y": -0.1532, "z": -0.105, "w": 0.978},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Eye": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": -1.68, "z": 0},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": -1.68, "z": 0},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Eyebrow": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": 0.94, "y": -0.95, "z": -0.06},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.94, "y": -0.95, "z": -0.06},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": 0, "z": -0.0791, "w": 0.9969},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": 0, "z": -0.0791, "w": 0.9969},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Foot": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.2534, "y": 0.002, "z": -0.05, "w": 0.9661},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": -0.0488, "y": 0.0152, "z": -0.0104, "w": 0.9986},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.0522, "y": 0.0258, "z": 0.0013, "w": 0.9983},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": 0.1027, "y": 0.0214, "z": -0.0276, "w": 0.9941},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 62,
+          "delta": {"x": 0.1546, "y": 0.0235, "z": -0.0313, "w": 0.9872},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.0546, "y": 0.0084, "z": -0.0647, "w": 0.9964},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 82,
+          "delta": {"x": 0.0437, "y": 0.0077, "z": -0.0645, "w": 0.9969},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 83,
+          "delta": {"x": 0.033, "y": 0.0071, "z": -0.0642, "w": 0.9974},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 84,
+          "delta": {"x": 0.0225, "y": 0.0064, "z": -0.064, "w": 0.9977},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 87,
+          "delta": {"x": -0.0203, "y": 0.0045, "z": -0.0621, "w": 0.9979},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 90,
+          "delta": {"x": -0.0607, "y": 0.0028, "z": -0.0601, "w": 0.9963},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 93,
+          "delta": {"x": -0.0989, "y": 0.0014, "z": -0.058, "w": 0.9934},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 96,
+          "delta": {"x": -0.1348, "y": 0.0001, "z": -0.056, "w": 0.9893},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 97,
+          "delta": {"x": -0.1462, "y": -0.0003, "z": -0.0553, "w": 0.9877},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 100,
+          "delta": {"x": -0.1677, "y": -0.0017, "z": -0.0549, "w": 0.9843},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 103,
+          "delta": {"x": -0.1882, "y": -0.003, "z": -0.0546, "w": 0.9806},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 106,
+          "delta": {"x": -0.2078, "y": -0.0043, "z": -0.0544, "w": 0.9766},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 109,
+          "delta": {"x": -0.2264, "y": -0.0055, "z": -0.0542, "w": 0.9725},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 112,
+          "delta": {"x": -0.244, "y": -0.0067, "z": -0.0541, "w": 0.9682},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.2497, "y": -0.0063, "z": -0.0541, "w": 0.9668},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 137,
+          "delta": {"x": -0.1888, "y": -0.0008, "z": -0.0463, "w": 0.9809},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.2475, "y": 0.0017, "z": -0.0496, "w": 0.9676},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Forearm": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.14, "y": -0.0041, "z": -0.0659, "w": 0.9879},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.0365, "y": -0.0011, "z": -0.0172, "w": 0.9992},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.1361, "y": -0.004, "z": -0.0641, "w": 0.9886},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Hand": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.1152, "y": 0.1136, "z": -0.0059, "w": 0.9868},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.0678, "y": -0.0374, "z": -0.0075, "w": 0.997},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.0796, "y": -0.0606, "z": 0.0584, "w": 0.9933},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.0473, "y": -0.0121, "z": -0.0071, "w": 0.9988},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.1197, "y": 0.0913, "z": -0.0009, "w": 0.9886},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Thigh": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.0973, "y": -0.0135, "z": 0.048, "w": 0.994},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": -0.3921, "y": -0.0384, "z": 0.0231, "w": 0.9188},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.4765, "y": -0.0468, "z": 0.0097, "w": 0.8779},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": -0.536, "y": -0.0808, "z": 0.0246, "w": 0.84},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 62,
+          "delta": {"x": -0.469, "y": -0.079, "z": 0.0335, "w": 0.879},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.438, "y": -0.1055, "z": 0.0298, "w": 0.8923},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 82,
+          "delta": {"x": -0.4376, "y": -0.1042, "z": 0.0301, "w": 0.8926},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 83,
+          "delta": {"x": -0.4369, "y": -0.1028, "z": 0.0304, "w": 0.8931},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 84,
+          "delta": {"x": -0.436, "y": -0.1014, "z": 0.0308, "w": 0.8937},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 87,
+          "delta": {"x": -0.4269, "y": -0.0975, "z": 0.0311, "w": 0.8985},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 90,
+          "delta": {"x": -0.4136, "y": -0.0933, "z": 0.0319, "w": 0.9051},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 93,
+          "delta": {"x": -0.3965, "y": -0.0889, "z": 0.0329, "w": 0.9131},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 96,
+          "delta": {"x": -0.3758, "y": -0.0842, "z": 0.034, "w": 0.9222},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 97,
+          "delta": {"x": -0.3682, "y": -0.0826, "z": 0.0345, "w": 0.9254},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 100,
+          "delta": {"x": -0.3545, "y": -0.0777, "z": 0.0367, "w": 0.9311},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 103,
+          "delta": {"x": -0.3395, "y": -0.0728, "z": 0.039, "w": 0.937},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 106,
+          "delta": {"x": -0.3232, "y": -0.0677, "z": 0.0414, "w": 0.943},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 109,
+          "delta": {"x": -0.3058, "y": -0.0625, "z": 0.0437, "w": 0.949},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 112,
+          "delta": {"x": -0.2873, "y": -0.0573, "z": 0.046, "w": 0.955},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.2808, "y": -0.0563, "z": 0.0465, "w": 0.957},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 137,
+          "delta": {"x": -0.0184, "y": -0.0212, "z": 0.0444, "w": 0.9986},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.0897, "y": -0.0143, "z": 0.0476, "w": 0.9947},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Mouth": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": -20},
+          "interpolationType": "step"
+        }
+      ]
+    },
+    "Origin": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": 0, "z": -5.68},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": 0, "z": -5.68},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Pelvis": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": -0.36, "y": -5.9, "z": 4.4},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.11, "y": -7.09, "z": 0.57},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.36, "y": -5.9, "z": 4.4},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.11, "y": -7.81, "z": 3.55},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.34, "y": -5.95, "z": 4.38},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.1164, "y": -0.0375, "z": -0.0047, "w": 0.9925},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.1164, "y": 0.0375, "z": 0.0047, "w": 0.9925},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.1164, "y": -0.0363, "z": -0.0046, "w": 0.9925},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Arm": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.2666, "y": -0.0011, "z": -0.0532, "w": 0.9623},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.2962, "y": -0.0237, "z": 0.021, "w": 0.9546},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.292, "y": -0.0113, "z": 0.0551, "w": 0.9548},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.2925, "y": -0.0381, "z": 0.0678, "w": 0.9531},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.2692, "y": -0.0024, "z": -0.0494, "w": 0.9618},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Calf": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.2258, "y": 0, "z": 0, "w": 0.9742},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 3,
+          "delta": {"x": 0.2738, "y": 0, "z": 0, "w": 0.9618},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 6,
+          "delta": {"x": 0.3112, "y": 0, "z": 0, "w": 0.9503},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 9,
+          "delta": {"x": 0.3401, "y": 0, "z": 0, "w": 0.9404},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 12,
+          "delta": {"x": 0.3617, "y": 0, "z": 0, "w": 0.9323},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 15,
+          "delta": {"x": 0.3766, "y": 0, "z": 0, "w": 0.9264},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 17,
+          "delta": {"x": 0.3831, "y": 0, "z": 0, "w": 0.9237},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 19,
+          "delta": {"x": 0.3868, "y": 0, "z": 0, "w": 0.9222},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 21,
+          "delta": {"x": 0.39, "y": 0, "z": 0, "w": 0.9208},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 23,
+          "delta": {"x": 0.3928, "y": 0, "z": 0, "w": 0.9196},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": 0.395, "y": 0, "z": 0, "w": 0.9187},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 27,
+          "delta": {"x": 0.3968, "y": 0, "z": 0, "w": 0.9179},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 29,
+          "delta": {"x": 0.3982, "y": 0, "z": 0, "w": 0.9173},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.3995, "y": 0, "z": 0, "w": 0.9168},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": 0.4639, "y": 0, "z": 0, "w": 0.8859},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 61,
+          "delta": {"x": 0.4605, "y": 0, "z": 0, "w": 0.8877},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.5123, "y": 0, "z": 0, "w": 0.8588},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 112,
+          "delta": {"x": 0.6735, "y": 0, "z": 0, "w": 0.7392},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.6749, "y": 0, "z": 0, "w": 0.7379},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 134,
+          "delta": {"x": 0.304, "y": 0, "z": 0, "w": 0.9527},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.2325, "y": 0, "z": 0, "w": 0.9726},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Ear": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.095, "y": 0.1532, "z": 0.105, "w": 0.978},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Eye": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": -1.68, "z": 0},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": -1.68, "z": 0},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Eyebrow": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {"x": -0.94, "y": -0.95, "z": -0.06},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.94, "y": -0.95, "z": -0.06},
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": 0, "z": 0.0791, "w": 0.9969},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": 0, "z": 0.0791, "w": 0.9969},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Foot": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.1243, "y": -0.0054, "z": 0.0628, "w": 0.9902},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 3,
+          "delta": {"x": 0.0734, "y": -0.0045, "z": 0.0623, "w": 0.9953},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 6,
+          "delta": {"x": 0.0262, "y": -0.0041, "z": 0.0615, "w": 0.9978},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 9,
+          "delta": {"x": -0.0181, "y": -0.0039, "z": 0.0605, "w": 0.998},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 12,
+          "delta": {"x": -0.0597, "y": -0.004, "z": 0.0593, "w": 0.9964},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 15,
+          "delta": {"x": -0.0986, "y": -0.0043, "z": 0.0579, "w": 0.9934},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 17,
+          "delta": {"x": -0.123, "y": -0.0046, "z": 0.0568, "w": 0.9908},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 19,
+          "delta": {"x": -0.1339, "y": -0.0048, "z": 0.0568, "w": 0.9894},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 21,
+          "delta": {"x": -0.1445, "y": -0.0051, "z": 0.0569, "w": 0.9879},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 23,
+          "delta": {"x": -0.1549, "y": -0.0054, "z": 0.057, "w": 0.9863},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": -0.165, "y": -0.0056, "z": 0.057, "w": 0.9846},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 27,
+          "delta": {"x": -0.175, "y": -0.0069, "z": 0.0571, "w": 0.9829},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 29,
+          "delta": {"x": -0.1848, "y": -0.0082, "z": 0.0572, "w": 0.9811},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 31,
+          "delta": {"x": -0.1943, "y": -0.0096, "z": 0.0573, "w": 0.9792},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.2036, "y": -0.0109, "z": 0.0573, "w": 0.9773},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": -0.1994, "y": -0.0047, "z": 0.061, "w": 0.978},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 61,
+          "delta": {"x": -0.1885, "y": 0.0034, "z": 0.0575, "w": 0.9804},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.1658, "y": 0.0164, "z": 0.0384, "w": 0.9853},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 112,
+          "delta": {"x": 0.0282, "y": -0.0086, "z": -0.0099, "w": 0.9995},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.0379, "y": -0.0104, "z": -0.0122, "w": 0.9992},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 134,
+          "delta": {"x": 0.008, "y": -0.0038, "z": 0.0374, "w": 0.9993},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.115, "y": -0.0054, "z": 0.0609, "w": 0.9915},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Forearm": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.149, "y": 0.0044, "z": 0.0701, "w": 0.9863},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.083, "y": 0.0024, "z": 0.0391, "w": 0.9958},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Hand": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0.0541, "y": -0.1381, "z": 0.1007, "w": 0.9838},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.0538, "y": 0.0118, "z": 0.0089, "w": 0.9984},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": 0.2828, "y": 0.0145, "z": -0.0169, "w": 0.9589},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": 0.1011, "y": 0.0347, "z": -0.0172, "w": 0.9941},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": 0.0546, "y": -0.1328, "z": 0.0976, "w": 0.9848},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Thigh": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": -0.4526, "y": 0.0887, "z": -0.0297, "w": 0.8868},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 3,
+          "delta": {"x": -0.451, "y": 0.0884, "z": -0.0301, "w": 0.8876},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 6,
+          "delta": {"x": -0.4435, "y": 0.0879, "z": -0.0307, "w": 0.8914},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 9,
+          "delta": {"x": -0.4309, "y": 0.0872, "z": -0.0314, "w": 0.8976},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 12,
+          "delta": {"x": -0.4139, "y": 0.0863, "z": -0.0323, "w": 0.9057},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 15,
+          "delta": {"x": -0.3926, "y": 0.0851, "z": -0.0332, "w": 0.9151},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 17,
+          "delta": {"x": -0.3763, "y": 0.0841, "z": -0.0338, "w": 0.922},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 19,
+          "delta": {"x": -0.3698, "y": 0.083, "z": -0.0349, "w": 0.9247},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 21,
+          "delta": {"x": -0.3631, "y": 0.0819, "z": -0.036, "w": 0.9275},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 23,
+          "delta": {"x": -0.356, "y": 0.0807, "z": -0.037, "w": 0.9303},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 25,
+          "delta": {"x": -0.3486, "y": 0.0795, "z": -0.0381, "w": 0.9331},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 27,
+          "delta": {"x": -0.3408, "y": 0.0792, "z": -0.0389, "w": 0.936},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 29,
+          "delta": {"x": -0.3327, "y": 0.079, "z": -0.0397, "w": 0.9389},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 31,
+          "delta": {"x": -0.3244, "y": 0.0787, "z": -0.0404, "w": 0.9418},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.3157, "y": 0.0783, "z": -0.0411, "w": 0.9447},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 55,
+          "delta": {"x": -0.1998, "y": 0.0824, "z": -0.0328, "w": 0.9758},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 61,
+          "delta": {"x": -0.1548, "y": 0.0753, "z": -0.0315, "w": 0.9846},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 81,
+          "delta": {"x": -0.1944, "y": 0.0534, "z": -0.0256, "w": 0.9791},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 112,
+          "delta": {"x": -0.5339, "y": 0.0324, "z": -0.0152, "w": 0.8448},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 113,
+          "delta": {"x": -0.543, "y": 0.032, "z": -0.0138, "w": 0.839},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 134,
+          "delta": {"x": -0.5109, "y": 0.064, "z": -0.0274, "w": 0.8568},
+          "interpolationType": "linear"
+        },
+        {
+          "time": 146,
+          "delta": {"x": -0.4574, "y": 0.0868, "z": -0.0295, "w": 0.8845},
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    }
+  }
+}
